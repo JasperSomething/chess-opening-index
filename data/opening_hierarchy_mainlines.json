@@ -1,0 +1,5777 @@
+{
+  "version": 1,
+  "source": "installed local Lumbra OTB index; both players rated 2200+",
+  "method": {
+    "minimum_continuation_games": 75,
+    "maximum_plies": 28,
+    "wide_choice": "the leading move is below 50%, at least three moves reach 15%, or the runner-up reaches 30%",
+    "selection": "Continue only along a majority local-OTB trunk; stop before choosing among plural alternatives. Frequencies are conditional at each position, and no complete-line probability or theoretical-best claim is made."
+  },
+  "entries": {
+    "e4": {
+      "definition_position_key": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "e4"
+      ],
+      "moves_uci": [
+        "e2e4"
+      ],
+      "pgn": "1. e4",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 1288665,
+      "choices_at_stop": [
+        {
+          "san": "c5",
+          "games": 589118,
+          "frequency": 0.45715372109896674
+        },
+        {
+          "san": "e5",
+          "games": 296915,
+          "frequency": 0.230405109163359
+        },
+        {
+          "san": "e6",
+          "games": 155876,
+          "frequency": 0.1209592873244792
+        },
+        {
+          "san": "c6",
+          "games": 102429,
+          "frequency": 0.07948458288228516
+        },
+        {
+          "san": "d6",
+          "games": 47095,
+          "frequency": 0.03654557235588768
+        }
+      ]
+    },
+    "e4/e5": {
+      "definition_position_key": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5",
+        "a6",
+        "Ba4",
+        "Nf6",
+        "O-O",
+        "Be7",
+        "Re1",
+        "b5",
+        "Bb3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "f1b5",
+        "a7a6",
+        "b5a4",
+        "g8f6",
+        "e1g1",
+        "f8e7",
+        "f1e1",
+        "b7b5",
+        "a4b3"
+      ],
+      "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3",
+      "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 b kq - 1 7",
+      "position_key": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 b kq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 47851,
+      "choices_at_stop": [
+        {
+          "san": "d6",
+          "games": 28066,
+          "frequency": 0.5865290171574262
+        },
+        {
+          "san": "O-O",
+          "games": 19594,
+          "frequency": 0.40947942571733087
+        },
+        {
+          "san": "Bb7",
+          "games": 174,
+          "frequency": 0.0036362876428914755
+        },
+        {
+          "san": "d5",
+          "games": 6,
+          "frequency": 0.0001253892290652233
+        },
+        {
+          "san": "Na5",
+          "games": 3,
+          "frequency": 6.269461453261165e-05
+        }
+      ]
+    },
+    "e4/e5/Ruy Lopez": {
+      "definition_position_key": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5",
+        "a6",
+        "Ba4",
+        "Nf6",
+        "O-O",
+        "Be7",
+        "Re1",
+        "b5",
+        "Bb3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "f1b5",
+        "a7a6",
+        "b5a4",
+        "g8f6",
+        "e1g1",
+        "f8e7",
+        "f1e1",
+        "b7b5",
+        "a4b3"
+      ],
+      "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3",
+      "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 b kq - 1 7",
+      "position_key": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 b kq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 47851,
+      "choices_at_stop": [
+        {
+          "san": "d6",
+          "games": 28066,
+          "frequency": 0.5865290171574262
+        },
+        {
+          "san": "O-O",
+          "games": 19594,
+          "frequency": 0.40947942571733087
+        },
+        {
+          "san": "Bb7",
+          "games": 174,
+          "frequency": 0.0036362876428914755
+        },
+        {
+          "san": "d5",
+          "games": 6,
+          "frequency": 0.0001253892290652233
+        },
+        {
+          "san": "Na5",
+          "games": 3,
+          "frequency": 6.269461453261165e-05
+        }
+      ]
+    },
+    "e4/e5/Italian": {
+      "definition_position_key": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bc4"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "f1c4"
+      ],
+      "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bc4",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "position_key": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 44276,
+      "choices_at_stop": [
+        {
+          "san": "Bc5",
+          "games": 22133,
+          "frequency": 0.49988707200289095
+        },
+        {
+          "san": "Nf6",
+          "games": 20050,
+          "frequency": 0.4528412684072635
+        },
+        {
+          "san": "Be7",
+          "games": 1183,
+          "frequency": 0.02671876411599964
+        },
+        {
+          "san": "d6",
+          "games": 726,
+          "frequency": 0.016397145180233084
+        },
+        {
+          "san": "g6",
+          "games": 119,
+          "frequency": 0.00268768633119523
+        }
+      ]
+    },
+    "e4/e5/Scotch": {
+      "definition_position_key": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "d4",
+        "exd4",
+        "Nxd4"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "d2d4",
+        "e5d4",
+        "f3d4"
+      ],
+      "pgn": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+      "position_key": "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 18395,
+      "choices_at_stop": [
+        {
+          "san": "Nf6",
+          "games": 8125,
+          "frequency": 0.4416961130742049
+        },
+        {
+          "san": "Bc5",
+          "games": 7222,
+          "frequency": 0.39260668659961945
+        },
+        {
+          "san": "Bb4+",
+          "games": 1145,
+          "frequency": 0.062245175319380265
+        },
+        {
+          "san": "Qf6",
+          "games": 929,
+          "frequency": 0.05050285403642294
+        },
+        {
+          "san": "Qh4",
+          "games": 329,
+          "frequency": 0.017885294917097037
+        }
+      ]
+    },
+    "e4/e5/4 Knights": {
+      "definition_position_key": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Nc3",
+        "Nf6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "b1c3",
+        "g8f6"
+      ],
+      "pgn": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4",
+      "position_key": "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 17021,
+      "choices_at_stop": [
+        {
+          "san": "Bb5",
+          "games": 6722,
+          "frequency": 0.3949239175136596
+        },
+        {
+          "san": "d4",
+          "games": 6467,
+          "frequency": 0.37994242406439105
+        },
+        {
+          "san": "g3",
+          "games": 1850,
+          "frequency": 0.10868926620057576
+        },
+        {
+          "san": "a3",
+          "games": 681,
+          "frequency": 0.040009400152752485
+        },
+        {
+          "san": "h3",
+          "games": 412,
+          "frequency": 0.024205393337641736
+        }
+      ]
+    },
+    "e4/e5/Petroff": {
+      "definition_position_key": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nf6",
+        "Nxe5",
+        "d6",
+        "Nf3",
+        "Nxe4",
+        "d4",
+        "d5",
+        "Bd3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "g8f6",
+        "f3e5",
+        "d7d6",
+        "e5f3",
+        "f6e4",
+        "d2d4",
+        "d6d5",
+        "f1d3"
+      ],
+      "pgn": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3",
+      "fen": "rnbqkb1r/ppp2ppp/8/3p4/3Pn3/3B1N2/PPP2PPP/RNBQK2R b KQkq - 1 6",
+      "position_key": "rnbqkb1r/ppp2ppp/8/3p4/3Pn3/3B1N2/PPP2PPP/RNBQK2R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 9732,
+      "choices_at_stop": [
+        {
+          "san": "Nc6",
+          "games": 4039,
+          "frequency": 0.4150226058364159
+        },
+        {
+          "san": "Bd6",
+          "games": 2739,
+          "frequency": 0.281442663378545
+        },
+        {
+          "san": "Be7",
+          "games": 2391,
+          "frequency": 0.24568434032059186
+        },
+        {
+          "san": "Bf5",
+          "games": 378,
+          "frequency": 0.03884093711467324
+        },
+        {
+          "san": "Nd6",
+          "games": 97,
+          "frequency": 0.009967118783394985
+        }
+      ]
+    },
+    "e4/e5/Vienna": {
+      "definition_position_key": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nc3",
+        "Nf6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "b1c3",
+        "g8f6"
+      ],
+      "pgn": "1. e4 e5 2. Nc3 Nf6",
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3",
+      "position_key": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 6569,
+      "choices_at_stop": [
+        {
+          "san": "g3",
+          "games": 2205,
+          "frequency": 0.3356675293043081
+        },
+        {
+          "san": "Bc4",
+          "games": 1569,
+          "frequency": 0.23884913989952808
+        },
+        {
+          "san": "f4",
+          "games": 1301,
+          "frequency": 0.1980514537981428
+        },
+        {
+          "san": "Nf3",
+          "games": 1136,
+          "frequency": 0.17293347541482723
+        },
+        {
+          "san": "d4",
+          "games": 274,
+          "frequency": 0.041711067133505864
+        }
+      ]
+    },
+    "e4/e5/Sidelines / Transpositions": {
+      "definition_position_key": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5",
+        "a6",
+        "Ba4",
+        "Nf6",
+        "O-O",
+        "Be7",
+        "Re1",
+        "b5",
+        "Bb3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "f1b5",
+        "a7a6",
+        "b5a4",
+        "g8f6",
+        "e1g1",
+        "f8e7",
+        "f1e1",
+        "b7b5",
+        "a4b3"
+      ],
+      "pgn": "1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3",
+      "fen": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 b kq - 1 7",
+      "position_key": "r1bqk2r/2ppbppp/p1n2n2/1p2p3/4P3/1B3N2/PPPP1PPP/RNBQR1K1 b kq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 47851,
+      "choices_at_stop": [
+        {
+          "san": "d6",
+          "games": 28066,
+          "frequency": 0.5865290171574262
+        },
+        {
+          "san": "O-O",
+          "games": 19594,
+          "frequency": 0.40947942571733087
+        },
+        {
+          "san": "Bb7",
+          "games": 174,
+          "frequency": 0.0036362876428914755
+        },
+        {
+          "san": "d5",
+          "games": 6,
+          "frequency": 0.0001253892290652233
+        },
+        {
+          "san": "Na5",
+          "games": 3,
+          "frequency": 6.269461453261165e-05
+        }
+      ]
+    },
+    "e4/e5/Sidelines / Transpositions/Ponziani": {
+      "definition_position_key": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2P2N2/PP1P1PPP/RNBQKB1R b KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "c3",
+        "Nf6",
+        "d4"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "c2c3",
+        "g8f6",
+        "d2d4"
+      ],
+      "pgn": "1. e4 e5 2. Nf3 Nc6 3. c3 Nf6 4. d4",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/3PP3/2P2N2/PP3PPP/RNBQKB1R b KQkq - 0 4",
+      "position_key": "r1bqkb1r/pppp1ppp/2n2n2/4p3/3PP3/2P2N2/PP3PPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 838,
+      "choices_at_stop": [
+        {
+          "san": "Nxe4",
+          "games": 473,
+          "frequency": 0.5644391408114559
+        },
+        {
+          "san": "exd4",
+          "games": 179,
+          "frequency": 0.21360381861575178
+        },
+        {
+          "san": "d6",
+          "games": 132,
+          "frequency": 0.1575178997613365
+        },
+        {
+          "san": "d5",
+          "games": 48,
+          "frequency": 0.057279236276849645
+        },
+        {
+          "san": "Qe7",
+          "games": 6,
+          "frequency": 0.007159904534606206
+        }
+      ]
+    },
+    "e4/e5/Sidelines / Transpositions/Bishops opening": {
+      "definition_position_key": "rnbqkbnr/pppp1ppp/8/4p3/2B1P3/8/PPPP1PPP/RNBQK1NR b KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Bc4",
+        "Nf6",
+        "d3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "f1c4",
+        "g8f6",
+        "d2d3"
+      ],
+      "pgn": "1. e4 e5 2. Bc4 Nf6 3. d3",
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/3P4/PPP2PPP/RNBQK1NR b KQkq - 0 3",
+      "position_key": "rnbqkb1r/pppp1ppp/5n2/4p3/2B1P3/3P4/PPP2PPP/RNBQK1NR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 6437,
+      "choices_at_stop": [
+        {
+          "san": "Nc6",
+          "games": 2766,
+          "frequency": 0.42970327792449897
+        },
+        {
+          "san": "c6",
+          "games": 2569,
+          "frequency": 0.3990989591424577
+        },
+        {
+          "san": "Bc5",
+          "games": 817,
+          "frequency": 0.12692247941587695
+        },
+        {
+          "san": "Be7",
+          "games": 173,
+          "frequency": 0.026875873854279943
+        },
+        {
+          "san": "d5",
+          "games": 58,
+          "frequency": 0.009010408575423333
+        }
+      ]
+    },
+    "e4/e5/Sidelines / Transpositions/King's Gambit": {
+      "definition_position_key": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "f4",
+        "exf4",
+        "Nf3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "f2f4",
+        "e5f4",
+        "g1f3"
+      ],
+      "pgn": "1. e4 e5 2. f4 exf4 3. Nf3",
+      "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/5N2/PPPP2PP/RNBQKB1R b KQkq - 1 3",
+      "position_key": "rnbqkbnr/pppp1ppp/8/8/4Pp2/5N2/PPPP2PP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 2600,
+      "choices_at_stop": [
+        {
+          "san": "g5",
+          "games": 835,
+          "frequency": 0.3211538461538462
+        },
+        {
+          "san": "d6",
+          "games": 499,
+          "frequency": 0.19192307692307692
+        },
+        {
+          "san": "d5",
+          "games": 433,
+          "frequency": 0.16653846153846155
+        },
+        {
+          "san": "Be7",
+          "games": 250,
+          "frequency": 0.09615384615384616
+        },
+        {
+          "san": "Ne7",
+          "games": 208,
+          "frequency": 0.08
+        }
+      ]
+    },
+    "e4/e5/Sidelines / Transpositions/Philidor": {
+      "definition_position_key": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "d6",
+        "d4",
+        "exd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "Be7"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "d7d6",
+        "d2d4",
+        "e5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "f8e7"
+      ],
+      "pgn": "1. e4 e5 2. Nf3 d6 3. d4 exd4 4. Nxd4 Nf6 5. Nc3 Be7",
+      "fen": "rnbqk2r/ppp1bppp/3p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6",
+      "position_key": "rnbqk2r/ppp1bppp/3p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 3358,
+      "choices_at_stop": [
+        {
+          "san": "Be2",
+          "games": 989,
+          "frequency": 0.2945205479452055
+        },
+        {
+          "san": "g3",
+          "games": 932,
+          "frequency": 0.27754615842763547
+        },
+        {
+          "san": "Bf4",
+          "games": 803,
+          "frequency": 0.2391304347826087
+        },
+        {
+          "san": "Bc4",
+          "games": 319,
+          "frequency": 0.09499702203692674
+        },
+        {
+          "san": "Nde2",
+          "games": 87,
+          "frequency": 0.025908278737343658
+        }
+      ]
+    },
+    "e4/Sicilian": {
+      "definition_position_key": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3"
+      ],
+      "pgn": "1. e4 c5 2. Nf3",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "position_key": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 487712,
+      "choices_at_stop": [
+        {
+          "san": "d6",
+          "games": 217326,
+          "frequency": 0.4456031428383964
+        },
+        {
+          "san": "Nc6",
+          "games": 133004,
+          "frequency": 0.2727101240076111
+        },
+        {
+          "san": "e6",
+          "games": 117571,
+          "frequency": 0.24106644905189947
+        },
+        {
+          "san": "g6",
+          "games": 10036,
+          "frequency": 0.020577717997506725
+        },
+        {
+          "san": "a6",
+          "games": 5064,
+          "frequency": 0.010383176956892592
+        }
+      ]
+    },
+    "e4/Sicilian/d6 open": {
+      "definition_position_key": "rnbqkbnr/pp2pppp/3p4/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "a6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "d7d6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "a7a6"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6",
+      "fen": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "position_key": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 111926,
+      "choices_at_stop": [
+        {
+          "san": "Be3",
+          "games": 35265,
+          "frequency": 0.3150742454836231
+        },
+        {
+          "san": "Bg5",
+          "games": 23520,
+          "frequency": 0.21013884173471759
+        },
+        {
+          "san": "Be2",
+          "games": 15891,
+          "frequency": 0.14197773528938762
+        },
+        {
+          "san": "h3",
+          "games": 8583,
+          "frequency": 0.07668459517895752
+        },
+        {
+          "san": "Bc4",
+          "games": 8007,
+          "frequency": 0.0715383378303522
+        }
+      ]
+    },
+    "e4/Sicilian/d6 open/Najdorf": {
+      "definition_position_key": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "a6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "d7d6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "a7a6"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6",
+      "fen": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "position_key": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 111926,
+      "choices_at_stop": [
+        {
+          "san": "Be3",
+          "games": 35265,
+          "frequency": 0.3150742454836231
+        },
+        {
+          "san": "Bg5",
+          "games": 23520,
+          "frequency": 0.21013884173471759
+        },
+        {
+          "san": "Be2",
+          "games": 15891,
+          "frequency": 0.14197773528938762
+        },
+        {
+          "san": "h3",
+          "games": 8583,
+          "frequency": 0.07668459517895752
+        },
+        {
+          "san": "Bc4",
+          "games": 8007,
+          "frequency": 0.0715383378303522
+        }
+      ]
+    },
+    "e4/Sicilian/d6 open/Classical": {
+      "definition_position_key": "r1bqkb1r/pp2pppp/2np1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "Nc6",
+        "Bg5",
+        "e6",
+        "Qd2",
+        "a6",
+        "O-O-O",
+        "Bd7",
+        "f4"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "d7d6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "b8c6",
+        "c1g5",
+        "e7e6",
+        "d1d2",
+        "a7a6",
+        "e1c1",
+        "c8d7",
+        "f2f4"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5 e6 7. Qd2 a6 8. O-O-O Bd7 9. f4",
+      "fen": "r2qkb1r/1p1b1ppp/p1nppn2/6B1/3NPP2/2N5/PPPQ2PP/2KR1B1R b kq - 0 9",
+      "position_key": "r2qkb1r/1p1b1ppp/p1nppn2/6B1/3NPP2/2N5/PPPQ2PP/2KR1B1R b kq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 5003,
+      "choices_at_stop": [
+        {
+          "san": "b5",
+          "games": 2535,
+          "frequency": 0.5066959824105537
+        },
+        {
+          "san": "Be7",
+          "games": 1362,
+          "frequency": 0.27223665800519686
+        },
+        {
+          "san": "h6",
+          "games": 1012,
+          "frequency": 0.2022786328203078
+        },
+        {
+          "san": "Qc7",
+          "games": 65,
+          "frequency": 0.012992204677193683
+        },
+        {
+          "san": "Rc8",
+          "games": 13,
+          "frequency": 0.002598440935438737
+        }
+      ]
+    },
+    "e4/Sicilian/d6 open/Dragon": {
+      "definition_position_key": "rnbqkb1r/pp2pp1p/3p1np1/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "g6",
+        "Be3",
+        "Bg7",
+        "f3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "d7d6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "g7g6",
+        "c1e3",
+        "f8g7",
+        "f2f3"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3",
+      "fen": "rnbqk2r/pp2ppbp/3p1np1/8/3NP3/2N1BP2/PPP3PP/R2QKB1R b KQkq - 0 7",
+      "position_key": "rnbqk2r/pp2ppbp/3p1np1/8/3NP3/2N1BP2/PPP3PP/R2QKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 13998,
+      "choices_at_stop": [
+        {
+          "san": "O-O",
+          "games": 7938,
+          "frequency": 0.5670810115730819
+        },
+        {
+          "san": "Nc6",
+          "games": 5445,
+          "frequency": 0.3889841405915131
+        },
+        {
+          "san": "a6",
+          "games": 537,
+          "frequency": 0.03836262323189027
+        },
+        {
+          "san": "h5",
+          "games": 40,
+          "frequency": 0.002857551078725532
+        },
+        {
+          "san": "Nbd7",
+          "games": 25,
+          "frequency": 0.0017859694242034576
+        }
+      ]
+    },
+    "e4/Sicilian/d6 open/Scheveningen": {
+      "definition_position_key": "rnbqkb1r/pp3ppp/3ppn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "e6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "d7d6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "e7e6"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6",
+      "fen": "rnbqkb1r/pp3ppp/3ppn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "position_key": "rnbqkb1r/pp3ppp/3ppn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 17161,
+      "choices_at_stop": [
+        {
+          "san": "g4",
+          "games": 4921,
+          "frequency": 0.2867548511159023
+        },
+        {
+          "san": "Be2",
+          "games": 4679,
+          "frequency": 0.2726531087931939
+        },
+        {
+          "san": "Be3",
+          "games": 3051,
+          "frequency": 0.17778684225860963
+        },
+        {
+          "san": "f4",
+          "games": 1466,
+          "frequency": 0.08542625721111824
+        },
+        {
+          "san": "Bc4",
+          "games": 1174,
+          "frequency": 0.06841093176388323
+        }
+      ]
+    },
+    "e4/Sicilian/d6 open/Kupreichik variation": {
+      "definition_position_key": "rnbqkb1r/p3pppp/3p1n2/1p6/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "b5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "d7d6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "b7b5"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 b5",
+      "fen": "rnbqkb1r/p3pppp/3p1n2/1p6/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "position_key": "rnbqkb1r/p3pppp/3p1n2/1p6/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "stop_reason": "small_sample",
+      "continuation_games_at_stop": 1,
+      "choices_at_stop": [
+        {
+          "san": "Bc4",
+          "games": 1,
+          "frequency": 1.0
+        }
+      ]
+    },
+    "e4/Sicilian/d6 open/Delayed alapin transposition": {
+      "definition_position_key": "rnbqkb1r/pp2pppp/3p1n2/2p5/4P3/2P2N2/PP1P1PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "c3",
+        "Nf6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "d7d6",
+        "c2c3",
+        "g8f6"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 d6 3. c3 Nf6",
+      "fen": "rnbqkb1r/pp2pppp/3p1n2/2p5/4P3/2P2N2/PP1P1PPP/RNBQKB1R w KQkq - 1 4",
+      "position_key": "rnbqkb1r/pp2pppp/3p1n2/2p5/4P3/2P2N2/PP1P1PPP/RNBQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 7614,
+      "choices_at_stop": [
+        {
+          "san": "Be2",
+          "games": 3472,
+          "frequency": 0.4560021013921723
+        },
+        {
+          "san": "h3",
+          "games": 1800,
+          "frequency": 0.2364066193853428
+        },
+        {
+          "san": "Bd3",
+          "games": 1501,
+          "frequency": 0.19713685316522195
+        },
+        {
+          "san": "Bc4",
+          "games": 317,
+          "frequency": 0.04163383241397426
+        },
+        {
+          "san": "Qc2",
+          "games": 141,
+          "frequency": 0.018518518518518517
+        }
+      ]
+    },
+    "e4/Sicilian/d6 open/Moscow variation": {
+      "definition_position_key": "rnbqkbnr/pp2pppp/3p4/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "Bb5+"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "d7d6",
+        "f1b5"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 d6 3. Bb5+",
+      "fen": "rnbqkbnr/pp2pppp/3p4/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 3",
+      "position_key": "rnbqkbnr/pp2pppp/3p4/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 27080,
+      "choices_at_stop": [
+        {
+          "san": "Bd7",
+          "games": 12790,
+          "frequency": 0.4723042836041359
+        },
+        {
+          "san": "Nd7",
+          "games": 11017,
+          "frequency": 0.4068316100443131
+        },
+        {
+          "san": "Nc6",
+          "games": 3271,
+          "frequency": 0.12079025110782865
+        },
+        {
+          "san": "Qd7",
+          "games": 2,
+          "frequency": 7.385524372230428e-05
+        }
+      ]
+    },
+    "e4/Sicilian/e6 open": {
+      "definition_position_key": "rnbqkbnr/pp1p1ppp/4p3/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "e7e6",
+        "d2d4",
+        "c5d4",
+        "f3d4"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4",
+      "fen": "rnbqkbnr/pp1p1ppp/4p3/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+      "position_key": "rnbqkbnr/pp1p1ppp/4p3/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 84833,
+      "choices_at_stop": [
+        {
+          "san": "a6",
+          "games": 33471,
+          "frequency": 0.3945516485330001
+        },
+        {
+          "san": "Nc6",
+          "games": 30203,
+          "frequency": 0.35602890384638053
+        },
+        {
+          "san": "Nf6",
+          "games": 19614,
+          "frequency": 0.23120719531314465
+        },
+        {
+          "san": "Qb6",
+          "games": 828,
+          "frequency": 0.00976035269293789
+        },
+        {
+          "san": "Bc5",
+          "games": 403,
+          "frequency": 0.004750509825185953
+        }
+      ]
+    },
+    "e4/Sicilian/e6 open/Kan": {
+      "definition_position_key": "rnbqkbnr/1p1p1ppp/p3p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "a6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "e7e6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "a7a6"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6",
+      "fen": "rnbqkbnr/1p1p1ppp/p3p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+      "position_key": "rnbqkbnr/1p1p1ppp/p3p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 33488,
+      "choices_at_stop": [
+        {
+          "san": "Bd3",
+          "games": 16040,
+          "frequency": 0.4789775441949355
+        },
+        {
+          "san": "Nc3",
+          "games": 11396,
+          "frequency": 0.3403010033444816
+        },
+        {
+          "san": "c4",
+          "games": 4135,
+          "frequency": 0.12347706641184902
+        },
+        {
+          "san": "Be2",
+          "games": 997,
+          "frequency": 0.029771858576206404
+        },
+        {
+          "san": "g3",
+          "games": 337,
+          "frequency": 0.010063306258958432
+        }
+      ]
+    },
+    "e4/Sicilian/e6 open/Taimanov": {
+      "definition_position_key": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Qc7"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "e7e6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "b8c6",
+        "b1c3",
+        "d8c7"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Qc7",
+      "fen": "r1b1kbnr/ppqp1ppp/2n1p3/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6",
+      "position_key": "r1b1kbnr/ppqp1ppp/2n1p3/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 25018,
+      "choices_at_stop": [
+        {
+          "san": "Be3",
+          "games": 11095,
+          "frequency": 0.44348069390039174
+        },
+        {
+          "san": "Be2",
+          "games": 6803,
+          "frequency": 0.27192421456551286
+        },
+        {
+          "san": "g3",
+          "games": 3996,
+          "frequency": 0.15972499800143897
+        },
+        {
+          "san": "f4",
+          "games": 1710,
+          "frequency": 0.0683507874330482
+        },
+        {
+          "san": "Qd3",
+          "games": 334,
+          "frequency": 0.013350387720840995
+        }
+      ]
+    },
+    "e4/Sicilian/e6 open/Scheveningen": {
+      "definition_position_key": "rnbqkbnr/pp3ppp/3pp3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "d6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "e7e6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "d7d6"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 d6",
+      "fen": "rnbqkbnr/pp3ppp/3pp3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+      "position_key": "rnbqkbnr/pp3ppp/3pp3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 422,
+      "choices_at_stop": [
+        {
+          "san": "Nc3",
+          "games": 247,
+          "frequency": 0.5853080568720379
+        },
+        {
+          "san": "c4",
+          "games": 129,
+          "frequency": 0.3056872037914692
+        },
+        {
+          "san": "Bd3",
+          "games": 12,
+          "frequency": 0.02843601895734597
+        },
+        {
+          "san": "Be2",
+          "games": 8,
+          "frequency": 0.018957345971563982
+        },
+        {
+          "san": "g3",
+          "games": 8,
+          "frequency": 0.018957345971563982
+        }
+      ]
+    },
+    "e4/Sicilian/e6 open/4 Knights": {
+      "definition_position_key": "r1bqkb1r/pp1p1ppp/2n1pn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "e6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nc6",
+        "Nc3",
+        "Nf6",
+        "Ndb5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "e7e6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "b8c6",
+        "b1c3",
+        "g8f6",
+        "d4b5"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Nf6 6. Ndb5",
+      "fen": "r1bqkb1r/pp1p1ppp/2n1pn2/1N6/4P3/2N5/PPP2PPP/R1BQKB1R b KQkq - 4 6",
+      "position_key": "r1bqkb1r/pp1p1ppp/2n1pn2/1N6/4P3/2N5/PPP2PPP/R1BQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 6713,
+      "choices_at_stop": [
+        {
+          "san": "d6",
+          "games": 3837,
+          "frequency": 0.5715775361239386
+        },
+        {
+          "san": "Bb4",
+          "games": 2099,
+          "frequency": 0.31267689557574857
+        },
+        {
+          "san": "Bc5",
+          "games": 766,
+          "frequency": 0.11410695665127364
+        },
+        {
+          "san": "a6",
+          "games": 5,
+          "frequency": 0.0007448234768359899
+        },
+        {
+          "san": "d5",
+          "games": 3,
+          "frequency": 0.00044689408610159393
+        }
+      ]
+    },
+    "e4/Sicilian/Nc6 open": {
+      "definition_position_key": "r1bqkbnr/pp1ppppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "Nc6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "b8c6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3",
+      "fen": "r1bqkb1r/pp1ppppp/2n2n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq - 2 5",
+      "position_key": "r1bqkb1r/pp1ppppp/2n2n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 46399,
+      "choices_at_stop": [
+        {
+          "san": "e5",
+          "games": 25612,
+          "frequency": 0.551994655057221
+        },
+        {
+          "san": "d6",
+          "games": 17514,
+          "frequency": 0.37746503157395633
+        },
+        {
+          "san": "e6",
+          "games": 2188,
+          "frequency": 0.047156188710963595
+        },
+        {
+          "san": "g6",
+          "games": 720,
+          "frequency": 0.015517575809823488
+        },
+        {
+          "san": "Qb6",
+          "games": 177,
+          "frequency": 0.0038147373865816073
+        }
+      ]
+    },
+    "e4/Sicilian/Nc6 open/Rossolimo": {
+      "definition_position_key": "r1bqkbnr/pp1ppppp/2n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "Nc6",
+        "Bb5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "b8c6",
+        "f1b5"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 Nc6 3. Bb5",
+      "fen": "r1bqkbnr/pp1ppppp/2n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "position_key": "r1bqkbnr/pp1ppppp/2n5/1Bp5/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 35708,
+      "choices_at_stop": [
+        {
+          "san": "g6",
+          "games": 17491,
+          "frequency": 0.4898342108211045
+        },
+        {
+          "san": "e6",
+          "games": 8807,
+          "frequency": 0.24663940853590233
+        },
+        {
+          "san": "d6",
+          "games": 4586,
+          "frequency": 0.1284306037862664
+        },
+        {
+          "san": "Nf6",
+          "games": 2481,
+          "frequency": 0.06948022852021955
+        },
+        {
+          "san": "e5",
+          "games": 707,
+          "frequency": 0.01979948470930884
+        }
+      ]
+    },
+    "e4/Sicilian/Nc6 open/Sveshnikov": {
+      "definition_position_key": "r1bqkb1r/pp1p1ppp/2n2n2/4p3/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "Nc6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "e5",
+        "Ndb5",
+        "d6",
+        "Bg5",
+        "a6",
+        "Na3",
+        "b5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "b8c6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "e7e5",
+        "d4b5",
+        "d7d6",
+        "c1g5",
+        "a7a6",
+        "b5a3",
+        "b7b5"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5",
+      "fen": "r1bqkb1r/5ppp/p1np1n2/1p2p1B1/4P3/N1N5/PPP2PPP/R2QKB1R w KQkq - 0 9",
+      "position_key": "r1bqkb1r/5ppp/p1np1n2/1p2p1B1/4P3/N1N5/PPP2PPP/R2QKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 22777,
+      "choices_at_stop": [
+        {
+          "san": "Nd5",
+          "games": 12522,
+          "frequency": 0.5497651139307196
+        },
+        {
+          "san": "Bxf6",
+          "games": 10037,
+          "frequency": 0.4406638275453308
+        },
+        {
+          "san": "Nab1",
+          "games": 216,
+          "frequency": 0.009483250647583088
+        },
+        {
+          "san": "Naxb5",
+          "games": 2,
+          "frequency": 8.780787636651008e-05
+        }
+      ]
+    },
+    "e4/Sicilian/Nc6 open/Accelerated Dragon": {
+      "definition_position_key": "r1bqkbnr/pp1ppp1p/2n3p1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "Nc6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "g6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "b8c6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g7g6"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6",
+      "fen": "r1bqkbnr/pp1ppp1p/2n3p1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
+      "position_key": "r1bqkbnr/pp1ppp1p/2n3p1/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 14820,
+      "choices_at_stop": [
+        {
+          "san": "c4",
+          "games": 7984,
+          "frequency": 0.5387314439946019
+        },
+        {
+          "san": "Nc3",
+          "games": 5792,
+          "frequency": 0.39082321187584346
+        },
+        {
+          "san": "Be3",
+          "games": 365,
+          "frequency": 0.024628879892037787
+        },
+        {
+          "san": "Be2",
+          "games": 302,
+          "frequency": 0.0203778677462888
+        },
+        {
+          "san": "Nxc6",
+          "games": 148,
+          "frequency": 0.009986504723346829
+        }
+      ]
+    },
+    "e4/Sicilian/Nc6 open/Transpositions (4 Knights, Classical)": {
+      "definition_position_key": "r1bqkb1r/pp1ppppp/2n2n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "Nc6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "b8c6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3",
+      "fen": "r1bqkb1r/pp1ppppp/2n2n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq - 2 5",
+      "position_key": "r1bqkb1r/pp1ppppp/2n2n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 46399,
+      "choices_at_stop": [
+        {
+          "san": "e5",
+          "games": 25612,
+          "frequency": 0.551994655057221
+        },
+        {
+          "san": "d6",
+          "games": 17514,
+          "frequency": 0.37746503157395633
+        },
+        {
+          "san": "e6",
+          "games": 2188,
+          "frequency": 0.047156188710963595
+        },
+        {
+          "san": "g6",
+          "games": 720,
+          "frequency": 0.015517575809823488
+        },
+        {
+          "san": "Qb6",
+          "games": 177,
+          "frequency": 0.0038147373865816073
+        }
+      ]
+    },
+    "e4/Sicilian/Nc6 open/Kalashnikov": {
+      "definition_position_key": "r1bqkbnr/pp3ppp/2np4/1N2p3/4P3/8/PPP2PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "Nc6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "e5",
+        "Nb5",
+        "d6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "b8c6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "e7e5",
+        "d4b5",
+        "d7d6"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5 5. Nb5 d6",
+      "fen": "r1bqkbnr/pp3ppp/2np4/1N2p3/4P3/8/PPP2PPP/RNBQKB1R w KQkq - 0 6",
+      "position_key": "r1bqkbnr/pp3ppp/2np4/1N2p3/4P3/8/PPP2PPP/RNBQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 7015,
+      "choices_at_stop": [
+        {
+          "san": "N1c3",
+          "games": 3321,
+          "frequency": 0.4734141126158232
+        },
+        {
+          "san": "c4",
+          "games": 2970,
+          "frequency": 0.4233784746970777
+        },
+        {
+          "san": "a4",
+          "games": 304,
+          "frequency": 0.04333570919458304
+        },
+        {
+          "san": "Be3",
+          "games": 123,
+          "frequency": 0.01753385602280827
+        },
+        {
+          "san": "Bc4",
+          "games": 106,
+          "frequency": 0.01511047754811119
+        }
+      ]
+    },
+    "e4/Sicilian/Closed": {
+      "definition_position_key": "r1bqkbnr/pp1ppppp/2n5/2p5/4P3/2N3P1/PPPP1P1P/R1BQKBNR b KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nc3",
+        "Nc6",
+        "g3",
+        "g6",
+        "Bg2",
+        "Bg7",
+        "d3",
+        "d6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "b1c3",
+        "b8c6",
+        "g2g3",
+        "g7g6",
+        "f1g2",
+        "f8g7",
+        "d2d3",
+        "d7d6"
+      ],
+      "pgn": "1. e4 c5 2. Nc3 Nc6 3. g3 g6 4. Bg2 Bg7 5. d3 d6",
+      "fen": "r1bqk1nr/pp2ppbp/2np2p1/2p5/4P3/2NP2P1/PPP2PBP/R1BQK1NR w KQkq - 0 6",
+      "position_key": "r1bqk1nr/pp2ppbp/2np2p1/2p5/4P3/2NP2P1/PPP2PBP/R1BQK1NR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 7155,
+      "choices_at_stop": [
+        {
+          "san": "Be3",
+          "games": 3082,
+          "frequency": 0.43074772886093643
+        },
+        {
+          "san": "f4",
+          "games": 2871,
+          "frequency": 0.40125786163522015
+        },
+        {
+          "san": "Nge2",
+          "games": 586,
+          "frequency": 0.08190076869322152
+        },
+        {
+          "san": "Nh3",
+          "games": 393,
+          "frequency": 0.05492662473794549
+        },
+        {
+          "san": "Nf3",
+          "games": 90,
+          "frequency": 0.012578616352201259
+        }
+      ]
+    },
+    "e4/Sicilian/Alternatives": {
+      "definition_position_key": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3"
+      ],
+      "pgn": "1. e4 c5 2. Nf3",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+      "position_key": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 487712,
+      "choices_at_stop": [
+        {
+          "san": "d6",
+          "games": 217326,
+          "frequency": 0.4456031428383964
+        },
+        {
+          "san": "Nc6",
+          "games": 133004,
+          "frequency": 0.2727101240076111
+        },
+        {
+          "san": "e6",
+          "games": 117571,
+          "frequency": 0.24106644905189947
+        },
+        {
+          "san": "g6",
+          "games": 10036,
+          "frequency": 0.020577717997506725
+        },
+        {
+          "san": "a6",
+          "games": 5064,
+          "frequency": 0.010383176956892592
+        }
+      ]
+    },
+    "e4/Sicilian/Alternatives/O-Kelly Variation": {
+      "definition_position_key": "rnbqkbnr/1p1ppppp/p7/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "a6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "a7a6"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 a6",
+      "fen": "rnbqkbnr/1p1ppppp/p7/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+      "position_key": "rnbqkbnr/1p1ppppp/p7/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 5068,
+      "choices_at_stop": [
+        {
+          "san": "c3",
+          "games": 1880,
+          "frequency": 0.3709550118389897
+        },
+        {
+          "san": "c4",
+          "games": 1375,
+          "frequency": 0.27131018153117603
+        },
+        {
+          "san": "Nc3",
+          "games": 799,
+          "frequency": 0.15765588003157063
+        },
+        {
+          "san": "d4",
+          "games": 494,
+          "frequency": 0.09747434885556433
+        },
+        {
+          "san": "g3",
+          "games": 283,
+          "frequency": 0.0558405682715075
+        }
+      ]
+    },
+    "e4/Sicilian/Alternatives/Nimsowitsch variation": {
+      "definition_position_key": "rnbqkb1r/pp1ppppp/5n2/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "Nf6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "g8f6"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 Nf6",
+      "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "position_key": "rnbqkb1r/pp1ppppp/5n2/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 3870,
+      "choices_at_stop": [
+        {
+          "san": "e5",
+          "games": 2171,
+          "frequency": 0.5609819121447028
+        },
+        {
+          "san": "Nc3",
+          "games": 1544,
+          "frequency": 0.39896640826873386
+        },
+        {
+          "san": "d3",
+          "games": 130,
+          "frequency": 0.03359173126614987
+        },
+        {
+          "san": "d4",
+          "games": 10,
+          "frequency": 0.002583979328165375
+        },
+        {
+          "san": "Qe2",
+          "games": 6,
+          "frequency": 0.0015503875968992248
+        }
+      ]
+    },
+    "e4/Sicilian/Alternatives/Katalimov variation": {
+      "definition_position_key": "rnbqkbnr/p2ppppp/1p6/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "b6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Bb7",
+        "Nc3",
+        "a6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "b7b6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "c8b7",
+        "b1c3",
+        "a7a6"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 b6 3. d4 cxd4 4. Nxd4 Bb7 5. Nc3 a6",
+      "fen": "rn1qkbnr/1b1ppppp/pp6/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "position_key": "rn1qkbnr/1b1ppppp/pp6/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 308,
+      "choices_at_stop": [
+        {
+          "san": "Be3",
+          "games": 81,
+          "frequency": 0.262987012987013
+        },
+        {
+          "san": "Bd3",
+          "games": 78,
+          "frequency": 0.2532467532467532
+        },
+        {
+          "san": "Bg5",
+          "games": 57,
+          "frequency": 0.18506493506493507
+        },
+        {
+          "san": "g3",
+          "games": 33,
+          "frequency": 0.10714285714285714
+        },
+        {
+          "san": "Be2",
+          "games": 31,
+          "frequency": 0.10064935064935066
+        }
+      ]
+    },
+    "e4/Sicilian/Alternatives/Hyper Accelerated Dragon": {
+      "definition_position_key": "rnbqkbnr/pp1ppp1p/6p1/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "g6",
+        "d4"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "g7g6",
+        "d2d4"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 g6 3. d4",
+      "fen": "rnbqkbnr/pp1ppp1p/6p1/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+      "position_key": "rnbqkbnr/pp1ppp1p/6p1/2p5/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 6902,
+      "choices_at_stop": [
+        {
+          "san": "cxd4",
+          "games": 4762,
+          "frequency": 0.6899449434946392
+        },
+        {
+          "san": "Bg7",
+          "games": 2137,
+          "frequency": 0.30962039988409157
+        },
+        {
+          "san": "Nc6",
+          "games": 1,
+          "frequency": 0.0001448855404230658
+        },
+        {
+          "san": "Nf6",
+          "games": 1,
+          "frequency": 0.0001448855404230658
+        },
+        {
+          "san": "d6",
+          "games": 1,
+          "frequency": 0.0001448855404230658
+        }
+      ]
+    },
+    "e4/Sicilian/Alternatives/Alapin": {
+      "definition_position_key": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "c3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "c2c3"
+      ],
+      "pgn": "1. e4 c5 2. c3",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq - 0 2",
+      "position_key": "rnbqkbnr/pp1ppppp/8/2p5/4P3/2P5/PP1P1PPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 38688,
+      "choices_at_stop": [
+        {
+          "san": "Nf6",
+          "games": 16427,
+          "frequency": 0.4246019437551696
+        },
+        {
+          "san": "d5",
+          "games": 13162,
+          "frequency": 0.34020885028949543
+        },
+        {
+          "san": "e6",
+          "games": 3277,
+          "frequency": 0.08470326716294459
+        },
+        {
+          "san": "d6",
+          "games": 2939,
+          "frequency": 0.07596670802315963
+        },
+        {
+          "san": "g6",
+          "games": 1344,
+          "frequency": 0.034739454094292806
+        }
+      ]
+    },
+    "e4/French": {
+      "definition_position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "e6",
+        "d4",
+        "d5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e6",
+        "d2d4",
+        "d7d5"
+      ],
+      "pgn": "1. e4 e6 2. d4 d5",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 141121,
+      "choices_at_stop": [
+        {
+          "san": "Nc3",
+          "games": 69795,
+          "frequency": 0.4945755769871245
+        },
+        {
+          "san": "Nd2",
+          "games": 45625,
+          "frequency": 0.32330411490848276
+        },
+        {
+          "san": "e5",
+          "games": 16381,
+          "frequency": 0.11607769219322425
+        },
+        {
+          "san": "exd5",
+          "games": 8141,
+          "frequency": 0.05768808327605388
+        },
+        {
+          "san": "Bd3",
+          "games": 1106,
+          "frequency": 0.007837246051260975
+        }
+      ]
+    },
+    "e4/French/Advance": {
+      "definition_position_key": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "e4",
+        "e6",
+        "d4",
+        "d5",
+        "e5",
+        "c5",
+        "c3",
+        "Nc6",
+        "Nf3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e6",
+        "d2d4",
+        "d7d5",
+        "e4e5",
+        "c7c5",
+        "c2c3",
+        "b8c6",
+        "g1f3"
+      ],
+      "pgn": "1. e4 e6 2. d4 d5 3. e5 c5 4. c3 Nc6 5. Nf3",
+      "fen": "r1bqkbnr/pp3ppp/2n1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq - 2 5",
+      "position_key": "r1bqkbnr/pp3ppp/2n1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 11810,
+      "choices_at_stop": [
+        {
+          "san": "Bd7",
+          "games": 5284,
+          "frequency": 0.4474174428450466
+        },
+        {
+          "san": "Qb6",
+          "games": 4896,
+          "frequency": 0.41456392887383575
+        },
+        {
+          "san": "Nge7",
+          "games": 911,
+          "frequency": 0.07713801862828112
+        },
+        {
+          "san": "Nh6",
+          "games": 444,
+          "frequency": 0.0375952582557155
+        },
+        {
+          "san": "cxd4",
+          "games": 102,
+          "frequency": 0.008636748518204911
+        }
+      ]
+    },
+    "e4/French/Tarrasch": {
+      "definition_position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPPN1PPP/R1BQKBNR b KQkq -",
+      "moves_san": [
+        "e4",
+        "e6",
+        "d4",
+        "d5",
+        "Nd2"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e6",
+        "d2d4",
+        "d7d5",
+        "b1d2"
+      ],
+      "pgn": "1. e4 e6 2. d4 d5 3. Nd2",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPPN1PPP/R1BQKBNR b KQkq - 1 3",
+      "position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPPN1PPP/R1BQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 45629,
+      "choices_at_stop": [
+        {
+          "san": "c5",
+          "games": 15819,
+          "frequency": 0.3466874137061956
+        },
+        {
+          "san": "Nf6",
+          "games": 14626,
+          "frequency": 0.32054176072234764
+        },
+        {
+          "san": "Be7",
+          "games": 4693,
+          "frequency": 0.10285125687610949
+        },
+        {
+          "san": "dxe4",
+          "games": 3688,
+          "frequency": 0.08082579061561726
+        },
+        {
+          "san": "Nc6",
+          "games": 3272,
+          "frequency": 0.07170878169585132
+        }
+      ]
+    },
+    "e4/French/Classical": {
+      "definition_position_key": "rnbqkb1r/ppp2ppp/4pn2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "e6",
+        "d4",
+        "d5",
+        "Nc3",
+        "Nf6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e6",
+        "d2d4",
+        "d7d5",
+        "b1c3",
+        "g8f6"
+      ],
+      "pgn": "1. e4 e6 2. d4 d5 3. Nc3 Nf6",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4",
+      "position_key": "rnbqkb1r/ppp2ppp/4pn2/3p4/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 29576,
+      "choices_at_stop": [
+        {
+          "san": "e5",
+          "games": 14624,
+          "frequency": 0.4944549634839059
+        },
+        {
+          "san": "Bg5",
+          "games": 14309,
+          "frequency": 0.48380443602921286
+        },
+        {
+          "san": "exd5",
+          "games": 452,
+          "frequency": 0.015282661617527725
+        },
+        {
+          "san": "Bd3",
+          "games": 166,
+          "frequency": 0.005612658912631864
+        },
+        {
+          "san": "Qd3",
+          "games": 10,
+          "frequency": 0.0003381119826886665
+        }
+      ]
+    },
+    "e4/French/Winawer": {
+      "definition_position_key": "rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2N5/PPP2PPP/R1BQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "e6",
+        "d4",
+        "d5",
+        "Nc3",
+        "Bb4",
+        "e5",
+        "c5",
+        "a3",
+        "Bxc3+",
+        "bxc3",
+        "Ne7",
+        "Qg4"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e6",
+        "d2d4",
+        "d7d5",
+        "b1c3",
+        "f8b4",
+        "e4e5",
+        "c7c5",
+        "a2a3",
+        "b4c3",
+        "b2c3",
+        "g8e7",
+        "d1g4"
+      ],
+      "pgn": "1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. e5 c5 5. a3 Bxc3+ 6. bxc3 Ne7 7. Qg4",
+      "fen": "rnbqk2r/pp2nppp/4p3/2ppP3/3P2Q1/P1P5/2P2PPP/R1B1KBNR b KQkq - 2 7",
+      "position_key": "rnbqk2r/pp2nppp/4p3/2ppP3/3P2Q1/P1P5/2P2PPP/R1B1KBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 6821,
+      "choices_at_stop": [
+        {
+          "san": "O-O",
+          "games": 2946,
+          "frequency": 0.43190148072130186
+        },
+        {
+          "san": "Qc7",
+          "games": 2239,
+          "frequency": 0.32825098959096904
+        },
+        {
+          "san": "cxd4",
+          "games": 775,
+          "frequency": 0.11361970385573963
+        },
+        {
+          "san": "Kf8",
+          "games": 643,
+          "frequency": 0.09426770268289107
+        },
+        {
+          "san": "Nf5",
+          "games": 109,
+          "frequency": 0.015980061574549186
+        }
+      ]
+    },
+    "e4/French/Rubinstein": {
+      "definition_position_key": "rnbqkbnr/ppp2ppp/4p3/8/3Pp3/2N5/PPP2PPP/R1BQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "e6",
+        "d4",
+        "d5",
+        "Nc3",
+        "dxe4",
+        "Nxe4"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e6",
+        "d2d4",
+        "d7d5",
+        "b1c3",
+        "d5e4",
+        "c3e4"
+      ],
+      "pgn": "1. e4 e6 2. d4 d5 3. Nc3 dxe4 4. Nxe4",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/8/3PN3/8/PPP2PPP/R1BQKBNR b KQkq - 0 4",
+      "position_key": "rnbqkbnr/ppp2ppp/4p3/8/3PN3/8/PPP2PPP/R1BQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 9328,
+      "choices_at_stop": [
+        {
+          "san": "Nd7",
+          "games": 5381,
+          "frequency": 0.5768653516295026
+        },
+        {
+          "san": "Bd7",
+          "games": 2996,
+          "frequency": 0.3211835334476844
+        },
+        {
+          "san": "Nf6",
+          "games": 462,
+          "frequency": 0.049528301886792456
+        },
+        {
+          "san": "Be7",
+          "games": 278,
+          "frequency": 0.029802744425385934
+        },
+        {
+          "san": "Qd5",
+          "games": 171,
+          "frequency": 0.018331903945111493
+        }
+      ]
+    },
+    "e4/French/Exchange": {
+      "definition_position_key": "rnbqkbnr/ppp2ppp/8/3p4/3P4/8/PPP2PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "e6",
+        "d4",
+        "d5",
+        "exd5",
+        "exd5",
+        "Nf3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e6",
+        "d2d4",
+        "d7d5",
+        "e4d5",
+        "e6d5",
+        "g1f3"
+      ],
+      "pgn": "1. e4 e6 2. d4 d5 3. exd5 exd5 4. Nf3",
+      "fen": "rnbqkbnr/ppp2ppp/8/3p4/3P4/5N2/PPP2PPP/RNBQKB1R b KQkq - 1 4",
+      "position_key": "rnbqkbnr/ppp2ppp/8/3p4/3P4/5N2/PPP2PPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 4658,
+      "choices_at_stop": [
+        {
+          "san": "Nf6",
+          "games": 1764,
+          "frequency": 0.3787033061399742
+        },
+        {
+          "san": "Bd6",
+          "games": 1484,
+          "frequency": 0.3185916702447402
+        },
+        {
+          "san": "Nc6",
+          "games": 869,
+          "frequency": 0.18656075568913696
+        },
+        {
+          "san": "Bg4",
+          "games": 339,
+          "frequency": 0.07277801631601545
+        },
+        {
+          "san": "c6",
+          "games": 72,
+          "frequency": 0.015457277801631602
+        }
+      ]
+    },
+    "e4/French/Sidlines": {
+      "definition_position_key": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "e6",
+        "d4",
+        "d5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e6",
+        "d2d4",
+        "d7d5"
+      ],
+      "pgn": "1. e4 e6 2. d4 d5",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 141121,
+      "choices_at_stop": [
+        {
+          "san": "Nc3",
+          "games": 69795,
+          "frequency": 0.4945755769871245
+        },
+        {
+          "san": "Nd2",
+          "games": 45625,
+          "frequency": 0.32330411490848276
+        },
+        {
+          "san": "e5",
+          "games": 16381,
+          "frequency": 0.11607769219322425
+        },
+        {
+          "san": "exd5",
+          "games": 8141,
+          "frequency": 0.05768808327605388
+        },
+        {
+          "san": "Bd3",
+          "games": 1106,
+          "frequency": 0.007837246051260975
+        }
+      ]
+    },
+    "e4/French/Sidlines/2 Knights": {
+      "definition_position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq -",
+      "moves_san": [
+        "e4",
+        "e6",
+        "Nf3",
+        "d5",
+        "Nc3",
+        "Nf6",
+        "e5",
+        "Nfd7",
+        "d4",
+        "c5",
+        "dxc5",
+        "Nc6",
+        "Bf4",
+        "Bxc5",
+        "Bd3",
+        "f6",
+        "exf6",
+        "Nxf6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e6",
+        "g1f3",
+        "d7d5",
+        "b1c3",
+        "g8f6",
+        "e4e5",
+        "f6d7",
+        "d2d4",
+        "c7c5",
+        "d4c5",
+        "b8c6",
+        "c1f4",
+        "f8c5",
+        "f1d3",
+        "f7f6",
+        "e5f6",
+        "d7f6"
+      ],
+      "pgn": "1. e4 e6 2. Nf3 d5 3. Nc3 Nf6 4. e5 Nfd7 5. d4 c5 6. dxc5 Nc6 7. Bf4 Bxc5 8. Bd3 f6 9. exf6 Nxf6",
+      "fen": "r1bqk2r/pp4pp/2n1pn2/2bp4/5B2/2NB1N2/PPP2PPP/R2QK2R w KQkq - 0 10",
+      "position_key": "r1bqk2r/pp4pp/2n1pn2/2bp4/5B2/2NB1N2/PPP2PPP/R2QK2R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 333,
+      "choices_at_stop": [
+        {
+          "san": "O-O",
+          "games": 217,
+          "frequency": 0.6516516516516516
+        },
+        {
+          "san": "Qe2",
+          "games": 108,
+          "frequency": 0.32432432432432434
+        },
+        {
+          "san": "Ne5",
+          "games": 6,
+          "frequency": 0.018018018018018018
+        },
+        {
+          "san": "Qd2",
+          "games": 2,
+          "frequency": 0.006006006006006006
+        }
+      ]
+    },
+    "e4/French/Sidlines/Kings indian attack transposition": {
+      "definition_position_key": "rnbqkb1r/ppp2ppp/4pn2/3p4/4P3/3P1N2/PPPN1PPP/R1BQKB1R b KQkq -",
+      "moves_san": [
+        "e4",
+        "e6",
+        "d3",
+        "d5",
+        "Nd2",
+        "Nf6",
+        "Ngf3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e6",
+        "d2d3",
+        "d7d5",
+        "b1d2",
+        "g8f6",
+        "g1f3"
+      ],
+      "pgn": "1. e4 e6 2. d3 d5 3. Nd2 Nf6 4. Ngf3",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/4P3/3P1N2/PPPN1PPP/R1BQKB1R b KQkq - 3 4",
+      "position_key": "rnbqkb1r/ppp2ppp/4pn2/3p4/4P3/3P1N2/PPPN1PPP/R1BQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 2987,
+      "choices_at_stop": [
+        {
+          "san": "b6",
+          "games": 874,
+          "frequency": 0.29260127217944426
+        },
+        {
+          "san": "Nc6",
+          "games": 840,
+          "frequency": 0.2812186139939739
+        },
+        {
+          "san": "c5",
+          "games": 700,
+          "frequency": 0.23434884499497824
+        },
+        {
+          "san": "Be7",
+          "games": 269,
+          "frequency": 0.09005691329092735
+        },
+        {
+          "san": "Bc5",
+          "games": 146,
+          "frequency": 0.04887847338466689
+        }
+      ]
+    },
+    "e4/Caro-Kann": {
+      "definition_position_key": "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "c6",
+        "d4",
+        "d5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c6",
+        "d2d4",
+        "d7d5"
+      ],
+      "pgn": "1. e4 c6 2. d4 d5",
+      "fen": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 80079,
+      "choices_at_stop": [
+        {
+          "san": "e5",
+          "games": 29223,
+          "frequency": 0.36492713445472597
+        },
+        {
+          "san": "Nc3",
+          "games": 19795,
+          "frequency": 0.24719339652093558
+        },
+        {
+          "san": "exd5",
+          "games": 16770,
+          "frequency": 0.20941819952796614
+        },
+        {
+          "san": "Nd2",
+          "games": 11851,
+          "frequency": 0.14799135853344822
+        },
+        {
+          "san": "f3",
+          "games": 2406,
+          "frequency": 0.030045330236391565
+        }
+      ]
+    },
+    "e4/Caro-Kann/Advance": {
+      "definition_position_key": "rnbqkbnr/pp2pppp/2p5/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "e4",
+        "c6",
+        "d4",
+        "d5",
+        "e5",
+        "Bf5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c6",
+        "d2d4",
+        "d7d5",
+        "e4e5",
+        "c8f5"
+      ],
+      "pgn": "1. e4 c6 2. d4 d5 3. e5 Bf5",
+      "fen": "rn1qkbnr/pp2pppp/2p5/3pPb2/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 1 4",
+      "position_key": "rn1qkbnr/pp2pppp/2p5/3pPb2/3P4/8/PPP2PPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 23158,
+      "choices_at_stop": [
+        {
+          "san": "Nf3",
+          "games": 10794,
+          "frequency": 0.46610242680715086
+        },
+        {
+          "san": "h4",
+          "games": 4550,
+          "frequency": 0.19647637965281975
+        },
+        {
+          "san": "Nc3",
+          "games": 2818,
+          "frequency": 0.12168581051904309
+        },
+        {
+          "san": "Nd2",
+          "games": 1783,
+          "frequency": 0.07699283185076432
+        },
+        {
+          "san": "Be3",
+          "games": 821,
+          "frequency": 0.035452111581310994
+        }
+      ]
+    },
+    "e4/Caro-Kann/Mainline variation": {
+      "definition_position_key": "rn1qkbnr/pp2pppp/2p5/5b2/3PN3/8/PPP2PPP/R1BQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "c6",
+        "d4",
+        "d5",
+        "Nc3",
+        "dxe4",
+        "Nxe4",
+        "Bf5",
+        "Ng3",
+        "Bg6",
+        "h4",
+        "h6",
+        "Nf3",
+        "Nd7",
+        "h5",
+        "Bh7",
+        "Bd3",
+        "Bxd3",
+        "Qxd3",
+        "e6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c6",
+        "d2d4",
+        "d7d5",
+        "b1c3",
+        "d5e4",
+        "c3e4",
+        "c8f5",
+        "e4g3",
+        "f5g6",
+        "h2h4",
+        "h7h6",
+        "g1f3",
+        "b8d7",
+        "h4h5",
+        "g6h7",
+        "f1d3",
+        "h7d3",
+        "d1d3",
+        "e7e6"
+      ],
+      "pgn": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Bf5 5. Ng3 Bg6 6. h4 h6 7. Nf3 Nd7 8. h5 Bh7 9. Bd3 Bxd3 10. Qxd3 e6",
+      "fen": "r2qkbnr/pp1n1pp1/2p1p2p/7P/3P4/3Q1NN1/PPP2PP1/R1B1K2R w KQkq - 0 11",
+      "position_key": "r2qkbnr/pp1n1pp1/2p1p2p/7P/3P4/3Q1NN1/PPP2PP1/R1B1K2R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 5989,
+      "choices_at_stop": [
+        {
+          "san": "Bd2",
+          "games": 3323,
+          "frequency": 0.5548505593588245
+        },
+        {
+          "san": "Bf4",
+          "games": 2622,
+          "frequency": 0.4378026381699783
+        },
+        {
+          "san": "Ne4",
+          "games": 15,
+          "frequency": 0.002504591751544498
+        },
+        {
+          "san": "Be3",
+          "games": 7,
+          "frequency": 0.0011688094840540991
+        },
+        {
+          "san": "Qe2",
+          "games": 7,
+          "frequency": 0.0011688094840540991
+        }
+      ]
+    },
+    "e4/Caro-Kann/Exchange": {
+      "definition_position_key": "rnbqkbnr/pp2pppp/8/3p4/3P4/8/PPP2PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "c6",
+        "d4",
+        "d5",
+        "exd5",
+        "cxd5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c6",
+        "d2d4",
+        "d7d5",
+        "e4d5",
+        "c6d5"
+      ],
+      "pgn": "1. e4 c6 2. d4 d5 3. exd5 cxd5",
+      "fen": "rnbqkbnr/pp2pppp/8/3p4/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 0 4",
+      "position_key": "rnbqkbnr/pp2pppp/8/3p4/3P4/8/PPP2PPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 16802,
+      "choices_at_stop": [
+        {
+          "san": "c4",
+          "games": 10041,
+          "frequency": 0.5976074276871801
+        },
+        {
+          "san": "Bd3",
+          "games": 5655,
+          "frequency": 0.3365670753481728
+        },
+        {
+          "san": "Nf3",
+          "games": 534,
+          "frequency": 0.03178193072253303
+        },
+        {
+          "san": "c3",
+          "games": 375,
+          "frequency": 0.02231877157481252
+        },
+        {
+          "san": "Bf4",
+          "games": 173,
+          "frequency": 0.01029639328651351
+        }
+      ]
+    },
+    "e4/Caro-Kann/Sidelines": {
+      "definition_position_key": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "c6",
+        "d4",
+        "d5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c6",
+        "d2d4",
+        "d7d5"
+      ],
+      "pgn": "1. e4 c6 2. d4 d5",
+      "fen": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 80079,
+      "choices_at_stop": [
+        {
+          "san": "e5",
+          "games": 29223,
+          "frequency": 0.36492713445472597
+        },
+        {
+          "san": "Nc3",
+          "games": 19795,
+          "frequency": 0.24719339652093558
+        },
+        {
+          "san": "exd5",
+          "games": 16770,
+          "frequency": 0.20941819952796614
+        },
+        {
+          "san": "Nd2",
+          "games": 11851,
+          "frequency": 0.14799135853344822
+        },
+        {
+          "san": "f3",
+          "games": 2406,
+          "frequency": 0.030045330236391565
+        }
+      ]
+    },
+    "e4/Caro-Kann/Sidelines/Fantasy": {
+      "definition_position_key": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/5P2/PPP3PP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "e4",
+        "c6",
+        "d4",
+        "d5",
+        "f3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c6",
+        "d2d4",
+        "d7d5",
+        "f2f3"
+      ],
+      "pgn": "1. e4 c6 2. d4 d5 3. f3",
+      "fen": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/5P2/PPP3PP/RNBQKBNR b KQkq - 0 3",
+      "position_key": "rnbqkbnr/pp2pppp/2p5/3p4/3PP3/5P2/PPP3PP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 2409,
+      "choices_at_stop": [
+        {
+          "san": "e6",
+          "games": 1135,
+          "frequency": 0.47114985471149856
+        },
+        {
+          "san": "dxe4",
+          "games": 470,
+          "frequency": 0.19510170195101703
+        },
+        {
+          "san": "g6",
+          "games": 382,
+          "frequency": 0.1585720215857202
+        },
+        {
+          "san": "Qb6",
+          "games": 300,
+          "frequency": 0.12453300124533001
+        },
+        {
+          "san": "e5",
+          "games": 67,
+          "frequency": 0.027812370278123704
+        }
+      ]
+    },
+    "e4/Caro-Kann/Sidelines/Two Knights Attack": {
+      "definition_position_key": "rnbqkbnr/pp2pppp/2p5/3p4/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq -",
+      "moves_san": [
+        "e4",
+        "c6",
+        "Nc3",
+        "d5",
+        "Nf3",
+        "Bg4",
+        "h3",
+        "Bxf3",
+        "Qxf3",
+        "e6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c6",
+        "b1c3",
+        "d7d5",
+        "g1f3",
+        "c8g4",
+        "h2h3",
+        "g4f3",
+        "d1f3",
+        "e7e6"
+      ],
+      "pgn": "1. e4 c6 2. Nc3 d5 3. Nf3 Bg4 4. h3 Bxf3 5. Qxf3 e6",
+      "fen": "rn1qkbnr/pp3ppp/2p1p3/3p4/4P3/2N2Q1P/PPPP1PP1/R1B1KB1R w KQkq - 0 6",
+      "position_key": "rn1qkbnr/pp3ppp/2p1p3/3p4/4P3/2N2Q1P/PPPP1PP1/R1B1KB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 2762,
+      "choices_at_stop": [
+        {
+          "san": "Be2",
+          "games": 720,
+          "frequency": 0.2606806661839247
+        },
+        {
+          "san": "d3",
+          "games": 711,
+          "frequency": 0.25742215785662564
+        },
+        {
+          "san": "d4",
+          "games": 643,
+          "frequency": 0.2328023171614772
+        },
+        {
+          "san": "g3",
+          "games": 450,
+          "frequency": 0.16292541636495295
+        },
+        {
+          "san": "a3",
+          "games": 136,
+          "frequency": 0.049239681390296886
+        }
+      ]
+    },
+    "e4/Caro-Kann/Sidelines/Accelerated Panov Attack": {
+      "definition_position_key": "rnbqkbnr/pp2pppp/8/3p4/2PP4/8/PP3PPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "e4",
+        "c6",
+        "d4",
+        "d5",
+        "exd5",
+        "cxd5",
+        "c4",
+        "Nf6",
+        "Nc3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c6",
+        "d2d4",
+        "d7d5",
+        "e4d5",
+        "c6d5",
+        "c2c4",
+        "g8f6",
+        "b1c3"
+      ],
+      "pgn": "1. e4 c6 2. d4 d5 3. exd5 cxd5 4. c4 Nf6 5. Nc3",
+      "fen": "rnbqkb1r/pp2pppp/5n2/3p4/2PP4/2N5/PP3PPP/R1BQKBNR b KQkq - 2 5",
+      "position_key": "rnbqkb1r/pp2pppp/5n2/3p4/2PP4/2N5/PP3PPP/R1BQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 12267,
+      "choices_at_stop": [
+        {
+          "san": "e6",
+          "games": 5794,
+          "frequency": 0.4723241216271297
+        },
+        {
+          "san": "Nc6",
+          "games": 4041,
+          "frequency": 0.3294203961848863
+        },
+        {
+          "san": "g6",
+          "games": 2296,
+          "frequency": 0.1871688269340507
+        },
+        {
+          "san": "Be6",
+          "games": 88,
+          "frequency": 0.007173718105486264
+        },
+        {
+          "san": "dxc4",
+          "games": 26,
+          "frequency": 0.002119507622075487
+        }
+      ]
+    },
+    "e4/Alternatives": {
+      "definition_position_key": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "e4"
+      ],
+      "moves_uci": [
+        "e2e4"
+      ],
+      "pgn": "1. e4",
+      "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 1288665,
+      "choices_at_stop": [
+        {
+          "san": "c5",
+          "games": 589118,
+          "frequency": 0.45715372109896674
+        },
+        {
+          "san": "e5",
+          "games": 296915,
+          "frequency": 0.230405109163359
+        },
+        {
+          "san": "e6",
+          "games": 155876,
+          "frequency": 0.1209592873244792
+        },
+        {
+          "san": "c6",
+          "games": 102429,
+          "frequency": 0.07948458288228516
+        },
+        {
+          "san": "d6",
+          "games": 47095,
+          "frequency": 0.03654557235588768
+        }
+      ]
+    },
+    "e4/Alternatives/Modern/ Pirc": {
+      "definition_position_key": "rnbqkb1r/ppp1pp1p/3p1np1/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "d6",
+        "d4",
+        "Nf6",
+        "Nc3",
+        "g6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "d7d6",
+        "d2d4",
+        "g8f6",
+        "b1c3",
+        "g7g6"
+      ],
+      "pgn": "1. e4 d6 2. d4 Nf6 3. Nc3 g6",
+      "fen": "rnbqkb1r/ppp1pp1p/3p1np1/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4",
+      "position_key": "rnbqkb1r/ppp1pp1p/3p1np1/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 21863,
+      "choices_at_stop": [
+        {
+          "san": "f4",
+          "games": 5791,
+          "frequency": 0.264876732378905
+        },
+        {
+          "san": "Nf3",
+          "games": 5094,
+          "frequency": 0.23299638658921465
+        },
+        {
+          "san": "Be3",
+          "games": 3995,
+          "frequency": 0.182728811233591
+        },
+        {
+          "san": "Bg5",
+          "games": 2184,
+          "frequency": 0.09989479943283172
+        },
+        {
+          "san": "g3",
+          "games": 1725,
+          "frequency": 0.07890042537620638
+        }
+      ]
+    },
+    "e4/Alternatives/Alekhine": {
+      "definition_position_key": "rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "Nf6",
+        "e5",
+        "Nd5",
+        "d4",
+        "d6",
+        "Nf3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "g8f6",
+        "e4e5",
+        "f6d5",
+        "d2d4",
+        "d7d6",
+        "g1f3"
+      ],
+      "pgn": "1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3",
+      "fen": "rnbqkb1r/ppp1pppp/3p4/3nP3/3P4/5N2/PPP2PPP/RNBQKB1R b KQkq - 1 4",
+      "position_key": "rnbqkb1r/ppp1pppp/3p4/3nP3/3P4/5N2/PPP2PPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 11047,
+      "choices_at_stop": [
+        {
+          "san": "Bg4",
+          "games": 4017,
+          "frequency": 0.3636281343351136
+        },
+        {
+          "san": "g6",
+          "games": 2742,
+          "frequency": 0.24821218430343078
+        },
+        {
+          "san": "dxe5",
+          "games": 2618,
+          "frequency": 0.23698741739838872
+        },
+        {
+          "san": "Nb6",
+          "games": 749,
+          "frequency": 0.06780121299900425
+        },
+        {
+          "san": "Nc6",
+          "games": 458,
+          "frequency": 0.041459219697655474
+        }
+      ]
+    },
+    "e4/Alternatives/Nimsowitsch Defense": {
+      "definition_position_key": "r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "Nc6",
+        "Nf3",
+        "d6",
+        "d4",
+        "Nf6",
+        "Nc3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "b8c6",
+        "g1f3",
+        "d7d6",
+        "d2d4",
+        "g8f6",
+        "b1c3"
+      ],
+      "pgn": "1. e4 Nc6 2. Nf3 d6 3. d4 Nf6 4. Nc3",
+      "fen": "r1bqkb1r/ppp1pppp/2np1n2/8/3PP3/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 2 4",
+      "position_key": "r1bqkb1r/ppp1pppp/2np1n2/8/3PP3/2N2N2/PPP2PPP/R1BQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 1748,
+      "choices_at_stop": [
+        {
+          "san": "Bg4",
+          "games": 1041,
+          "frequency": 0.5955377574370709
+        },
+        {
+          "san": "g6",
+          "games": 610,
+          "frequency": 0.3489702517162471
+        },
+        {
+          "san": "a6",
+          "games": 49,
+          "frequency": 0.02803203661327231
+        },
+        {
+          "san": "e5",
+          "games": 26,
+          "frequency": 0.014874141876430207
+        },
+        {
+          "san": "e6",
+          "games": 19,
+          "frequency": 0.010869565217391304
+        }
+      ]
+    },
+    "e4/Alternatives/Scandinavian": {
+      "definition_position_key": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "d5",
+        "exd5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "d7d5",
+        "e4d5"
+      ],
+      "pgn": "1. e4 d5 2. exd5",
+      "fen": "rnbqkbnr/ppp1pppp/8/3P4/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2",
+      "position_key": "rnbqkbnr/ppp1pppp/8/3P4/8/8/PPPP1PPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 24621,
+      "choices_at_stop": [
+        {
+          "san": "Qxd5",
+          "games": 16826,
+          "frequency": 0.683400349295317
+        },
+        {
+          "san": "Nf6",
+          "games": 7749,
+          "frequency": 0.31473132691604727
+        },
+        {
+          "san": "c6",
+          "games": 40,
+          "frequency": 0.001624629381422363
+        },
+        {
+          "san": "Qd7",
+          "games": 3,
+          "frequency": 0.00012184720360667723
+        },
+        {
+          "san": "c5",
+          "games": 1,
+          "frequency": 4.0615734535559076e-05
+        }
+      ]
+    },
+    "e4/Alternatives/Owen Defense": {
+      "definition_position_key": "rnbqkbnr/p1pppppp/1p6/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "e4",
+        "b6",
+        "d4",
+        "Bb7",
+        "Bd3",
+        "e6",
+        "Nf3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "b7b6",
+        "d2d4",
+        "c8b7",
+        "f1d3",
+        "e7e6",
+        "g1f3"
+      ],
+      "pgn": "1. e4 b6 2. d4 Bb7 3. Bd3 e6 4. Nf3",
+      "fen": "rn1qkbnr/pbpp1ppp/1p2p3/8/3PP3/3B1N2/PPP2PPP/RNBQK2R b KQkq - 1 4",
+      "position_key": "rn1qkbnr/pbpp1ppp/1p2p3/8/3PP3/3B1N2/PPP2PPP/RNBQK2R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 1336,
+      "choices_at_stop": [
+        {
+          "san": "c5",
+          "games": 733,
+          "frequency": 0.5486526946107785
+        },
+        {
+          "san": "d6",
+          "games": 223,
+          "frequency": 0.16691616766467066
+        },
+        {
+          "san": "Nf6",
+          "games": 203,
+          "frequency": 0.15194610778443113
+        },
+        {
+          "san": "d5",
+          "games": 71,
+          "frequency": 0.0531437125748503
+        },
+        {
+          "san": "g6",
+          "games": 53,
+          "frequency": 0.03967065868263473
+        }
+      ]
+    },
+    "e4/Alternatives/Philidor": {
+      "definition_position_key": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "d6",
+        "d4",
+        "exd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "Be7"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "d7d6",
+        "d2d4",
+        "e5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "f8e7"
+      ],
+      "pgn": "1. e4 e5 2. Nf3 d6 3. d4 exd4 4. Nxd4 Nf6 5. Nc3 Be7",
+      "fen": "rnbqk2r/ppp1bppp/3p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 3 6",
+      "position_key": "rnbqk2r/ppp1bppp/3p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 3358,
+      "choices_at_stop": [
+        {
+          "san": "Be2",
+          "games": 989,
+          "frequency": 0.2945205479452055
+        },
+        {
+          "san": "g3",
+          "games": 932,
+          "frequency": 0.27754615842763547
+        },
+        {
+          "san": "Bf4",
+          "games": 803,
+          "frequency": 0.2391304347826087
+        },
+        {
+          "san": "Bc4",
+          "games": 319,
+          "frequency": 0.09499702203692674
+        },
+        {
+          "san": "Nde2",
+          "games": 87,
+          "frequency": 0.025908278737343658
+        }
+      ]
+    },
+    "d4": {
+      "definition_position_key": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4"
+      ],
+      "pgn": "1. d4 Nf6 2. c4",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "position_key": "rnbqkb1r/pppppppp/5n2/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 439782,
+      "choices_at_stop": [
+        {
+          "san": "e6",
+          "games": 229103,
+          "frequency": 0.5209467417947984
+        },
+        {
+          "san": "g6",
+          "games": 146757,
+          "frequency": 0.3337039715131588
+        },
+        {
+          "san": "c5",
+          "games": 41216,
+          "frequency": 0.09371916085697005
+        },
+        {
+          "san": "d6",
+          "games": 10396,
+          "frequency": 0.02363898476972682
+        },
+        {
+          "san": "c6",
+          "games": 4200,
+          "frequency": 0.009550186228631458
+        }
+      ]
+    },
+    "d4/Nf6": {
+      "definition_position_key": "rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4"
+      ],
+      "pgn": "1. d4 Nf6 2. c4",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "position_key": "rnbqkb1r/pppppppp/5n2/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 439782,
+      "choices_at_stop": [
+        {
+          "san": "e6",
+          "games": 229103,
+          "frequency": 0.5209467417947984
+        },
+        {
+          "san": "g6",
+          "games": 146757,
+          "frequency": 0.3337039715131588
+        },
+        {
+          "san": "c5",
+          "games": 41216,
+          "frequency": 0.09371916085697005
+        },
+        {
+          "san": "d6",
+          "games": 10396,
+          "frequency": 0.02363898476972682
+        },
+        {
+          "san": "c6",
+          "games": 4200,
+          "frequency": 0.009550186228631458
+        }
+      ]
+    },
+    "d4/Nf6/King's Indian Defense": {
+      "definition_position_key": "rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "g6",
+        "Nc3"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "g7g6",
+        "b1c3"
+      ],
+      "pgn": "1. d4 Nf6 2. c4 g6 3. Nc3",
+      "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 3",
+      "position_key": "rnbqkb1r/pppppp1p/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 121252,
+      "choices_at_stop": [
+        {
+          "san": "Bg7",
+          "games": 80397,
+          "frequency": 0.663057104212714
+        },
+        {
+          "san": "d5",
+          "games": 40254,
+          "frequency": 0.33198627651502655
+        },
+        {
+          "san": "d6",
+          "games": 325,
+          "frequency": 0.00268036815887573
+        },
+        {
+          "san": "c5",
+          "games": 270,
+          "frequency": 0.0022267673935275293
+        },
+        {
+          "san": "e5",
+          "games": 3,
+          "frequency": 2.4741859928083662e-05
+        }
+      ]
+    },
+    "d4/Nf6/Nimzo Indian": {
+      "definition_position_key": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "e6",
+        "Nc3",
+        "Bb4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "e7e6",
+        "b1c3",
+        "f8b4"
+      ],
+      "pgn": "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4",
+      "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
+      "position_key": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 83655,
+      "choices_at_stop": [
+        {
+          "san": "e3",
+          "games": 35576,
+          "frequency": 0.42527045603968683
+        },
+        {
+          "san": "Qc2",
+          "games": 27401,
+          "frequency": 0.3275476660092045
+        },
+        {
+          "san": "Nf3",
+          "games": 6829,
+          "frequency": 0.0816328970175124
+        },
+        {
+          "san": "f3",
+          "games": 6513,
+          "frequency": 0.07785547785547786
+        },
+        {
+          "san": "Bg5",
+          "games": 2200,
+          "frequency": 0.026298487836949377
+        }
+      ]
+    },
+    "d4/Nf6/Bogo Indian": {
+      "definition_position_key": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP2PPPP/RNBQKB1R w KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "e6",
+        "Nf3",
+        "Bb4+"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "e7e6",
+        "g1f3",
+        "f8b4"
+      ],
+      "pgn": "1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+",
+      "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4",
+      "position_key": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP2PPPP/RNBQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 23099,
+      "choices_at_stop": [
+        {
+          "san": "Bd2",
+          "games": 13366,
+          "frequency": 0.5786397679553228
+        },
+        {
+          "san": "Nbd2",
+          "games": 8786,
+          "frequency": 0.3803627862678038
+        },
+        {
+          "san": "Nc3",
+          "games": 944,
+          "frequency": 0.04086757002467639
+        },
+        {
+          "san": "Nfd2",
+          "games": 3,
+          "frequency": 0.0001298757521970648
+        }
+      ]
+    },
+    "d4/Nf6/Benoni": {
+      "definition_position_key": "rnbqkb1r/pp1ppppp/5n2/2p5/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "c5",
+        "d5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "c7c5",
+        "d4d5"
+      ],
+      "pgn": "1. d4 Nf6 2. c4 c5 3. d5",
+      "fen": "rnbqkb1r/pp1ppppp/5n2/2pP4/2P5/8/PP2PPPP/RNBQKBNR b KQkq - 0 3",
+      "position_key": "rnbqkb1r/pp1ppppp/5n2/2pP4/2P5/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 37276,
+      "choices_at_stop": [
+        {
+          "san": "b5",
+          "games": 17561,
+          "frequency": 0.4711074149586866
+        },
+        {
+          "san": "e6",
+          "games": 10059,
+          "frequency": 0.269851915441571
+        },
+        {
+          "san": "g6",
+          "games": 3742,
+          "frequency": 0.10038630754372786
+        },
+        {
+          "san": "e5",
+          "games": 3432,
+          "frequency": 0.09206996458847516
+        },
+        {
+          "san": "d6",
+          "games": 1868,
+          "frequency": 0.050112673033587296
+        }
+      ]
+    },
+    "d4/Nf6/Benoni/Benko": {
+      "definition_position_key": "rnbqkb1r/pp1ppppp/5n2/2p5/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "c5",
+        "d5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "c7c5",
+        "d4d5"
+      ],
+      "pgn": "1. d4 Nf6 2. c4 c5 3. d5",
+      "fen": "rnbqkb1r/pp1ppppp/5n2/2pP4/2P5/8/PP2PPPP/RNBQKBNR b KQkq - 0 3",
+      "position_key": "rnbqkb1r/pp1ppppp/5n2/2pP4/2P5/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 37276,
+      "choices_at_stop": [
+        {
+          "san": "b5",
+          "games": 17561,
+          "frequency": 0.4711074149586866
+        },
+        {
+          "san": "e6",
+          "games": 10059,
+          "frequency": 0.269851915441571
+        },
+        {
+          "san": "g6",
+          "games": 3742,
+          "frequency": 0.10038630754372786
+        },
+        {
+          "san": "e5",
+          "games": 3432,
+          "frequency": 0.09206996458847516
+        },
+        {
+          "san": "d6",
+          "games": 1868,
+          "frequency": 0.050112673033587296
+        }
+      ]
+    },
+    "d4/Nf6/Grunfeld": {
+      "definition_position_key": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "g6",
+        "Nc3",
+        "d5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "g7g6",
+        "b1c3",
+        "d7d5"
+      ],
+      "pgn": "1. d4 Nf6 2. c4 g6 3. Nc3 d5",
+      "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
+      "position_key": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 40450,
+      "choices_at_stop": [
+        {
+          "san": "cxd5",
+          "games": 20567,
+          "frequency": 0.5084548825710754
+        },
+        {
+          "san": "Nf3",
+          "games": 12521,
+          "frequency": 0.3095426452410383
+        },
+        {
+          "san": "Bf4",
+          "games": 3117,
+          "frequency": 0.07705809641532757
+        },
+        {
+          "san": "Bg5",
+          "games": 2558,
+          "frequency": 0.06323856613102596
+        },
+        {
+          "san": "e3",
+          "games": 830,
+          "frequency": 0.020519159456118666
+        }
+      ]
+    },
+    "d4/Nf6/Trompowsky": {
+      "definition_position_key": "rnbqkb1r/pppppppp/5n2/6B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "Bg5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c1g5"
+      ],
+      "pgn": "1. d4 Nf6 2. Bg5",
+      "fen": "rnbqkb1r/pppppppp/5n2/6B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 2 2",
+      "position_key": "rnbqkb1r/pppppppp/5n2/6B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 22589,
+      "choices_at_stop": [
+        {
+          "san": "Ne4",
+          "games": 6773,
+          "frequency": 0.29983620346186196
+        },
+        {
+          "san": "e6",
+          "games": 5585,
+          "frequency": 0.2472442339191642
+        },
+        {
+          "san": "d5",
+          "games": 5425,
+          "frequency": 0.2401611403780601
+        },
+        {
+          "san": "c5",
+          "games": 2828,
+          "frequency": 0.12519367833901457
+        },
+        {
+          "san": "g6",
+          "games": 1243,
+          "frequency": 0.0550267829474523
+        }
+      ]
+    },
+    "d4/Nf6/Catalan": {
+      "definition_position_key": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "e6",
+        "g3"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "e7e6",
+        "g2g3"
+      ],
+      "pgn": "1. d4 Nf6 2. c4 e6 3. g3",
+      "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3",
+      "position_key": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 27612,
+      "choices_at_stop": [
+        {
+          "san": "d5",
+          "games": 15915,
+          "frequency": 0.5763798348544111
+        },
+        {
+          "san": "Bb4+",
+          "games": 5737,
+          "frequency": 0.207771983195712
+        },
+        {
+          "san": "c5",
+          "games": 5693,
+          "frequency": 0.20617847312762566
+        },
+        {
+          "san": "Be7",
+          "games": 120,
+          "frequency": 0.004345936549326379
+        },
+        {
+          "san": "b6",
+          "games": 40,
+          "frequency": 0.0014486455164421266
+        }
+      ]
+    },
+    "d4/Queen's Gambit": {
+      "definition_position_key": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4"
+      ],
+      "pgn": "1. d4 d5 2. c4",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "position_key": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 191824,
+      "choices_at_stop": [
+        {
+          "san": "c6",
+          "games": 92497,
+          "frequency": 0.4821972224539161
+        },
+        {
+          "san": "e6",
+          "games": 68508,
+          "frequency": 0.35713987822170323
+        },
+        {
+          "san": "dxc4",
+          "games": 23575,
+          "frequency": 0.12289911585620152
+        },
+        {
+          "san": "Nc6",
+          "games": 3888,
+          "frequency": 0.020268579531236966
+        },
+        {
+          "san": "e5",
+          "games": 1559,
+          "frequency": 0.00812724163816832
+        }
+      ]
+    },
+    "d4/Queen's Gambit/QGA": {
+      "definition_position_key": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "dxc4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "d5c4"
+      ],
+      "pgn": "1. d4 d5 2. c4 dxc4",
+      "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 23575,
+      "choices_at_stop": [
+        {
+          "san": "Nf3",
+          "games": 12488,
+          "frequency": 0.5297136797454931
+        },
+        {
+          "san": "e4",
+          "games": 5783,
+          "frequency": 0.24530222693531284
+        },
+        {
+          "san": "e3",
+          "games": 4812,
+          "frequency": 0.20411452810180275
+        },
+        {
+          "san": "Nc3",
+          "games": 418,
+          "frequency": 0.017730646871686108
+        },
+        {
+          "san": "Qa4+",
+          "games": 66,
+          "frequency": 0.002799575821845175
+        }
+      ]
+    },
+    "d4/Queen's Gambit/QGD": {
+      "definition_position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "e6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "e7e6"
+      ],
+      "pgn": "1. d4 d5 2. c4 e6",
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 72962,
+      "choices_at_stop": [
+        {
+          "san": "Nc3",
+          "games": 43651,
+          "frequency": 0.5982703325018502
+        },
+        {
+          "san": "Nf3",
+          "games": 27763,
+          "frequency": 0.38051314382829415
+        },
+        {
+          "san": "g3",
+          "games": 698,
+          "frequency": 0.009566623721937447
+        },
+        {
+          "san": "cxd5",
+          "games": 688,
+          "frequency": 0.009429566075491351
+        },
+        {
+          "san": "e3",
+          "games": 132,
+          "frequency": 0.001809160933088457
+        }
+      ]
+    },
+    "d4/Queen's Gambit/QGD/QGD Exchange Positional Line": {
+      "definition_position_key": "rnbqkb1r/ppp2ppp/5n2/3p4/3P4/2N5/PP2PPPP/R1BQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "e6",
+        "Nc3",
+        "Nf6",
+        "cxd5",
+        "exd5",
+        "Bg5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "e7e6",
+        "b1c3",
+        "g8f6",
+        "c4d5",
+        "e6d5",
+        "c1g5"
+      ],
+      "pgn": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. cxd5 exd5 5. Bg5",
+      "fen": "rnbqkb1r/ppp2ppp/5n2/3p2B1/3P4/2N5/PP2PPPP/R2QKBNR b KQkq - 1 5",
+      "position_key": "rnbqkb1r/ppp2ppp/5n2/3p2B1/3P4/2N5/PP2PPPP/R2QKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 15538,
+      "choices_at_stop": [
+        {
+          "san": "c6",
+          "games": 7103,
+          "frequency": 0.4571373407130905
+        },
+        {
+          "san": "Be7",
+          "games": 6557,
+          "frequency": 0.421997683099498
+        },
+        {
+          "san": "Nbd7",
+          "games": 891,
+          "frequency": 0.05734328742437894
+        },
+        {
+          "san": "Bb4",
+          "games": 806,
+          "frequency": 0.05187282790577938
+        },
+        {
+          "san": "Be6",
+          "games": 166,
+          "frequency": 0.010683485648088556
+        }
+      ]
+    },
+    "d4/Queen's Gambit/QGD/3 Knights": {
+      "definition_position_key": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "e6",
+        "Nc3",
+        "Nf6",
+        "Nf3"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "e7e6",
+        "b1c3",
+        "g8f6",
+        "g1f3"
+      ],
+      "pgn": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 3 4",
+      "position_key": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 69800,
+      "choices_at_stop": [
+        {
+          "san": "Be7",
+          "games": 21461,
+          "frequency": 0.30746418338108883
+        },
+        {
+          "san": "c6",
+          "games": 16793,
+          "frequency": 0.24058739255014328
+        },
+        {
+          "san": "Bb4",
+          "games": 12956,
+          "frequency": 0.1856160458452722
+        },
+        {
+          "san": "Nbd7",
+          "games": 6123,
+          "frequency": 0.08772206303724929
+        },
+        {
+          "san": "dxc4",
+          "games": 5710,
+          "frequency": 0.0818051575931232
+        }
+      ]
+    },
+    "d4/Queen's Gambit/Slav": {
+      "definition_position_key": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "c6",
+        "Nf3",
+        "Nf6",
+        "Nc3"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "c7c6",
+        "g1f3",
+        "g8f6",
+        "b1c3"
+      ],
+      "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3",
+      "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq - 3 4",
+      "position_key": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 57774,
+      "choices_at_stop": [
+        {
+          "san": "e6",
+          "games": 27995,
+          "frequency": 0.4845605289576626
+        },
+        {
+          "san": "dxc4",
+          "games": 18378,
+          "frequency": 0.3181015681794579
+        },
+        {
+          "san": "a6",
+          "games": 9487,
+          "frequency": 0.1642088136532004
+        },
+        {
+          "san": "g6",
+          "games": 1240,
+          "frequency": 0.021462941807733584
+        },
+        {
+          "san": "Bf5",
+          "games": 353,
+          "frequency": 0.006110014885588673
+        }
+      ]
+    },
+    "d4/Queen's Gambit/Slav/Semi-Slav": {
+      "definition_position_key": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "c6",
+        "Nf3",
+        "Nf6",
+        "Nc3",
+        "e6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "c7c6",
+        "g1f3",
+        "g8f6",
+        "b1c3",
+        "e7e6"
+      ],
+      "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6",
+      "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+      "position_key": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 47584,
+      "choices_at_stop": [
+        {
+          "san": "Bg5",
+          "games": 21635,
+          "frequency": 0.4546696368527236
+        },
+        {
+          "san": "e3",
+          "games": 19922,
+          "frequency": 0.4186701412239408
+        },
+        {
+          "san": "cxd5",
+          "games": 2545,
+          "frequency": 0.05348436449226631
+        },
+        {
+          "san": "g3",
+          "games": 2083,
+          "frequency": 0.04377521856086079
+        },
+        {
+          "san": "Qb3",
+          "games": 729,
+          "frequency": 0.015320275722932078
+        }
+      ]
+    },
+    "d4/Queen's Gambit/Slav/Slav accepted": {
+      "definition_position_key": "rnbqkb1r/pp2pppp/2p2n2/8/2pP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "c6",
+        "Nf3",
+        "Nf6",
+        "Nc3",
+        "dxc4",
+        "a4",
+        "Bf5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "c7c6",
+        "g1f3",
+        "g8f6",
+        "b1c3",
+        "d5c4",
+        "a2a4",
+        "c8f5"
+      ],
+      "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Bf5",
+      "fen": "rn1qkb1r/pp2pppp/2p2n2/5b2/P1pP4/2N2N2/1P2PPPP/R1BQKB1R w KQkq - 1 6",
+      "position_key": "rn1qkb1r/pp2pppp/2p2n2/5b2/P1pP4/2N2N2/1P2PPPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 13893,
+      "choices_at_stop": [
+        {
+          "san": "e3",
+          "games": 6282,
+          "frequency": 0.4521701576333405
+        },
+        {
+          "san": "Ne5",
+          "games": 6275,
+          "frequency": 0.45166630677319514
+        },
+        {
+          "san": "Nh4",
+          "games": 1292,
+          "frequency": 0.09299647304397898
+        },
+        {
+          "san": "g3",
+          "games": 34,
+          "frequency": 0.0024472756064204994
+        },
+        {
+          "san": "Bg5",
+          "games": 4,
+          "frequency": 0.0002879147772259411
+        }
+      ]
+    },
+    "d4/Queen's Gambit/Slav/Chebanenko Slav": {
+      "definition_position_key": "rnbqkb1r/1p2pppp/p1p2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "c6",
+        "Nf3",
+        "Nf6",
+        "Nc3",
+        "a6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "c7c6",
+        "g1f3",
+        "g8f6",
+        "b1c3",
+        "a7a6"
+      ],
+      "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 a6",
+      "fen": "rnbqkb1r/1p2pppp/p1p2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+      "position_key": "rnbqkb1r/1p2pppp/p1p2n2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 9497,
+      "choices_at_stop": [
+        {
+          "san": "c5",
+          "games": 2799,
+          "frequency": 0.29472464988943875
+        },
+        {
+          "san": "e3",
+          "games": 2372,
+          "frequency": 0.24976308307886702
+        },
+        {
+          "san": "a4",
+          "games": 1744,
+          "frequency": 0.18363693798041486
+        },
+        {
+          "san": "cxd5",
+          "games": 1053,
+          "frequency": 0.11087711909023902
+        },
+        {
+          "san": "g3",
+          "games": 411,
+          "frequency": 0.04327682426029272
+        }
+      ]
+    },
+    "d4/Queen's Gambit/Slav/Schlechter variation": {
+      "definition_position_key": "rnbqkb1r/pp2pp1p/2p2np1/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "c6",
+        "Nf3",
+        "Nf6",
+        "Nc3",
+        "g6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "c7c6",
+        "g1f3",
+        "g8f6",
+        "b1c3",
+        "g7g6"
+      ],
+      "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 g6",
+      "fen": "rnbqkb1r/pp2pp1p/2p2np1/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+      "position_key": "rnbqkb1r/pp2pp1p/2p2np1/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 1347,
+      "choices_at_stop": [
+        {
+          "san": "cxd5",
+          "games": 465,
+          "frequency": 0.34521158129175944
+        },
+        {
+          "san": "e3",
+          "games": 379,
+          "frequency": 0.281365998515219
+        },
+        {
+          "san": "Bf4",
+          "games": 308,
+          "frequency": 0.22865627319970305
+        },
+        {
+          "san": "Bg5",
+          "games": 102,
+          "frequency": 0.0757238307349666
+        },
+        {
+          "san": "Qb3",
+          "games": 47,
+          "frequency": 0.034892353377876766
+        }
+      ]
+    },
+    "d4/Queen's Gambit/Slav/Quiet Slav": {
+      "definition_position_key": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/4PN2/PP3PPP/RNBQKB1R b KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "c6",
+        "Nf3",
+        "Nf6",
+        "e3"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "c7c6",
+        "g1f3",
+        "g8f6",
+        "e2e3"
+      ],
+      "pgn": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. e3",
+      "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/4PN2/PP3PPP/RNBQKB1R b KQkq - 0 4",
+      "position_key": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/4PN2/PP3PPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 25331,
+      "choices_at_stop": [
+        {
+          "san": "Bf5",
+          "games": 8921,
+          "frequency": 0.3521771742134144
+        },
+        {
+          "san": "e6",
+          "games": 7478,
+          "frequency": 0.29521140105009674
+        },
+        {
+          "san": "Bg4",
+          "games": 4014,
+          "frequency": 0.1584619636019107
+        },
+        {
+          "san": "a6",
+          "games": 2958,
+          "frequency": 0.11677391338675931
+        },
+        {
+          "san": "g6",
+          "games": 1903,
+          "frequency": 0.0751253404918874
+        }
+      ]
+    },
+    "d4/Queen's Gambit/QG Sidelines": {
+      "definition_position_key": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4"
+      ],
+      "pgn": "1. d4 d5 2. c4",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "position_key": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 191824,
+      "choices_at_stop": [
+        {
+          "san": "c6",
+          "games": 92497,
+          "frequency": 0.4821972224539161
+        },
+        {
+          "san": "e6",
+          "games": 68508,
+          "frequency": 0.35713987822170323
+        },
+        {
+          "san": "dxc4",
+          "games": 23575,
+          "frequency": 0.12289911585620152
+        },
+        {
+          "san": "Nc6",
+          "games": 3888,
+          "frequency": 0.020268579531236966
+        },
+        {
+          "san": "e5",
+          "games": 1559,
+          "frequency": 0.00812724163816832
+        }
+      ]
+    },
+    "d4/Queen's Gambit/QG Sidelines/Chigorin": {
+      "definition_position_key": "r1bqkbnr/ppp1pppp/2n5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "Nc6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "b8c6"
+      ],
+      "pgn": "1. d4 d5 2. c4 Nc6",
+      "fen": "r1bqkbnr/ppp1pppp/2n5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+      "position_key": "r1bqkbnr/ppp1pppp/2n5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 3919,
+      "choices_at_stop": [
+        {
+          "san": "Nc3",
+          "games": 1521,
+          "frequency": 0.3881092115335545
+        },
+        {
+          "san": "Nf3",
+          "games": 1213,
+          "frequency": 0.3095177341158459
+        },
+        {
+          "san": "cxd5",
+          "games": 930,
+          "frequency": 0.23730543505996426
+        },
+        {
+          "san": "e3",
+          "games": 222,
+          "frequency": 0.05664710385302373
+        },
+        {
+          "san": "Bf4",
+          "games": 20,
+          "frequency": 0.0051033426894615975
+        }
+      ]
+    },
+    "d4/Queen's Gambit/QG Sidelines/Albin Counter Gambit": {
+      "definition_position_key": "rnbqkbnr/ppp2ppp/8/3pp3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "e5",
+        "dxe5",
+        "d4",
+        "Nf3",
+        "Nc6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "e7e5",
+        "d4e5",
+        "d5d4",
+        "g1f3",
+        "b8c6"
+      ],
+      "pgn": "1. d4 d5 2. c4 e5 3. dxe5 d4 4. Nf3 Nc6",
+      "fen": "r1bqkbnr/ppp2ppp/2n5/4P3/2Pp4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 5",
+      "position_key": "r1bqkbnr/ppp2ppp/2n5/4P3/2Pp4/5N2/PP2PPPP/RNBQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 1271,
+      "choices_at_stop": [
+        {
+          "san": "g3",
+          "games": 679,
+          "frequency": 0.5342250196695515
+        },
+        {
+          "san": "a3",
+          "games": 402,
+          "frequency": 0.3162863886703383
+        },
+        {
+          "san": "Nbd2",
+          "games": 163,
+          "frequency": 0.12824547600314712
+        },
+        {
+          "san": "Bf4",
+          "games": 13,
+          "frequency": 0.010228166797797011
+        },
+        {
+          "san": "Bg5",
+          "games": 9,
+          "frequency": 0.007081038552321007
+        }
+      ]
+    },
+    "d4/Queen's Gambit/QG Sidelines/Marshall defense": {
+      "definition_position_key": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "Nf6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "g8f6"
+      ],
+      "pgn": "1. d4 d5 2. c4 Nf6",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+      "position_key": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 357,
+      "choices_at_stop": [
+        {
+          "san": "cxd5",
+          "games": 203,
+          "frequency": 0.5686274509803921
+        },
+        {
+          "san": "Nc3",
+          "games": 87,
+          "frequency": 0.24369747899159663
+        },
+        {
+          "san": "Nf3",
+          "games": 61,
+          "frequency": 0.17086834733893558
+        },
+        {
+          "san": "e3",
+          "games": 3,
+          "frequency": 0.008403361344537815
+        },
+        {
+          "san": "g3",
+          "games": 3,
+          "frequency": 0.008403361344537815
+        }
+      ]
+    },
+    "d4/Queen's Gambit/QG Sidelines/Baltic defense": {
+      "definition_position_key": "rn1qkbnr/ppp1pppp/8/3p1b2/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "Bf5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "c8f5"
+      ],
+      "pgn": "1. d4 d5 2. c4 Bf5",
+      "fen": "rn1qkbnr/ppp1pppp/8/3p1b2/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+      "position_key": "rn1qkbnr/ppp1pppp/8/3p1b2/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 1201,
+      "choices_at_stop": [
+        {
+          "san": "cxd5",
+          "games": 573,
+          "frequency": 0.47710241465445463
+        },
+        {
+          "san": "Nc3",
+          "games": 450,
+          "frequency": 0.37468776019983346
+        },
+        {
+          "san": "Nf3",
+          "games": 100,
+          "frequency": 0.08326394671107411
+        },
+        {
+          "san": "Qb3",
+          "games": 66,
+          "frequency": 0.054954204829308906
+        },
+        {
+          "san": "e3",
+          "games": 7,
+          "frequency": 0.005828476269775187
+        }
+      ]
+    },
+    "d4/Queen's Gambit/QG Sidelines/Austrian defense": {
+      "definition_position_key": "rnbqkbnr/pp2pppp/8/2pp4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "c5",
+        "cxd5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "c7c5",
+        "c4d5"
+      ],
+      "pgn": "1. d4 d5 2. c4 c5 3. cxd5",
+      "fen": "rnbqkbnr/pp2pppp/8/2pP4/3P4/8/PP2PPPP/RNBQKBNR b KQkq - 0 3",
+      "position_key": "rnbqkbnr/pp2pppp/8/2pP4/3P4/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 288,
+      "choices_at_stop": [
+        {
+          "san": "Qxd5",
+          "games": 168,
+          "frequency": 0.5833333333333334
+        },
+        {
+          "san": "Nf6",
+          "games": 111,
+          "frequency": 0.3854166666666667
+        },
+        {
+          "san": "cxd4",
+          "games": 5,
+          "frequency": 0.017361111111111112
+        },
+        {
+          "san": "e6",
+          "games": 4,
+          "frequency": 0.013888888888888888
+        }
+      ]
+    },
+    "d4/d4 d5": {
+      "definition_position_key": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4"
+      ],
+      "pgn": "1. d4 d5 2. c4",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "position_key": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 191824,
+      "choices_at_stop": [
+        {
+          "san": "c6",
+          "games": 92497,
+          "frequency": 0.4821972224539161
+        },
+        {
+          "san": "e6",
+          "games": 68508,
+          "frequency": 0.35713987822170323
+        },
+        {
+          "san": "dxc4",
+          "games": 23575,
+          "frequency": 0.12289911585620152
+        },
+        {
+          "san": "Nc6",
+          "games": 3888,
+          "frequency": 0.020268579531236966
+        },
+        {
+          "san": "e5",
+          "games": 1559,
+          "frequency": 0.00812724163816832
+        }
+      ]
+    },
+    "d4/d4 d5/London System": {
+      "definition_position_key": "rnbqkbnr/ppp1pppp/8/3p4/3P1B2/8/PPP1PPPP/RN1QKBNR b KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "Bf4",
+        "Nf6",
+        "e3",
+        "c5",
+        "c3",
+        "Nc6",
+        "Nd2"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c1f4",
+        "g8f6",
+        "e2e3",
+        "c7c5",
+        "c2c3",
+        "b8c6",
+        "b1d2"
+      ],
+      "pgn": "1. d4 d5 2. Bf4 Nf6 3. e3 c5 4. c3 Nc6 5. Nd2",
+      "fen": "r1bqkb1r/pp2pppp/2n2n2/2pp4/3P1B2/2P1P3/PP1N1PPP/R2QKBNR b KQkq - 2 5",
+      "position_key": "r1bqkb1r/pp2pppp/2n2n2/2pp4/3P1B2/2P1P3/PP1N1PPP/R2QKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 1756,
+      "choices_at_stop": [
+        {
+          "san": "Bf5",
+          "games": 805,
+          "frequency": 0.45842824601366744
+        },
+        {
+          "san": "e6",
+          "games": 435,
+          "frequency": 0.24772209567198178
+        },
+        {
+          "san": "cxd4",
+          "games": 246,
+          "frequency": 0.14009111617312073
+        },
+        {
+          "san": "Qb6",
+          "games": 171,
+          "frequency": 0.09738041002277904
+        },
+        {
+          "san": "g6",
+          "games": 52,
+          "frequency": 0.029612756264236904
+        }
+      ]
+    },
+    "d4/d4 d5/Colle System": {
+      "definition_position_key": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "Nf3",
+        "Nf6",
+        "e3"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "g1f3",
+        "g8f6",
+        "e2e3"
+      ],
+      "pgn": "1. d4 d5 2. Nf3 Nf6 3. e3",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+      "position_key": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 5285,
+      "choices_at_stop": [
+        {
+          "san": "e6",
+          "games": 1646,
+          "frequency": 0.31144749290444657
+        },
+        {
+          "san": "c5",
+          "games": 1302,
+          "frequency": 0.24635761589403973
+        },
+        {
+          "san": "c6",
+          "games": 710,
+          "frequency": 0.13434247871333965
+        },
+        {
+          "san": "Bf5",
+          "games": 658,
+          "frequency": 0.12450331125827814
+        },
+        {
+          "san": "g6",
+          "games": 545,
+          "frequency": 0.10312204351939451
+        }
+      ]
+    },
+    "d4/d4 d5/Jobava London": {
+      "definition_position_key": "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/2N5/PPP1PPPP/R2QKBNR b KQkq -",
+      "moves_san": [
+        "d4",
+        "d5",
+        "Nc3",
+        "Nf6",
+        "Bf4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "b1c3",
+        "g8f6",
+        "c1f4"
+      ],
+      "pgn": "1. d4 d5 2. Nc3 Nf6 3. Bf4",
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/2N5/PPP1PPPP/R2QKBNR b KQkq - 3 3",
+      "position_key": "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/2N5/PPP1PPPP/R2QKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 2943,
+      "choices_at_stop": [
+        {
+          "san": "e6",
+          "games": 817,
+          "frequency": 0.27760788311247026
+        },
+        {
+          "san": "a6",
+          "games": 621,
+          "frequency": 0.21100917431192662
+        },
+        {
+          "san": "c5",
+          "games": 575,
+          "frequency": 0.19537886510363575
+        },
+        {
+          "san": "Bf5",
+          "games": 316,
+          "frequency": 0.1073734284743459
+        },
+        {
+          "san": "g6",
+          "games": 310,
+          "frequency": 0.10533469249065579
+        }
+      ]
+    },
+    "d4/Sidelines": {
+      "definition_position_key": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4"
+      ],
+      "pgn": "1. d4 Nf6 2. c4",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "position_key": "rnbqkb1r/pppppppp/5n2/8/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 439782,
+      "choices_at_stop": [
+        {
+          "san": "e6",
+          "games": 229103,
+          "frequency": 0.5209467417947984
+        },
+        {
+          "san": "g6",
+          "games": 146757,
+          "frequency": 0.3337039715131588
+        },
+        {
+          "san": "c5",
+          "games": 41216,
+          "frequency": 0.09371916085697005
+        },
+        {
+          "san": "d6",
+          "games": 10396,
+          "frequency": 0.02363898476972682
+        },
+        {
+          "san": "c6",
+          "games": 4200,
+          "frequency": 0.009550186228631458
+        }
+      ]
+    },
+    "d4/Sidelines/Mexican Defense": {
+      "definition_position_key": "r1bqkb1r/pppppppp/2n2n2/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "Nc6",
+        "Nf3",
+        "e6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "b8c6",
+        "g1f3",
+        "e7e6"
+      ],
+      "pgn": "1. d4 Nf6 2. c4 Nc6 3. Nf3 e6",
+      "fen": "r1bqkb1r/pppp1ppp/2n1pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4",
+      "position_key": "r1bqkb1r/pppp1ppp/2n1pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 2195,
+      "choices_at_stop": [
+        {
+          "san": "Nc3",
+          "games": 746,
+          "frequency": 0.3398633257403189
+        },
+        {
+          "san": "a3",
+          "games": 738,
+          "frequency": 0.3362186788154897
+        },
+        {
+          "san": "g3",
+          "games": 515,
+          "frequency": 0.23462414578587698
+        },
+        {
+          "san": "e3",
+          "games": 93,
+          "frequency": 0.04236902050113895
+        },
+        {
+          "san": "Bg5",
+          "games": 58,
+          "frequency": 0.02642369020501139
+        }
+      ]
+    },
+    "d4/Sidelines/Mikenas defense": {
+      "definition_position_key": "r1bqkbnr/pppppppp/2n5/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "Nc6",
+        "Nf3"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "b8c6",
+        "g1f3"
+      ],
+      "pgn": "1. d4 Nc6 2. Nf3",
+      "fen": "r1bqkbnr/pppppppp/2n5/8/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq - 2 2",
+      "position_key": "r1bqkbnr/pppppppp/2n5/8/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 2013,
+      "choices_at_stop": [
+        {
+          "san": "d5",
+          "games": 1323,
+          "frequency": 0.6572280178837556
+        },
+        {
+          "san": "d6",
+          "games": 617,
+          "frequency": 0.3065076999503229
+        },
+        {
+          "san": "e6",
+          "games": 40,
+          "frequency": 0.01987083954297069
+        },
+        {
+          "san": "Nf6",
+          "games": 25,
+          "frequency": 0.012419274714356682
+        },
+        {
+          "san": "g6",
+          "games": 3,
+          "frequency": 0.0014903129657228018
+        }
+      ]
+    },
+    "d4/Sidelines/Old Benoni": {
+      "definition_position_key": "rnbqkbnr/pp1ppppp/8/2p5/3P4/8/PPP1PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "c5",
+        "d5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "c7c5",
+        "d4d5"
+      ],
+      "pgn": "1. d4 c5 2. d5",
+      "fen": "rnbqkbnr/pp1ppppp/8/2pP4/8/8/PPP1PPPP/RNBQKBNR b KQkq - 0 2",
+      "position_key": "rnbqkbnr/pp1ppppp/8/2pP4/8/8/PPP1PPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 7292,
+      "choices_at_stop": [
+        {
+          "san": "e5",
+          "games": 2592,
+          "frequency": 0.35545803620405925
+        },
+        {
+          "san": "Nf6",
+          "games": 1829,
+          "frequency": 0.25082281952825014
+        },
+        {
+          "san": "d6",
+          "games": 915,
+          "frequency": 0.12547997805814592
+        },
+        {
+          "san": "g6",
+          "games": 903,
+          "frequency": 0.12383433900164564
+        },
+        {
+          "san": "e6",
+          "games": 664,
+          "frequency": 0.09105869445968184
+        }
+      ]
+    },
+    "d4/Sidelines/Dutch": {
+      "definition_position_key": "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "d4",
+        "f5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "f7f5"
+      ],
+      "pgn": "1. d4 f5",
+      "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 27589,
+      "choices_at_stop": [
+        {
+          "san": "g3",
+          "games": 10936,
+          "frequency": 0.3963898655261155
+        },
+        {
+          "san": "Nf3",
+          "games": 4607,
+          "frequency": 0.16698684258218854
+        },
+        {
+          "san": "c4",
+          "games": 4266,
+          "frequency": 0.15462684403204174
+        },
+        {
+          "san": "Nc3",
+          "games": 3378,
+          "frequency": 0.12244010293957737
+        },
+        {
+          "san": "Bg5",
+          "games": 2432,
+          "frequency": 0.08815107470368626
+        }
+      ]
+    },
+    "c4 (English)": {
+      "definition_position_key": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "c4"
+      ],
+      "moves_uci": [
+        "c2c4"
+      ],
+      "pgn": "1. c4",
+      "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 198137,
+      "choices_at_stop": [
+        {
+          "san": "Nf6",
+          "games": 56076,
+          "frequency": 0.2830162968047361
+        },
+        {
+          "san": "e5",
+          "games": 45477,
+          "frequency": 0.22952300680842044
+        },
+        {
+          "san": "e6",
+          "games": 31402,
+          "frequency": 0.158486299883414
+        },
+        {
+          "san": "c5",
+          "games": 22796,
+          "frequency": 0.11505170664742072
+        },
+        {
+          "san": "g6",
+          "games": 16420,
+          "frequency": 0.08287195223506967
+        }
+      ]
+    },
+    "c4 (English)/Reverse Sicilian": {
+      "definition_position_key": "rnbqkbnr/pppp1ppp/8/4p3/2P5/8/PP1PPPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "c4",
+        "e5"
+      ],
+      "moves_uci": [
+        "c2c4",
+        "e7e5"
+      ],
+      "pgn": "1. c4 e5",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/pppp1ppp/8/4p3/2P5/8/PP1PPPPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 45477,
+      "choices_at_stop": [
+        {
+          "san": "Nc3",
+          "games": 28931,
+          "frequency": 0.6361677331398289
+        },
+        {
+          "san": "g3",
+          "games": 14512,
+          "frequency": 0.31910636145744004
+        },
+        {
+          "san": "d3",
+          "games": 670,
+          "frequency": 0.014732722035314555
+        },
+        {
+          "san": "Nf3",
+          "games": 494,
+          "frequency": 0.010862633858873717
+        },
+        {
+          "san": "e3",
+          "games": 492,
+          "frequency": 0.010818655584141435
+        }
+      ]
+    },
+    "c4 (English)/Symmetrical English": {
+      "definition_position_key": "rnbqkbnr/pp1ppppp/8/2p5/2P5/8/PP1PPPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "c4",
+        "c5"
+      ],
+      "moves_uci": [
+        "c2c4",
+        "c7c5"
+      ],
+      "pgn": "1. c4 c5",
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/pp1ppppp/8/2p5/2P5/8/PP1PPPPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 22796,
+      "choices_at_stop": [
+        {
+          "san": "Nf3",
+          "games": 10947,
+          "frequency": 0.4802158273381295
+        },
+        {
+          "san": "Nc3",
+          "games": 6810,
+          "frequency": 0.29873662045972976
+        },
+        {
+          "san": "g3",
+          "games": 4749,
+          "frequency": 0.20832602210914195
+        },
+        {
+          "san": "b3",
+          "games": 219,
+          "frequency": 0.009606948587471487
+        },
+        {
+          "san": "e3",
+          "games": 43,
+          "frequency": 0.00188629584137568
+        }
+      ]
+    },
+    "c4 (English)/Transpositions": {
+      "definition_position_key": "rnbqkb1r/pppppppp/5n2/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq -",
+      "moves_san": [
+        "c4",
+        "Nf6"
+      ],
+      "moves_uci": [
+        "c2c4",
+        "g8f6"
+      ],
+      "pgn": "1. c4 Nf6",
+      "fen": "rnbqkb1r/pppppppp/5n2/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 1 2",
+      "position_key": "rnbqkb1r/pppppppp/5n2/8/2P5/8/PP1PPPPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 56076,
+      "choices_at_stop": [
+        {
+          "san": "Nc3",
+          "games": 34133,
+          "frequency": 0.6086917754476068
+        },
+        {
+          "san": "Nf3",
+          "games": 9735,
+          "frequency": 0.17360368071902418
+        },
+        {
+          "san": "g3",
+          "games": 9353,
+          "frequency": 0.16679149725372708
+        },
+        {
+          "san": "d4",
+          "games": 2693,
+          "frequency": 0.04802411013624367
+        },
+        {
+          "san": "b3",
+          "games": 102,
+          "frequency": 0.0018189599828803767
+        }
+      ]
+    },
+    "c4 (English)/Neo-Catalan": {
+      "definition_position_key": "rnbq1rk1/ppp1bppp/4pn2/3p4/2P5/5NP1/PP1PPPBP/RNBQ1RK1 w - -",
+      "moves_san": [
+        "c4",
+        "Nf6",
+        "Nf3",
+        "e6",
+        "g3",
+        "d5",
+        "Bg2",
+        "Be7",
+        "O-O",
+        "O-O"
+      ],
+      "moves_uci": [
+        "c2c4",
+        "g8f6",
+        "g1f3",
+        "e7e6",
+        "g2g3",
+        "d7d5",
+        "f1g2",
+        "f8e7",
+        "e1g1",
+        "e8g8"
+      ],
+      "pgn": "1. c4 Nf6 2. Nf3 e6 3. g3 d5 4. Bg2 Be7 5. O-O O-O",
+      "fen": "rnbq1rk1/ppp1bppp/4pn2/3p4/2P5/5NP1/PP1PPPBP/RNBQ1RK1 w - - 4 6",
+      "position_key": "rnbq1rk1/ppp1bppp/4pn2/3p4/2P5/5NP1/PP1PPPBP/RNBQ1RK1 w - -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 9926,
+      "choices_at_stop": [
+        {
+          "san": "d4",
+          "games": 4560,
+          "frequency": 0.459399556719726
+        },
+        {
+          "san": "b3",
+          "games": 4543,
+          "frequency": 0.45768688293370946
+        },
+        {
+          "san": "d3",
+          "games": 349,
+          "frequency": 0.03516018537175096
+        },
+        {
+          "san": "Qc2",
+          "games": 311,
+          "frequency": 0.03133185573241991
+        },
+        {
+          "san": "cxd5",
+          "games": 86,
+          "frequency": 0.008664114446907113
+        }
+      ]
+    },
+    "c4 (English)/Sidelines/ Alternatives": {
+      "definition_position_key": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "c4"
+      ],
+      "moves_uci": [
+        "c2c4"
+      ],
+      "pgn": "1. c4",
+      "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 198137,
+      "choices_at_stop": [
+        {
+          "san": "Nf6",
+          "games": 56076,
+          "frequency": 0.2830162968047361
+        },
+        {
+          "san": "e5",
+          "games": 45477,
+          "frequency": 0.22952300680842044
+        },
+        {
+          "san": "e6",
+          "games": 31402,
+          "frequency": 0.158486299883414
+        },
+        {
+          "san": "c5",
+          "games": 22796,
+          "frequency": 0.11505170664742072
+        },
+        {
+          "san": "g6",
+          "games": 16420,
+          "frequency": 0.08287195223506967
+        }
+      ]
+    },
+    "Alternatives/ Sidelines/ Other": {
+      "definition_position_key": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -",
+      "moves_san": [],
+      "moves_uci": [],
+      "pgn": "Starting position",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 2823189,
+      "choices_at_stop": [
+        {
+          "san": "e4",
+          "games": 1288664,
+          "frequency": 0.45645686491410953
+        },
+        {
+          "san": "d4",
+          "games": 999694,
+          "frequency": 0.35410098296642556
+        },
+        {
+          "san": "Nf3",
+          "games": 287239,
+          "frequency": 0.10174274552642419
+        },
+        {
+          "san": "c4",
+          "games": 198137,
+          "frequency": 0.07018198214855612
+        },
+        {
+          "san": "g3",
+          "games": 21788,
+          "frequency": 0.007717513776087963
+        }
+      ]
+    },
+    "Alternatives/ Sidelines/ Other/King's Indian Attack": {
+      "definition_position_key": "rnbqkbnr/ppp1pppp/8/3p4/8/3P1N2/PPP1PPPP/RNBQKB1R b KQkq -",
+      "moves_san": [
+        "Nf3",
+        "d5",
+        "d3"
+      ],
+      "moves_uci": [
+        "g1f3",
+        "d7d5",
+        "d2d3"
+      ],
+      "pgn": "1. Nf3 d5 2. d3",
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/3P1N2/PPP1PPPP/RNBQKB1R b KQkq - 0 2",
+      "position_key": "rnbqkbnr/ppp1pppp/8/3p4/8/3P1N2/PPP1PPPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 426,
+      "choices_at_stop": [
+        {
+          "san": "Nf6",
+          "games": 191,
+          "frequency": 0.44835680751173707
+        },
+        {
+          "san": "g6",
+          "games": 61,
+          "frequency": 0.1431924882629108
+        },
+        {
+          "san": "c5",
+          "games": 55,
+          "frequency": 0.12910798122065728
+        },
+        {
+          "san": "Nc6",
+          "games": 51,
+          "frequency": 0.11971830985915492
+        },
+        {
+          "san": "c6",
+          "games": 38,
+          "frequency": 0.0892018779342723
+        }
+      ]
+    },
+    "Alternatives/ Sidelines/ Other/Nimzo-Larsen Attack": {
+      "definition_position_key": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "b3"
+      ],
+      "moves_uci": [
+        "b2b3"
+      ],
+      "pgn": "1. b3",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 11107,
+      "choices_at_stop": [
+        {
+          "san": "e5",
+          "games": 4761,
+          "frequency": 0.42864859998199334
+        },
+        {
+          "san": "d5",
+          "games": 3024,
+          "frequency": 0.2722607364724948
+        },
+        {
+          "san": "Nf6",
+          "games": 1728,
+          "frequency": 0.15557756369856848
+        },
+        {
+          "san": "c5",
+          "games": 634,
+          "frequency": 0.05708112001440533
+        },
+        {
+          "san": "b6",
+          "games": 260,
+          "frequency": 0.023408661204645718
+        }
+      ]
+    },
+    "Alternatives/ Sidelines/ Other/Bird's": {
+      "definition_position_key": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq -",
+      "moves_san": [
+        "f4"
+      ],
+      "moves_uci": [
+        "f2f4"
+      ],
+      "pgn": "1. f4",
+      "fen": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 7165,
+      "choices_at_stop": [
+        {
+          "san": "d5",
+          "games": 3540,
+          "frequency": 0.49406838799720865
+        },
+        {
+          "san": "Nf6",
+          "games": 1162,
+          "frequency": 0.16217725052337753
+        },
+        {
+          "san": "c5",
+          "games": 818,
+          "frequency": 0.11416608513607816
+        },
+        {
+          "san": "g6",
+          "games": 772,
+          "frequency": 0.10774598743893929
+        },
+        {
+          "san": "e5",
+          "games": 489,
+          "frequency": 0.06824842986741103
+        }
+      ]
+    },
+    "Alternatives/ Sidelines/ Other/Reti (transpositions)": {
+      "definition_position_key": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq -",
+      "moves_san": [
+        "Nf3"
+      ],
+      "moves_uci": [
+        "g1f3"
+      ],
+      "pgn": "1. Nf3",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 287239,
+      "choices_at_stop": [
+        {
+          "san": "Nf6",
+          "games": 133326,
+          "frequency": 0.46416398887337723
+        },
+        {
+          "san": "d5",
+          "games": 83513,
+          "frequency": 0.2907439449378392
+        },
+        {
+          "san": "c5",
+          "games": 33549,
+          "frequency": 0.11679820637169744
+        },
+        {
+          "san": "g6",
+          "games": 14515,
+          "frequency": 0.050532831544462975
+        },
+        {
+          "san": "f5",
+          "games": 7225,
+          "frequency": 0.025153269576902858
+        }
+      ]
+    }
+  }
+}

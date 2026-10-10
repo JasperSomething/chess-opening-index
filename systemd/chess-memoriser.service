@@ -1,0 +1,17 @@
+[Unit]
+Description=Chess Memoriser local backend
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.local/share/chess-memoriser
+ExecStartPre=/usr/bin/mkdir -p %h/.local/share/chess-memoriser/data/run
+ExecStart=%h/.local/share/chess-memoriser/.venv/bin/python -m chess_memoriser.server --port 8879
+Restart=on-failure
+RestartSec=2
+Environment=PYTHONUNBUFFERED=1
+StandardOutput=append:%h/.local/share/chess-memoriser/data/run/server.log
+StandardError=append:%h/.local/share/chess-memoriser/data/run/server.log
+
+[Install]
+WantedBy=default.target

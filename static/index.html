@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chess Memoriser · Explorer</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <div class="eyebrow">CHESS MEMORISER / OPENING LAB</div>
+      <h1>Build the line. Read the field.</h1>
+    </div>
+    <div id="turn" class="turn">WHITE TO MOVE</div>
+  </header>
+
+  <main>
+    <section class="board-column">
+      <div id="board" class="board" role="group" aria-label="Chess board">
+        <div id="grid" class="grid"></div>
+      </div>
+      <div class="navigation">
+        <button id="back" title="Back">←</button>
+        <button id="forward" title="Forward">→</button>
+        <button id="reset">RESET</button>
+      </div>
+      <div class="line-panel">
+        <span class="label">CURRENT LINE</span>
+        <div id="line" class="line"></div>
+      </div>
+    </section>
+
+    <section class="data-column">
+      <nav class="view-tabs" aria-label="Application sections">
+        <button id="openings-tab" class="active" type="button">OPENINGS</button>
+        <button id="explorer-tab" type="button">DATABASE EXPLORER</button>
+      </nav>
+
+      <section id="opening-browser" class="opening-browser" aria-label="Opening catalogue">
+        <div class="opening-browser-head">
+          <div>
+            <span class="label">OPENING CATALOGUE</span>
+            <strong>Browse the opening map.</strong>
+          </div>
+          <span id="catalogue-count" class="status">LOADING</span>
+        </div>
+        <div class="catalogue-tools">
+          <label>SEARCH
+            <input id="opening-search" type="search" placeholder="Name, alias, ECO…" autocomplete="off">
+          </label>
+          <label>MAJOR CATEGORY
+            <select id="opening-group"><option value="">ALL MAJOR CATEGORIES</option></select>
+          </label>
+        </div>
+        <div id="opening-list" class="opening-list"><span class="empty">Loading catalogue…</span></div>
+      </section>
+
+      <section id="opening-guide" class="opening-guide hidden" aria-label="Opening guide"></section>
+
+      <div class="filters">
+        <label>LICHESS RATING
+          <select id="ratings">
+            <option value="0,1000,1200,1400,1600,1800,2000,2200,2500">ALL BUCKETS</option>
+            <option value="1800,2000,2200,2500">1800+</option>
+            <option value="2000,2200,2500">2000+</option>
+            <option value="2200,2500">2200+</option>
+            <option value="2500">2500+</option>
+          </select>
+        </label>
+        <label>SPEEDS
+          <select id="speeds">
+            <option value="ultraBullet,bullet,blitz,rapid,classical,correspondence">ALL SPEEDS</option>
+            <option value="blitz,rapid,classical">BLITZ · RAPID · CLASSICAL</option>
+            <option value="rapid,classical">RAPID · CLASSICAL</option>
+            <option value="classical">CLASSICAL</option>
+          </select>
+        </label>
+        <label>DISPLAY MOVES
+          <select id="frequency-threshold">
+            <option value="0.005">≥0.5%</option>
+            <option value="0.01" selected>≥1%</option>
+            <option value="0.02">≥2%</option>
+            <option value="0.05">≥5%</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="source-grid">
+        <article class="source-card">
+          <span id="master-source-name" class="source-name">LUMBRA OTB · BOTH 2200+ · DISPLAY ≥1%</span>
+          <strong id="master-total">—</strong>
+          <span id="master-status" class="status">LOCAL INDEX</span>
+        </article>
+        <article class="source-card">
+          <span id="lichess-source-name" class="source-name">LICHESS PLAYERS · DISPLAY ≥1%</span>
+          <strong id="lichess-total">—</strong>
+          <span id="lichess-status" class="status">LOADING</span>
+        </article>
+      </div>
+
+      <section class="engine-panel" aria-label="Stockfish analysis">
+        <div class="engine-head">
+          <div>
+            <span id="engine-perspective" class="source-name">STOCKFISH · SIDE TO MOVE</span>
+            <span id="engine-status" class="status">WAITING</span>
+          </div>
+          <div class="engine-controls">
+            <label>DEPTH
+              <select id="engine-depth">
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16" selected>16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+              </select>
+            </label>
+            <label>LINES
+              <select id="engine-multipv">
+                <option value="1">1</option>
+                <option value="3" selected>3</option>
+                <option value="5">5</option>
+              </select>
+            </label>
+            <button id="engine-toggle" type="button">PAUSE</button>
+          </div>
+        </div>
+        <div id="engine-lines" class="engine-lines"><span class="empty">Waiting for position…</span></div>
+      </section>
+
+      <div id="notice" class="notice hidden"></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2" class="move-head">MOVE</th>
+              <th id="master-table-head" colspan="3">OTB 2200+ · ≥1%</th>
+              <th id="lichess-table-head" colspan="3">LICHESS PLAYERS · ≥1%</th>
+            </tr>
+            <tr>
+              <th>GAMES</th><th>SHARE</th><th>WHITE / DRAW / BLACK</th>
+              <th>GAMES</th><th>SHARE</th><th>WHITE / DRAW / BLACK</th>
+            </tr>
+          </thead>
+          <tbody id="moves"></tbody>
+        </table>
+      </div>
+      <footer id="position-meta">Position data loading…</footer>
+    </section>
+  </main>
+  <dialog id="promotion">
+    <h2>Promote pawn</h2>
+    <div id="promotion-options"></div>
+    <button id="cancel-promotion">Cancel</button>
+  </dialog>
+  <script src="/app.js"></script>
+</body>
+</html>

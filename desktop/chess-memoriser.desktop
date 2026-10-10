@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Chess Memoriser
+GenericName=Chess Opening Explorer
+Comment=Explore Lichess and local OTB opening statistics
+Exec=chess-memoriser-launch
+TryExec=chess-memoriser-launch
+Icon=applications-games
+Terminal=false
+Categories=Game;BoardGame;
+StartupNotify=false
+StartupWMClass=ChessMemoriser

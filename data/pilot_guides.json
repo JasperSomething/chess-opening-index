@@ -1,0 +1,268 @@
+{
+  "version": 1,
+  "selection_criteria": {
+    "default_display_threshold": 0.01,
+    "configurable_thresholds": [0.005, 0.01, 0.02, 0.05],
+    "database_rule": "At a featured decision, include moves reaching at least 1% in either the active Lichess population or the local OTB population when they lead to a distinct practical structure.",
+    "theory_exception": "Retain a lower-frequency move when independent opening references identify a theoretically important system, a forcing tactical test, or a common trap response.",
+    "line_rule": "Representative lines were chosen to reach a characteristic strategic position. They are not chains of the most frequent move and their frequency is never calculated by multiplying position-level percentages.",
+    "sideline_rule": "Practical sidelines include database-visible deviations plus forcing or trap-related moves that users need to recognize even when the local OTB collection is sparse."
+  },
+  "guides": {
+    "scandinavian-defense": {
+      "title": "Scandinavian Defense",
+      "eco": "B01",
+      "aliases": ["Center Counter Defense", "Center Counter Game"],
+      "related_openings": ["french-defense", "caro-kann-defense"],
+      "defining_line": "1. e4 d5",
+      "summary": "Black challenges e4 before building a pawn centre of their own. After the usual exchange, White gains time against the recapturing piece while Black aims for a compact ...c6/...e6 shell and unusually easy development for the c8-bishop.",
+      "strategic_contest": [
+        "White tries to turn the queen or knight recapture into a lead in development, then use the extra central space before Black finishes coordinating.",
+        "Black accepts a small tempo concession in exchange for immediately removing White's e-pawn and obtaining a clear development scheme: ...c6, ...Bf5 or ...Bg4, ...e6 and often queenside castling.",
+        "The central question is not whether Black can regain d5, but which piece recaptures and whether White opens the centre quickly enough to make that extra move matter."
+      ],
+      "structures": [
+        "In queen-recapture lines, Black commonly builds pawns on c6 and e6 around a d5-free centre; White often owns more space with d4 and can choose opposite-side castling.",
+        "In 2...Nf6 lines, delaying the recapture can produce an open gambit position after ...e6 or a solid structure after ...Nxd5; White must decide whether to develop or try to keep the pawn."
+      ],
+      "sources": [
+        {"label": "365Chess Scandinavian guide", "url": "https://www.365chess.com/chess-openings/Scandinavian-Defense"},
+        {"label": "Chess.com Scandinavian overview", "url": "https://www.chess.com/openings/Scandinavian-Defense"},
+        {"label": "Lichess opening-name dataset", "url": "https://github.com/lichess-org/chess-openings"},
+        {"label": "Independent ECO and alias reference", "url": "https://en.wikipedia.org/wiki/Scandinavian_Defense"}
+      ],
+      "decisions": [
+        {
+          "title": "White answers the immediate central challenge",
+          "side": "White",
+          "position": "1. e4 d5",
+          "why_here": "This choice decides whether White accepts the opening's main bargain or lets Black keep a central pawn on d5.",
+          "options": [
+            {"move": "exd5", "label": "Exchange and gain a development tempo", "explanation": "Removing d5 prevents Black from maintaining a two-pawn centre. White normally attacks the recapturing queen with Nc3 or builds d4 while Black decides how to recover the pawn.", "changes": "Creates an open e-file and removes both central e/d pawns; the game becomes a race between White's development and Black's compact setup."},
+            {"move": "e5", "label": "Advance into a French-like space structure", "prominence": "practical_sideline", "otb_reference_frequency": 0.004, "explanation": "White keeps space but releases the direct tension. Black can strike with ...c5 and develop the queen's knight to c6 without spending time on a recapture.", "changes": "The centre closes; White's tempo gain disappears and play shifts toward pawn breaks around d4 and f4."},
+            {"move": "Nc3", "label": "Keep the tension", "explanation": "White develops while allowing ...dxe4. After Nxe4, the centre resembles an open Scandinavian but Black chose the moment of exchange.", "changes": "Preserves options briefly, but allows Black to exchange without exposing the queen."}
+          ]
+        },
+        {
+          "title": "Black chooses the recapture system",
+          "side": "Black",
+          "position": "1. e4 d5 2. exd5",
+          "why_here": "This is the opening's defining strategic fork: immediate material recovery with the queen, or development before recovering with a knight.",
+          "options": [
+            {"move": "Qxd5", "label": "Immediate recovery", "explanation": "Black restores material at once and accepts that Nc3 will gain a tempo. The payoff is a stable structure and freedom to develop the c8-bishop before ...e6.", "changes": "White gets a free developing attack; Black chooses a queen square and usually aims for ...c6 and ...e6."},
+            {"move": "Nf6", "label": "Develop before recapturing", "explanation": "Black avoids an exposed queen and pressures d5 with a piece. White may return the pawn through normal development or try to support it with c4.", "changes": "The position stays temporarily unbalanced; gambits with ...e6 and active bishop development become possible."},
+            {"move": "c6", "label": "Blackburne–Kloosterboer gambit", "prominence": "practical_sideline", "otb_reference_frequency": 0.0016, "explanation": "Black offers a second pawn to accelerate development after dxc6. It is forcing and practical but concedes material if the initiative fades.", "changes": "A positional recapture opening becomes a gambit; development and open lines replace the normal solid shell."}
+          ]
+        },
+        {
+          "title": "Where the exposed queen belongs",
+          "side": "Black",
+          "position": "1. e4 d5 2. exd5 Qxd5 3. Nc3",
+          "why_here": "The queen retreat fixes Black's development pattern and affects both castling choices and White's most useful tempos.",
+          "options": [
+            {"move": "Qa5", "label": "Classical: pin and prepare ...c6", "explanation": "Qa5 keeps contact with c3 and can make Bd2 awkward. Black often plays ...c6 so the queen can later use c7, then develops the light bishop before ...e6.", "changes": "The queen remains active but can become a target to Bd2/Nd5; queenside castling remains available."},
+            {"move": "Qd6", "label": "Modern: flexible but blockable", "explanation": "Qd6 supports central and kingside squares and often pairs with queenside castling. White can gain space or use Ne5/Nb5 ideas, so Black must coordinate the queen with ...c6 and ...Nbd7.", "changes": "Produces less of a pin on c3 and more direct piece contact in the centre."},
+            {"move": "Qd8", "label": "Retreat completely", "explanation": "Black gives back the queen's move immediately, removing future queen-chasing targets. Development is safe but White keeps the uncontested tempo gained by Nc3.", "changes": "The position becomes quieter and closer to a Caro-Kann-style structure without the queen's active pressure."}
+          ]
+        },
+        {
+          "title": "White meets the delayed recapture",
+          "side": "White",
+          "position": "1. e4 d5 2. exd5 Nf6",
+          "why_here": "White chooses between returning the pawn for a development lead, holding it, or using a check to disturb Black's recapture plan.",
+          "options": [
+            {"move": "d4", "label": "Build the centre", "explanation": "White lets ...Nxd5 happen under favourable development conditions and establishes a broad centre. This is the least materialistic route.", "changes": "Usually leads to a sound open game where White has space and Black has no exposed queen."},
+            {"move": "c4", "label": "Try to keep d5", "explanation": "Supporting the extra pawn takes more space but gives Black the forcing ...e6 gambit break or pressure with ...c6.", "changes": "The game can become sharply tactical; White's queenside pawns may be targets if development lags."},
+            {"move": "Bb5+", "label": "Insert a developing check", "explanation": "White makes Black choose a block before deciding what to do with d5. The bishop can trade for a defender or retreat after provoking ...c6.", "changes": "Black's recapture is delayed and the pawn structure may be fixed by a blocking move."}
+          ]
+        }
+      ],
+      "lines": [
+        {"name": "Main Line: 3...Qa5 and 7.Bd2", "category": "mainline", "primary": true, "line": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 Nf6 5. Nf3 c6 6. Bc4 Bf5 7. Bd2 e6 8. Nd5 Qd8", "result": "This is the guide's primary Scandinavian line: White uses Bd2 and Nd5 to gain time against the queen, while Black has developed the light bishop before ...e6 and now completes the compact c6/e6 structure.", "white_plans": ["Complete development and decide between kingside and queenside castling.", "Use the lead in activity before Black finishes ...Bd6, ...Nbd7 and castling."], "black_plans": ["Develop ...Bd6 and ...Nbd7, then choose the safer castling side.", "Challenge d4 with ...c5 only after the king and queen are coordinated."], "source_labels": ["365Chess Scandinavian guide", "Lichess opening-name dataset", "Chess.com Scandinavian overview"]},
+        {"name": "Modern ...Qd6 coordination", "category": "mainline", "line": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd6 4. d4 Nf6 5. Nf3 c6 6. Ne5 Nbd7 7. Nc4 Qc7 8. Bd3", "result": "White has spent an extra knight move to gain space and queen tempos; Black's queen is now stable on c7 and the solid c6/e6 framework is ready.", "white_plans": ["Complete development and watch for Bf4 hitting c7.", "Use the central space before Black achieves ...e5 or ...c5."], "black_plans": ["Develop ...e6, ...Be7 and castle before striking at the centre.", "Avoid automatic queen moves when a developing move solves the same threat."], "source_labels": ["365Chess Scandinavian guide", "Chess.com Scandinavian overview"]},
+        {"name": "Old ...Qd8 variation", "category": "mainline", "line": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd8 4. d4 Nf6 5. Nf3 Bf5 6. Bc4 e6 7. O-O c6 8. Re1", "result": "Black has a compact, low-risk structure but White has developed smoothly and controls more space.", "white_plans": ["Prepare Ne5 and use the e-file against an uncastled king.", "Choose Bf4 or Nh4 depending on the bishop's placement."], "black_plans": ["Develop ...Be7 and ...Nbd7 without creating new weaknesses.", "Break with ...c5 after the king is safe."], "source_labels": ["Chess.com Scandinavian overview"]},
+        {"name": "Modern 2...Nf6 development", "category": "mainline", "line": "1. e4 d5 2. exd5 Nf6 3. d4 Nxd5 4. Nf3 Nc6 5. c4 Nb6 6. d5 Nb8 7. Nc3 e6", "result": "White has advanced central pawns and gained space, while Black will attack that centre and develop rapidly after ...exd5 or ...Bb4.", "white_plans": ["Support the advanced centre and finish development before expanding again.", "Exploit the temporarily undeveloped queenside."], "black_plans": ["Undermine d5 rather than chase space with more knight moves.", "Use ...Bb4 and ...exd5 to make White's centre a target."], "source_labels": ["365Chess Scandinavian guide", "Chess.com Scandinavian overview"]},
+        {"name": "Icelandic gambit", "category": "sideline", "line": "1. e4 d5 2. exd5 Nf6 3. c4 e6 4. dxe6 Bxe6 5. Nf3 Nc6 6. d4 Bb4+ 7. Nc3", "result": "White has an extra pawn but Black has rapid piece activity and pressure against c4/d4. White must consolidate instead of trying to win more material.", "white_plans": ["Develop under the check and arrange Be2/O-O.", "Return material if needed to neutralise the lead in development."], "black_plans": ["Keep lines open and bring the queen or rook to the e-file.", "Avoid slow pawn moves that let White consolidate."], "source_labels": ["Lichess opening-name dataset"]},
+        {"name": "Portuguese gambit", "category": "sideline", "line": "1. e4 d5 2. exd5 Nf6 3. d4 Bg4 4. f3 Bf5 5. Bb5+ c6 6. dxc6 bxc6", "result": "Black has damaged queenside pawns but open files and fast development; White's f-pawn move has weakened the king and blocked the natural knight square.", "white_plans": ["Develop quickly and decide whether the bishop should capture or retreat.", "Do not assume the extra pawn matters while the king is central."], "black_plans": ["Use the b- and d-files and develop with tempo.", "Target d4 and exploit the weakened e1-h4 diagonal."], "source_labels": ["Lichess opening-name dataset"]},
+        {"name": "Advance sideline", "category": "sideline", "line": "1. e4 d5 2. e5 c5 3. f4 Nc6 4. Nf3 Bg4", "result": "White holds space, but Black has immediate pressure on d4 and no recapturing-piece tempo to lose.", "white_plans": ["Support e5 with d4 only after considering ...cxd4.", "Develop rather than overextend the pawn chain."], "black_plans": ["Attack the base with ...c5 and ...Nc6.", "Trade White's useful f3-knight or increase pressure on d4."], "source_labels": ["Chess.com Scandinavian overview"]}
+      ],
+      "transpositions": [
+        {"label": "Advance structures", "line": "1. e4 d5 2. e5", "note": "Can resemble a French Advance structure, but Black's light bishop is not locked behind an e6-pawn and the move order changes the value of ...c5."},
+        {"label": "Caro-Kann-like shell", "line": "1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd8 4. d4 c6", "note": "The c6/e6 setup resembles Caro-Kann structures, but Black spent a queen tempo and exchanged the d-pawn rather than the c-pawn."}
+      ]
+    },
+    "italian-game": {
+      "title": "Italian Game",
+      "eco": "C50-C59",
+      "aliases": ["Italian Opening"],
+      "related_openings": ["ruy-lopez", "scotch-game"],
+      "defining_line": "1. e4 e5 2. Nf3 Nc6 3. Bc4",
+      "summary": "White points the bishop at f7 while keeping the central d-pawn flexible. The opening's character is decided less by the first three moves than by whether either side opens the centre with d4/...d5, preserves it with d3/...d6, or accepts a development-for-pawn bargain such as the Evans Gambit.",
+      "strategic_contest": [
+        "White wants either a timely d4 break or a slow kingside build-up with c3, d3, Re1 and Nbd2-f1-g3; the bishop on c4 discourages careless central play while f7 is sensitive.",
+        "Black chooses between symmetrical development with ...Bc5, the immediate counterattack 3...Nf6, and restrained systems such as ...Be7 or ...d6.",
+        "In closed Pianissimo structures, a tempo is useful only if it improves a future break; a premature d4 or ...d5 can release the opponent's pieces instead of gaining space."
+      ],
+      "structures": [
+        "The Pianissimo keeps e4/e5 and often c3/d3 against ...d6; manoeuvres prepare d4 or ...d5 while queenside pawn moves give bishops retreat squares.",
+        "The Center Attack and Two Knights lines open the e- and d-files quickly, making king safety and exact move order more urgent than long-term manoeuvring.",
+        "The Evans Gambit trades the b-pawn for c3/d4 with open lines and a development lead; Black's task is to return material at the right moment rather than cling to every pawn."
+      ],
+      "sources": [
+        {"label": "365Chess Italian guide", "url": "https://www.365chess.com/chess-openings/Italian-Game"},
+        {"label": "Chess.com Italian overview", "url": "https://www.chess.com/openings/Italian-Game"},
+        {"label": "Independent ECO reference", "url": "https://en.wikipedia.org/wiki/Italian_Game"},
+        {"label": "Lichess opening-name dataset", "url": "https://github.com/lichess-org/chess-openings"}
+      ],
+      "decisions": [
+        {
+          "title": "Black chooses the Italian's character",
+          "side": "Black",
+          "position": "1. e4 e5 2. Nf3 Nc6 3. Bc4",
+          "why_here": "Black can mirror White's bishop, counterattack e4 immediately, or adopt a quieter structure that reduces forcing theory.",
+          "options": [
+            {"move": "Bc5", "label": "Giuoco Piano", "explanation": "Black develops actively, contests d4 and keeps the game flexible. White can now choose a slow d3 structure, prepare d4 with c3, or offer b4.", "changes": "Creates a balanced bishop-versus-bishop setup where both d4 and ...d5 breaks matter."},
+            {"move": "Nf6", "label": "Two Knights Defense", "explanation": "Black attacks e4 instead of mirroring the bishop. White may preserve a quiet game with d3 or force concrete play with Ng5 or d4.", "changes": "Makes e4/f7 tactics immediate and gives Black active central counterplay with ...d5."},
+            {"move": "Be7", "label": "Hungarian Defense", "explanation": "Black refuses the sharpest bishop confrontation and prepares safe castling. The bishop is modest but hard to hit with d4 tempos.", "changes": "Reduces early tactics and often yields a compact, slightly passive position."},
+            {"move": "d6", "label": "Semi-Italian setup", "explanation": "Black supports e5 first and may choose ...g6, ...Be7 or ...Nf6 according to White's setup.", "changes": "Keeps more piece placements hidden but gives White time to establish c3 and d4."}
+          ]
+        },
+        {
+          "title": "White chooses speed versus stored tension",
+          "side": "White",
+          "position": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5",
+          "why_here": "The same position can become a direct central confrontation, a slow manoeuvring game, or a pawn sacrifice for development.",
+          "options": [
+            {"move": "c3", "label": "Prepare d4", "explanation": "c3 builds a two-pawn centre after d4 and gives the bishop a c2 retreat. White can still choose d3 first if opening the centre is not favourable.", "changes": "Commits the c-pawn and removes the knight's c3 square in exchange for stronger central preparation."},
+            {"move": "d3", "label": "Giuoco Pianissimo", "explanation": "White secures e4 and delays d4 until the pieces are placed. Nbd2-f1-g3 and Re1 are common because the centre remains closed.", "changes": "Stores central tension and reduces immediate exchanges; manoeuvring quality becomes more important."},
+            {"move": "b4", "label": "Evans Gambit", "explanation": "White diverts the c5-bishop so c3 and d4 arrive with tempo and open files. The pawn is compensation only if development stays ahead.", "changes": "Creates an asymmetric material balance and forces Black to decide whether to accept or retreat."},
+            {"move": "O-O", "label": "Castle before committing", "explanation": "White makes the king safe and keeps c3, d3 and d4 available. Black's ...Nf6 may transpose to familiar systems in a different order.", "changes": "Preserves flexibility but lets Black choose a setup without being challenged immediately."}
+          ]
+        },
+        {
+          "title": "White answers the Two Knights counterattack",
+          "side": "White",
+          "position": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6",
+          "why_here": "White decides whether to keep an Italian structure or test f7 in a forcing line where ...d5 is Black's central resource.",
+          "options": [
+            {"move": "d3", "label": "Quiet Italian", "explanation": "White protects e4 and retains the usual c3/Re1/Nbd2 plan. Black can play ...Bc5 and reach a Pianissimo with the knights already committed.", "changes": "Avoids forcing f7 tactics and keeps a closed centre."},
+            {"move": "Ng5", "label": "Immediate f7 test", "explanation": "Knight and bishop converge on f7, but Black gains the thematic ...d5 tempo. White must know whether to take on d5, retreat, or enter pawn-sacrifice complications.", "changes": "Turns the opening into concrete calculation; the central pawn break dictates piece safety."},
+            {"move": "d4", "label": "Open the centre now", "explanation": "White attacks e5 before securing e4 with d3. Exchanges on d4 activate both sides and can leave White playing e5 with tempo on the f6-knight.", "changes": "Replaces the slow Italian structure with open files and immediate central tactics."}
+          ]
+        },
+        {
+          "title": "Black handles the Evans pawn offer",
+          "side": "Black",
+          "position": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4",
+          "why_here": "Accepting wins a pawn but helps White build c3/d4; declining keeps development intact but gives White queenside space for free.",
+          "options": [
+            {"move": "Bxb4", "label": "Accept", "explanation": "Black takes the material and usually retreats along the a5-e7 diagonal. The strategic goal is to return a pawn if necessary to blunt White's centre and finish development.", "changes": "White receives open lines and tempi; Black receives material and a concrete defensive task."},
+            {"move": "Bb6", "label": "Decline", "explanation": "The bishop keeps pressure on f2 and avoids giving White c3 with tempo. White gains b4/a4 space but no open b-file or sacrificed-pawn initiative.", "changes": "Returns to a positional Italian with an expanded white queenside."}
+          ]
+        }
+      ],
+      "lines": [
+        {"name": "Modern Pianissimo manoeuvre", "category": "mainline", "line": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d3 d6 6. O-O O-O 7. Re1 a6 8. Bb3 Ba7 9. Nbd2 h6 10. Nf1 Re8 11. Ng3 Be6", "result": "Both sides are developed without resolving the centre. White can prepare d4 or kingside expansion; Black can use ...d5, ...Ne7-g6 or queenside space according to timing.", "white_plans": ["Prepare d4 with pieces supporting the resulting open files.", "Use Nf1-g3 and h3 to improve the kingside without weakening e4."], "black_plans": ["Choose ...d5 when exchanges free the c8-bishop and do not lose e5.", "Use ...a6/...Ba7 to preserve the bishop and prepare ...b5."], "source_labels": ["365Chess Italian guide", "Chess.com Italian overview"]},
+        {"name": "Center Attack", "category": "mainline", "line": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Bd2 Bxd2+ 8. Nbxd2 d5", "result": "The centre opens and Black uses ...d5 before White can consolidate an ideal pawn duo. Exchanges reduce attacking pieces but leave active central play.", "white_plans": ["Use e5 only when the f6-knight has a poor square.", "Bring a rook to e1 and recover any isolated pawn with activity."], "black_plans": ["Counter in the centre rather than defend f7 passively.", "Exploit checks and pins to complete development with tempo."], "source_labels": ["Chess.com Italian overview"]},
+        {"name": "Evans Gambit Accepted", "category": "mainline", "line": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O dxc3 8. Qb3 Qf6 9. e5 Qg6 10. Nxc3", "result": "White has restored a strong centre and a large development lead; Black has an extra pawn but the king and queenside pieces remain undeveloped.", "white_plans": ["Use open files and development before trying to recover material.", "Bring a rook to e1 and exploit the queen's awkward placement."], "black_plans": ["Return material if it completes development or trades queens.", "Avoid another queen move unless it neutralises a direct threat."], "source_labels": ["365Chess Italian guide", "Chess.com Italian overview"]},
+        {"name": "Two Knights: quiet system", "category": "mainline", "line": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3 Bc5 5. O-O d6 6. c3 O-O 7. Re1 a6 8. Bb3 h6", "result": "The game has transposed to a Pianissimo-style structure, but Black's knight reached f6 before the bishop choice.", "white_plans": ["Use Nbd2-f1-g3 and prepare d4.", "Keep the c4-bishop from being caught by ...Na5."], "black_plans": ["Prepare ...Ba7 and ...Re8 before choosing ...d5.", "Use ...a6/...b5 for space only when the centre is stable."], "source_labels": ["Chess.com Italian overview"]},
+        {"name": "Two Knights: 4.Ng5 main test", "category": "mainline", "line": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Na5 6. Bb5+ c6 7. dxc6 bxc6 8. Be2 h6 9. Nf3 e4 10. Ne5", "result": "Black has damaged queenside pawns but a strong initiative and central space; White has won a pawn and must solve the displaced knight and undeveloped queenside.", "white_plans": ["Complete development and challenge e4 rather than hunt more pawns.", "Use d3 or d4 to undermine Black's centre."], "black_plans": ["Exploit the lead in development and open b-/d-files.", "Keep e4 supported while activating the bishops."], "source_labels": ["Lichess opening-name dataset", "Independent ECO reference"]},
+        {"name": "Hungarian Defense", "category": "sideline", "line": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Be7 4. d4 d6 5. Nc3 Nf6 6. O-O O-O", "result": "Black is safe but less active than in ...Bc5 systems; White has more central room and must choose whether to clarify d4/e5.", "white_plans": ["Use d5 only if it gains space without releasing c5.", "Develop the dark bishop before launching kingside play."], "black_plans": ["Challenge the centre with ...exd4 or ...Bg4.", "Re-route the passive e7-bishop after the centre changes."], "source_labels": ["Lichess opening-name dataset"]},
+        {"name": "Blackburne Shilling sideline", "category": "sideline", "line": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4 4. Nxd4 exd4 5. O-O", "result": "White declines the familiar e5-pawn trap by exchanging the advanced knight. Black has central space but no tactical attack on g2/e4.", "white_plans": ["Finish development and attack d4 with c3.", "Do not grab e5 without calculating ...Qg5."], "black_plans": ["Support or exchange d4 before it becomes a target.", "Develop rather than forcing a trap that is no longer present."], "source_labels": ["Lichess opening-name dataset"]},
+        {"name": "Evans Gambit Declined", "category": "sideline", "line": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bb6 5. a4 a6 6. Nc3 Nf6", "result": "White owns queenside space but did not gain the open lines of an accepted Evans; Black keeps material equal and a sound centre.", "white_plans": ["Use b5 carefully to displace c6 only when it does not weaken c4.", "Return attention to central development with d3 or O-O."], "black_plans": ["Counter in the centre before White's space becomes useful.", "Preserve the bishop's diagonal while preparing ...d6."], "source_labels": ["365Chess Italian guide", "Chess.com Italian overview"]}
+      ],
+      "transpositions": [
+        {"label": "Pianissimo move-order", "line": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d3 Nf6 5. c3", "note": "The same c3/d3 structure can arise with 4.c3 Nf6 5.d3. Move order changes whether White keeps the immediate d4 option."},
+        {"label": "Bishop's Opening route", "line": "1. e4 e5 2. Bc4 Nc6 3. Nf3", "note": "This reaches the Italian defining position without committing the knight on move two."}
+      ]
+    },
+    "queens-gambit": {
+      "title": "Queen's Gambit family overview",
+      "eco": "D06-D69",
+      "aliases": ["Aleppo Gambit"],
+      "related_openings": ["slav-defense", "catalan-opening", "chigorin-defense", "albin-countergambit"],
+      "defining_line": "1. d4 d5 2. c4",
+      "summary": "White attacks the d5-pawn with a wing pawn, offering c4 only temporarily to divert Black's centre. Black's reply determines whether the struggle centres on holding d5, surrendering it for free development, or counter-gambiting against d4.",
+      "strategic_contest": [
+        "White wants to remove or overload d5, then use the resulting central majority or open c-file. The c-pawn offer is usually a lever, not a permanent pawn sacrifice.",
+        "Black can support d5 with ...e6 or ...c6, accept with ...dxc4 and attack White's future centre, or challenge immediately with ...c5/...e5/...Nc6.",
+        "Recurring structures include the Carlsbad minority attack after cxd5 exd5, an isolated queen's pawn after central exchanges, and Slav structures where Black's light bishop remains outside the pawn chain."
+      ],
+      "structures": [
+        "QGD structures with ...e6 secure d5 but restrict the c8-bishop; Black seeks ...c5 or ...e5 to solve the centre.",
+        "QGA structures give up d5 so Black can develop freely and later pressure White's d4/e4 centre, often accepting an isolated d-pawn as the strategic target.",
+        "Slav structures use ...c6 to support d5 without blocking the light bishop, but the c6-pawn temporarily occupies the knight's best square and slows ...c5."
+      ],
+      "sources": [
+        {"label": "365Chess Queen's Gambit guide", "url": "https://www.365chess.com/chess-openings/Queens-Gambit"},
+        {"label": "Chess.com Queen's Gambit overview", "url": "https://www.chess.com/openings/Queens-Gambit"},
+        {"label": "Independent ECO reference", "url": "https://en.wikipedia.org/wiki/Queen%27s_Gambit"},
+        {"label": "Lichess opening-name dataset", "url": "https://github.com/lichess-org/chess-openings"}
+      ],
+      "decisions": [
+        {
+          "title": "Black chooses the central structure",
+          "side": "Black",
+          "position": "1. d4 d5 2. c4",
+          "why_here": "Every major reply answers a different question: reinforce d5, release it, or counterattack White's centre immediately.",
+          "options": [
+            {"move": "e6", "label": "Queen's Gambit Declined", "explanation": "Black holds d5 with a second pawn and prepares ...Nf6. The cost is closing the c8-bishop, so the freeing ...c5 or ...e5 break becomes a long-term priority.", "changes": "Keeps central tension and invites Carlsbad, Orthodox, Tarrasch and related structures."},
+            {"move": "dxc4", "label": "Queen's Gambit Accepted", "explanation": "Black abandons d5, gains a temporary pawn and develops without blocking the light bishop. Trying to keep c4 at all costs is usually less important than striking at White's centre.", "changes": "Creates an open centre and often an isolated d-pawn after White builds e4/d4."},
+            {"move": "c6", "label": "Slav Defense", "explanation": "Black supports d5 while preserving the c8-bishop's diagonal. In return, the c6-pawn delays ...c5 and takes the c6 square from the knight.", "changes": "Produces a sound centre with different bishop-development questions from the QGD."},
+            {"move": "e5", "label": "Albin Countergambit", "prominence": "practical_sideline", "otb_reference_frequency": 0.0081, "explanation": "Black answers a wing-pawn offer with a central pawn offer, seeking a cramping pawn on d4 and rapid piece activity.", "changes": "Turns a positional lever into a forcing gambit where White must challenge the advanced d4-pawn."},
+            {"move": "Nc6", "label": "Chigorin Defense", "explanation": "Black develops a piece to support e5 rather than reinforcing d5 with a pawn. The knight blocks the c-pawn but encourages immediate piece play.", "changes": "Trades structural orthodoxy for active pieces and tactical central pressure."}
+          ]
+        },
+        {
+          "title": "White selects a QGD plan",
+          "side": "White",
+          "position": "1. d4 d5 2. c4 e6",
+          "why_here": "White can develop into the main QGD, clarify the pawn structure immediately, or steer toward Catalan pressure.",
+          "options": [
+            {"move": "Nc3", "label": "Main-line pressure on d5", "explanation": "Nc3 increases pressure on d5 and supports e4, but exposes the knight to pins in Ragozin and Cambridge Springs systems.", "changes": "Keeps cxd5 flexible and permits both Orthodox and Tarrasch structures."},
+            {"move": "Nf3", "label": "Flexible development", "explanation": "Nf3 avoids committing the b1-knight and can transpose to main lines or Catalan setups. It also limits an immediate e4 expansion.", "changes": "Hides White's structural choice and reduces some ...Bb4 pin ideas."},
+            {"move": "cxd5", "label": "Exchange structure now", "explanation": "After ...exd5, White gets the Carlsbad structure and can plan a minority attack with b4-b5 or central e4 expansion.", "changes": "Releases central tension early and replaces opening tactics with a known asymmetric pawn plan."},
+            {"move": "g3", "label": "Catalan direction", "explanation": "White prepares Bg2 to pressure d5/c6 from the long diagonal, often transposing to a Catalan after Nf3.", "changes": "Prioritises long-term light-square pressure over immediate occupation of e4."}
+          ]
+        },
+        {
+          "title": "Black answers the pin",
+          "side": "Black",
+          "position": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5",
+          "why_here": "White has tied the f6-knight to the queen; Black decides whether to break the pin, counter-pin c3, or prepare a tactical ...Qa5 system.",
+          "options": [
+            {"move": "Be7", "label": "Orthodox development", "explanation": "Black calmly breaks the pin and prepares castling. The c8-bishop remains the strategic problem, usually solved by ...b6/...Bb7 or a freeing ...c5.", "changes": "Leads to classical QGD positions with gradual manoeuvring."},
+            {"move": "Nbd7", "label": "Cambridge Springs route", "explanation": "Black supports f6 and prepares ...c6 and ...Qa5, creating pressure on c3 and tactical ideas against the pinned pieces.", "changes": "Keeps the pin but introduces concrete queenside tactics."},
+            {"move": "Bb4", "label": "Ragozin counter-pin", "explanation": "Black pins the c3-knight and increases control of e4. White must decide whether to play e3, Qa4+ or exchange on d5.", "changes": "Combines Nimzo-Indian piece pressure with a QGD pawn centre."}
+          ]
+        },
+        {
+          "title": "White builds against the accepted pawn",
+          "side": "White",
+          "position": "1. d4 d5 2. c4 dxc4",
+          "why_here": "White can recover calmly or establish a broad centre, accepting that Black will attack it later.",
+          "options": [
+            {"move": "e4", "label": "Seize the full centre", "explanation": "White uses the time Black spent taking c4 to build e4/d4. Black responds with ...e5 or ...c5, trying to make that centre an object of attack.", "changes": "Creates maximum space and the greatest risk of an isolated or hanging centre."},
+            {"move": "Nf3", "label": "Develop before recovery", "explanation": "White prevents ...e5 from arriving without preparation and plans e3/Bxc4. The move keeps the central pawn structure less committed.", "changes": "Favors a positional QGA where material is recovered after development."},
+            {"move": "e3", "label": "Recover c4 directly", "explanation": "White opens the f1-bishop and threatens Bxc4. Black can use the tempo for ...e5 or ...Nf6 rather than trying to defend the extra pawn with ...b5.", "changes": "Restores material quickly but reveals White's bishop placement."}
+          ]
+        }
+      ],
+      "lines": [
+        {"name": "QGD Orthodox development", "category": "mainline", "line": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 Nbd7 7. Rc1 c6 8. Bd3 dxc4 9. Bxc4", "result": "White has active pieces and pressure on the centre; Black is solid and prepares ...b6/...Bb7 or ...Nd5 before the freeing ...c5.", "white_plans": ["Use e4 only when d4 remains adequately defended.", "Place rooks on c1/d1 and exploit the space advantage."], "black_plans": ["Solve the c8-bishop with ...b6/...Bb7 or ...Nd5.", "Time ...c5 so an isolated pawn is active rather than weak."], "source_labels": ["365Chess Queen's Gambit guide", "Chess.com Queen's Gambit overview"]},
+        {"name": "Exchange QGD: Carlsbad structure", "category": "mainline", "line": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. cxd5 exd5 5. Bg5 Be7 6. e3 O-O 7. Bd3 Nbd7 8. Qc2 c6 9. Nge2 Re8 10. O-O", "result": "The pawn structure is fixed: White can use a queenside minority attack or central e4; Black seeks kingside activity or ...Ne4 and piece play against the minority pawns.", "white_plans": ["Prepare b4-b5 to create a target on c6.", "Choose e4 when pieces can support the isolated pawn or central attack."], "black_plans": ["Use ...Ne4 and piece activity before the minority attack lands.", "Counter on the kingside or open the e-file against e3."], "source_labels": ["365Chess Queen's Gambit guide", "Chess.com Queen's Gambit overview"]},
+        {"name": "Tarrasch Defense", "category": "mainline", "line": "1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. Nf3 Nc6 6. g3 Nf6 7. Bg2 Be7 8. O-O O-O", "result": "Black accepts the prospect of an isolated d-pawn for free piece development and active central files; White tries to blockade without becoming passive.", "white_plans": ["Pressure d5 with Bg2, Nc3 and rooks, but watch for ...d4 breaks.", "Trade active pieces only when the resulting blockade is stable."], "black_plans": ["Use activity and ...d4 before the isolani becomes a static weakness.", "Place rooks on open central files and avoid unnecessary simplification."], "source_labels": ["365Chess Queen's Gambit guide", "Lichess opening-name dataset"]},
+        {"name": "Queen's Gambit Accepted: 3.e4", "category": "mainline", "line": "1. d4 d5 2. c4 dxc4 3. e4 e5 4. Nf3 exd4 5. Bxc4 Nc6 6. O-O Be6", "result": "White has recovered c4 and leads in development, but the d4-pawn has been exchanged and Black can challenge the remaining centre directly.", "white_plans": ["Use development and open files rather than trying to preserve every central pawn.", "Meet ...Bxc4 or ...Qd7 with quick rook development."], "black_plans": ["Exchange White's active bishop and complete development.", "Pressure e4/d4 so White's space does not become a lasting advantage."], "source_labels": ["Chess.com Queen's Gambit overview", "Independent ECO reference"]},
+        {"name": "Main Slav structure", "category": "mainline", "line": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Bf5 6. e3 e6 7. Bxc4 Bb4", "result": "Black has developed the light bishop outside the pawn chain and returned c4; White has regained the pawn but spent a4 to prevent ...b5.", "white_plans": ["Use Qe2/e4 when the pin on c3 is resolved.", "Exploit the a4 space without weakening b4."], "black_plans": ["Complete development and strike with ...c5.", "Use the pin on c3 to control e4."], "source_labels": ["Chess.com Queen's Gambit overview", "365Chess Queen's Gambit guide"]},
+        {"name": "Albin Countergambit", "category": "sideline", "line": "1. d4 d5 2. c4 e5 3. dxe5 d4 4. Nf3 Nc6 5. a3 Be6 6. Nbd2 Qe7 7. b4 O-O-O", "result": "Black's d4-pawn cramps White and supports practical activity, but White remains a sound pawn up if the blockade is completed. A Stockfish 19 depth-12 check strongly favoured White here, so this is presented as a response to prepare for, not as an equalising recommendation for Black.", "white_plans": ["Blockade d4 before trying to keep the extra pawn.", "Develop the queenside carefully because Black may castle long."], "black_plans": ["Use ...Nxe5 or ...f6 to recover e5 and open lines.", "Keep d4 supported only while it restricts White's pieces."], "source_labels": ["365Chess Queen's Gambit guide", "Chess.com Queen's Gambit overview"]},
+        {"name": "Chigorin Defense", "category": "sideline", "line": "1. d4 d5 2. c4 Nc6 3. Nf3 Bg4 4. cxd5 Bxf3 5. gxf3 Qxd5 6. e3", "result": "Black has traded a bishop to damage White's kingside pawns and activate the queen; White owns the bishop pair and central space.", "white_plans": ["Use the bishop pair and central pawns before the structure becomes a target.", "Develop with Nc3 while controlling queen checks."], "black_plans": ["Attack d4 and exploit weakened dark squares.", "Use rapid development to justify giving up the bishop pair."], "source_labels": ["365Chess Queen's Gambit guide", "Lichess opening-name dataset"]},
+        {"name": "Marshall Defense", "category": "sideline", "line": "1. d4 d5 2. c4 Nf6 3. cxd5 Nxd5 4. e4 Nb6 5. Nf3 e5 6. Nxe5", "result": "White has built the centre with tempo and can accept Black's attempted liquidation. A Stockfish 19 depth-12 check strongly favoured White here; the line illustrates why 2...Nf6 demands an accurate central response rather than offering Black a sound main system.", "white_plans": ["Use the central pawns and development lead rather than chase the knight repeatedly.", "Check tactics on b5 and f7 before holding extra material."], "black_plans": ["Break the centre before White consolidates.", "Develop rapidly; the moved knight must not become a permanent loss of time."], "source_labels": ["365Chess Queen's Gambit guide", "Lichess opening-name dataset"]}
+      ],
+      "transpositions": [
+        {"label": "Catalan route", "line": "1. d4 d5 2. c4 e6 3. Nf3 Nf6 4. g3", "note": "This can reach Catalan positions normally introduced through 1.d4 Nf6 2.c4 e6 3.g3 d5."},
+        {"label": "Semi-Slav route", "line": "1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6", "note": "The Slav move order transposes into a Semi-Slav once ...e6 is added; both Queen's Gambit and Slav family names remain relevant."},
+        {"label": "Tarrasch by immediate ...c5", "line": "1. d4 d5 2. c4 e6 3. Nc3 c5", "note": "The defining position may also arise through other queen-pawn move orders; classification should follow the position, not only the order."}
+      ]
+    }
+  }
+}

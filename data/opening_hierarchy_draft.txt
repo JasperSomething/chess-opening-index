@@ -1,0 +1,119 @@
+# Opening catalogue hierarchy — user draft 1
+# Saved verbatim as the editable information architecture. Markers:
+# & major category; % lesser major category; = minor category; \ subcategory.
+
+& e4
+% e5
+= Ruy Lopez
+= Italian
+= Scotch
+= 4 Knights
+= Petroff
+= Vienna
+= Sidelines / Transpositions
+\ Ponziani
+\ Bishops opening
+\ King's Gambit
+\ Philidor
+% Sicilian
+= d6 open
+\ Najdorf
+\ Classical
+\ Dragon
+\ Scheveningen
+\ Kupreichik variation
+\ Delayed alapin transposition
+\ Moscow variation
+= e6 open
+\ Kan
+\ Taimanov
+\ Scheveningen
+\ 4 Knights
+= Nc6 open
+\ Rossolimo
+\ Sveshnikov
+\ Accelerated Dragon
+\ Transpositions (4 Knights, Classical)
+\ Kalashnikov
+= Closed
+= Alternatives
+\ O-Kelly Variation
+\ Nimsowitsch variation
+\ Katalimov variation
+\ Hyper Accelerated Dragon
+\ Alapin
+% French
+= Advance
+= Tarrasch
+= Classical
+= Winawer
+= Rubinstein
+= Exchange
+= Sidlines
+\ 2 Knights
+\ Kings indian attack transposition
+% Caro-Kann
+= Advance
+= Mainline variation
+= Exchange
+= Sidelines
+\ Fantasy
+\ Two Knights Attack
+\ Accelerated Panov Attack
+% Alternatives
+= Modern/ Pirc
+= Alekhine
+= Nimsowitsch Defense
+= Scandinavian
+= Owen Defense
+= Philidor
+
+& d4
+% Nf6
+= King's Indian Defense
+= Nimzo Indian
+= Bogo Indian
+= Benoni
+\ Benko
+= Grunfeld
+= Trompowsky
+= Catalan
+% Queen's Gambit
+= QGA
+= QGD
+\ QGD Exchange Positional Line
+\ 3 Knights
+= Slav
+\ Semi-Slav
+\ Slav accepted
+\ Chebanenko Slav
+\ Schlechter variation
+\ Quiet Slav
+= QG Sidelines
+\ Chigorin
+\ Albin Counter Gambit
+\ Marshall defense
+\ Baltic defense
+\ Austrian defense
+% d4 d5
+= London System
+= Colle System
+= Jobava London
+% Sidelines
+= Mexican Defense
+= Mikenas defense
+= Old Benoni
+= Dutch
+
+& c4 (English)
+% Reverse Sicilian
+% Symmetrical English
+% Transpositions
+% Neo-Catalan
+% Sidelines/ Alternatives
+
+& Alternatives/ Sidelines/ Other
+% King's Indian Attack
+% Nimzo-Larsen Attack
+% Bird's
+% Reti (transpositions)

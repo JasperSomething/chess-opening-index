@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chess-memoriser"
+version = "0.1.0"
+description = "Position-first access to Lichess player and local master move distributions"
+requires-python = ">=3.10"
+dependencies = ["python-chess>=1.999,<2"]
+
+[project.scripts]
+chess-memoriser = "chess_memoriser.cli:main"
+chess-memoriser-gui = "chess_memoriser.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

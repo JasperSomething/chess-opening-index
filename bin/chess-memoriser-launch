@@ -1,0 +1,70 @@
+#!/bin/sh
+set -u
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+APP_DIR=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+PORT=8879
+URL=http://127.0.0.1:$PORT
+HEALTH_URL=$URL/api/health
+STATE_DIR=$APP_DIR/data/run
+LOG=$STATE_DIR/gui.log
+BROWSER_LOG=$STATE_DIR/browser.log
+PYTHON=$APP_DIR/.venv/bin/python
+BROWSER=${CHESS_MEMORISER_BROWSER:-/usr/bin/chromium}
+BROWSER_PROFILE=$STATE_DIR/chromium-profile-v3
+SERVICE=chess-memoriser.service
+
+mkdir -p "$STATE_DIR"
+
+is_running() {
+  response=$(curl --silent --show-error --fail --max-time 1 "$HEALTH_URL" 2>/dev/null) || return 1
+  printf '%s' "$response" | grep -Eq '"app"[[:space:]]*:[[:space:]]*"chess-memoriser"' || return 1
+  printf '%s' "$response" | grep -Eq '"launcher_api"[[:space:]]*:[[:space:]]*9'
+}
+
+if ! is_running; then
+  if response=$(curl --silent --fail --max-time 1 "$HEALTH_URL" 2>/dev/null) && \
+     printf '%s' "$response" | grep -Eq '"app"[[:space:]]*:[[:space:]]*"chess-memoriser"'; then
+    for listener_pid in $(fuser -n tcp "$PORT" 2>/dev/null || true); do
+      listener_command=$(tr '\0' ' ' <"/proc/$listener_pid/cmdline" 2>/dev/null || true)
+      case "$listener_command" in
+        *chess_memoriser.server*)
+          printf '[%s] replacing incompatible listener pid %s\n' "$(date -Is)" "$listener_pid" >>"$LOG"
+          kill "$listener_pid" 2>/dev/null || true
+          ;;
+      esac
+    done
+  fi
+  printf '\n[%s] starting Chess Memoriser\n' "$(date -Is)" >>"$LOG"
+  systemctl --user daemon-reload >>"$LOG" 2>&1 || true
+  systemctl --user reset-failed "$SERVICE" >>"$LOG" 2>&1 || true
+  if systemctl --user start "$SERVICE" >>"$LOG" 2>&1; then
+    printf '[%s] requested user service start\n' "$(date -Is)" >>"$LOG"
+  else
+    printf '[%s] user service unavailable; using detached fallback\n' "$(date -Is)" >>"$LOG"
+    nohup setsid "$PYTHON" -m chess_memoriser.server --port "$PORT" >>"$LOG" 2>&1 </dev/null &
+    server_pid=$!
+    printf '%s\n' "$server_pid" >"$STATE_DIR/server.pid"
+  fi
+
+  attempts=0
+  while ! is_running; do
+    attempts=$((attempts + 1))
+    if [ "$attempts" -ge 60 ]; then
+      printf '[%s] backend did not become ready\n' "$(date -Is)" >>"$LOG"
+      command -v notify-send >/dev/null 2>&1 && notify-send "Chess Memoriser" "Could not start. See $LOG"
+      exit 1
+    fi
+    sleep 0.1
+  done
+else
+  printf '[%s] reusing running backend\n' "$(date -Is)" >>"$LOG"
+fi
+
+printf '[%s] opening %s\n' "$(date -Is)" "$URL" >>"$LOG"
+if [ -x "$BROWSER" ]; then
+  mkdir -p "$BROWSER_PROFILE"
+  nohup "$BROWSER" --new-window --app="$URL" --class=ChessMemoriser --user-data-dir="$BROWSER_PROFILE" --no-first-run --no-default-browser-check >>"$BROWSER_LOG" 2>&1 </dev/null &
+else
+  nohup xdg-open "$URL" >>"$BROWSER_LOG" 2>&1 </dev/null &
+fi

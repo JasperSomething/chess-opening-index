@@ -1,0 +1,2292 @@
+{
+  "version": 2,
+  "catalogue_source": "https://www.365chess.com/chess-openings/",
+  "independent_reference": "https://github.com/lichess-org/chess-openings",
+  "sections": [
+    {
+      "id": "1.e4",
+      "label": "1.e4 openings",
+      "order": 0,
+      "overview_slug": null,
+      "families": [
+        {
+          "id": "e4-e5",
+          "label": "1...e5 · Open games",
+          "description": "Black meets the centre directly; choose the distinct White system or Black defence below.",
+          "order": 0,
+          "members": [
+            "ruy-lopez",
+            "italian-game",
+            "scotch-game",
+            "vienna-game",
+            "petrov-defense",
+            "kings-gambit",
+            "ponziani-opening"
+          ]
+        },
+        {
+          "id": "sicilian",
+          "label": "1...c5 · Sicilian",
+          "description": "The major asymmetric reply to 1.e4.",
+          "order": 1,
+          "members": [
+            "sicilian-defense"
+          ]
+        },
+        {
+          "id": "french",
+          "label": "1...e6 · French",
+          "description": "Black prepares ...d5 and accepts a temporarily restricted light bishop.",
+          "order": 2,
+          "members": [
+            "french-defense"
+          ]
+        },
+        {
+          "id": "caro-kann",
+          "label": "1...c6 · Caro-Kann",
+          "description": "Black prepares ...d5 while keeping the light bishop available.",
+          "order": 3,
+          "members": [
+            "caro-kann-defense"
+          ]
+        },
+        {
+          "id": "other-e4",
+          "label": "Other replies to 1.e4",
+          "description": "Important alternatives, grouped below the four major reply families.",
+          "order": 4,
+          "members": [
+            "scandinavian-defense",
+            "alekhine-defense",
+            "pirc-defense",
+            "modern-defense",
+            "philidor-defense",
+            "owens-defense"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queens-gambit-complex",
+      "label": "Queen's Gambit complex",
+      "order": 1,
+      "overview_slug": "queens-gambit",
+      "families": [
+        {
+          "id": "slav-family",
+          "label": "Slav families",
+          "description": "Black supports d5 with ...c6 and keeps the c8-bishop outside the pawn chain.",
+          "order": 0,
+          "members": [
+            "slav-defense",
+            "semi-slav-defense"
+          ]
+        },
+        {
+          "id": "qgd-family",
+          "label": "Queen's Gambit Declined",
+          "description": "Black maintains the d5 strongpoint with ...e6.",
+          "order": 1,
+          "members": [
+            "queens-gambit-declined"
+          ]
+        },
+        {
+          "id": "qga-and-sidelines",
+          "label": "Queen's Gambit Accepted + other replies",
+          "description": "The accepted game and the less common independent replies to 2.c4.",
+          "order": 2,
+          "members": [
+            "queens-gambit-accepted",
+            "chigorin-defense",
+            "marshall-defense",
+            "albin-countergambit",
+            "baltic-defense"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "other-d4",
+      "label": "Other 1.d4 openings",
+      "order": 2,
+      "overview_slug": null,
+      "families": [
+        {
+          "id": "indian-defenses",
+          "label": "Indian defenses",
+          "description": "Systems beginning with 1...Nf6, including their major transpositional families.",
+          "order": 0,
+          "members": [
+            "kings-indian-defense",
+            "grunfeld-defense",
+            "nimzo-indian-defense",
+            "queens-indian-defense",
+            "bogo-indian-defense",
+            "benoni-defense",
+            "budapest-gambit",
+            "catalan-opening",
+            "trompowsky-attack"
+          ]
+        },
+        {
+          "id": "d4-systems",
+          "label": "Queen's-pawn systems",
+          "description": "White systems that do not begin with an immediate 2.c4 Queen's Gambit.",
+          "order": 1,
+          "members": [
+            "london-system",
+            "colle-system"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "english",
+      "label": "English Opening · 1.c4",
+      "order": 3,
+      "overview_slug": null,
+      "families": [
+        {
+          "id": "english-main",
+          "label": "English families",
+          "description": "Distinct structures after 1.c4; transpositions remain linked rather than collapsed.",
+          "order": 0,
+          "members": [
+            "english-reversed-sicilian",
+            "english-symmetrical",
+            "english-neo-catalan"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bird-dutch",
+      "label": "Bird & Dutch",
+      "order": 4,
+      "overview_slug": null,
+      "families": [
+        {
+          "id": "bird-dutch",
+          "label": "Related f-pawn openings",
+          "description": "Bird's Opening and the Dutch are colour-reversed relatives, but remain distinct openings.",
+          "order": 0,
+          "members": [
+            "birds-opening",
+            "dutch-defense"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "other-flank",
+      "label": "Other flank openings",
+      "order": 5,
+      "overview_slug": null,
+      "families": [
+        {
+          "id": "other-flank",
+          "label": "Réti and other flank systems",
+          "description": "Flexible openings whose final family is often determined by transposition.",
+          "order": 0,
+          "members": [
+            "reti-opening",
+            "kings-indian-attack",
+            "larsen-opening"
+          ]
+        }
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "slug": "ruy-lopez",
+      "name": "Ruy Lopez",
+      "aliases": [
+        "Spanish Opening"
+      ],
+      "group": "Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "C60"
+      ],
+      "eco_family": "C60-C99",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bb5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "f1b5"
+      ],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "position_key": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Ruy Lopez"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Ruy-Lopez",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "e4-e5",
+      "family_label": "1...e5 · Open games",
+      "family_order": 0,
+      "opening_order": 0
+    },
+    {
+      "slug": "italian-game",
+      "name": "Italian Game",
+      "aliases": [
+        "Italian Opening"
+      ],
+      "group": "Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "C50"
+      ],
+      "eco_family": "C50-C59",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "Bc4"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "f1c4"
+      ],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "position_key": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq -",
+      "alternate_move_orders": [
+        {
+          "san": "e4 e5 Bc4 Nc6 Nf3",
+          "uci": [
+            "e2e4",
+            "e7e5",
+            "f1c4",
+            "b8c6",
+            "g1f3"
+          ],
+          "position_key": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq -",
+          "same_defining_position": true
+        }
+      ],
+      "position_names": [
+        "Italian Game"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Italian-Game",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": true,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "e4-e5",
+      "family_label": "1...e5 · Open games",
+      "family_order": 0,
+      "opening_order": 1
+    },
+    {
+      "slug": "scotch-game",
+      "name": "Scotch Game",
+      "aliases": [
+        "Scotch Opening"
+      ],
+      "group": "Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "C44"
+      ],
+      "eco_family": "C44-C45",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "d4"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "d2d4"
+      ],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+      "position_key": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R b KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Scotch Game"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Scotch-Game",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "e4-e5",
+      "family_label": "1...e5 · Open games",
+      "family_order": 0,
+      "opening_order": 2
+    },
+    {
+      "slug": "sicilian-defense",
+      "name": "Sicilian Defense",
+      "aliases": [
+        "Sicilian Defence"
+      ],
+      "group": "Semi-Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "B20"
+      ],
+      "eco_family": "B20-B99",
+      "moves_san": [
+        "e4",
+        "c5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5"
+      ],
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Sicilian Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Sicilian-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "sicilian",
+      "family_label": "1...c5 · Sicilian",
+      "family_order": 1,
+      "opening_order": 0
+    },
+    {
+      "slug": "french-defense",
+      "name": "French Defense",
+      "aliases": [
+        "French Defence"
+      ],
+      "group": "Semi-Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "C00"
+      ],
+      "eco_family": "C00-C19",
+      "moves_san": [
+        "e4",
+        "e6",
+        "d4",
+        "d5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e6",
+        "d2d4",
+        "d7d5"
+      ],
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [
+        {
+          "san": "e4 e6 d4 d5",
+          "uci": [
+            "e2e4",
+            "e7e6",
+            "d2d4",
+            "d7d5"
+          ],
+          "position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq -",
+          "same_defining_position": true
+        },
+        {
+          "san": "d4 e6 e4 d5",
+          "uci": [
+            "d2d4",
+            "e7e6",
+            "e2e4",
+            "d7d5"
+          ],
+          "position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq -",
+          "same_defining_position": true
+        }
+      ],
+      "position_names": [
+        "French Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/French-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "french",
+      "family_label": "1...e6 · French",
+      "family_order": 2,
+      "opening_order": 0
+    },
+    {
+      "slug": "scandinavian-defense",
+      "name": "Scandinavian Defense",
+      "aliases": [
+        "Scandinavian Defence",
+        "Center Counter Defense",
+        "Center Counter Game"
+      ],
+      "group": "Semi-Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "B01"
+      ],
+      "eco_family": "B01",
+      "moves_san": [
+        "e4",
+        "d5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "d7d5"
+      ],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Scandinavian Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Scandinavian-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": true,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "other-e4",
+      "family_label": "Other replies to 1.e4",
+      "family_order": 4,
+      "opening_order": 0
+    },
+    {
+      "slug": "petrov-defense",
+      "name": "Petrov's Defense",
+      "aliases": [
+        "Petroff Defense",
+        "Russian Game"
+      ],
+      "group": "Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "C42"
+      ],
+      "eco_family": "C42-C43",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nf6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "g8f6"
+      ],
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "position_key": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Petrov's Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Petrovs-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "e4-e5",
+      "family_label": "1...e5 · Open games",
+      "family_order": 0,
+      "opening_order": 4
+    },
+    {
+      "slug": "philidor-defense",
+      "name": "Philidor Defense",
+      "aliases": [
+        "Philidor's Defence"
+      ],
+      "group": "Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "C41"
+      ],
+      "eco_family": "C41",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "d6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "d7d6"
+      ],
+      "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+      "position_key": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Philidor Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Philidor-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "other-e4",
+      "family_label": "Other replies to 1.e4",
+      "family_order": 4,
+      "opening_order": 4
+    },
+    {
+      "slug": "kings-gambit",
+      "name": "King's Gambit",
+      "aliases": [],
+      "group": "Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "C30"
+      ],
+      "eco_family": "C30-C39",
+      "moves_san": [
+        "e4",
+        "e5",
+        "f4"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "f2f4"
+      ],
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+      "position_key": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "King's Gambit"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Kings-Gambit",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": "365Chess currently prints 1.e4 d5 for this entry; corrected to 1.e4 e5 2.f4 and independently validated.",
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "e4-e5",
+      "family_label": "1...e5 · Open games",
+      "family_order": 0,
+      "opening_order": 5
+    },
+    {
+      "slug": "caro-kann-defense",
+      "name": "Caro-Kann Defense",
+      "aliases": [
+        "Caro-Kann Defence"
+      ],
+      "group": "Semi-Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "B10"
+      ],
+      "eco_family": "B10-B19",
+      "moves_san": [
+        "e4",
+        "c6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c6"
+      ],
+      "fen": "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/pp1ppppp/2p5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Caro-Kann Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Caro-Kann-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "caro-kann",
+      "family_label": "1...c6 · Caro-Kann",
+      "family_order": 3,
+      "opening_order": 0
+    },
+    {
+      "slug": "modern-defense",
+      "name": "Modern Defense",
+      "aliases": [
+        "Robatsch Defense"
+      ],
+      "group": "Semi-Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "B06"
+      ],
+      "eco_family": "B06",
+      "moves_san": [
+        "e4",
+        "g6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "g7g6"
+      ],
+      "fen": "rnbqkbnr/pppppp1p/6p1/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/pppppp1p/6p1/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Modern Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Modern-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "other-e4",
+      "family_label": "Other replies to 1.e4",
+      "family_order": 4,
+      "opening_order": 3
+    },
+    {
+      "slug": "pirc-defense",
+      "name": "Pirc Defense",
+      "aliases": [
+        "Pirc Defence"
+      ],
+      "group": "Semi-Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "B00"
+      ],
+      "eco_family": "B07-B09",
+      "moves_san": [
+        "e4",
+        "d6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "d7d6"
+      ],
+      "fen": "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Pirc Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Pirc-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "other-e4",
+      "family_label": "Other replies to 1.e4",
+      "family_order": 4,
+      "opening_order": 2
+    },
+    {
+      "slug": "owens-defense",
+      "name": "Owen's Defense",
+      "aliases": [
+        "Queen's Fianchetto Defense"
+      ],
+      "group": "Semi-Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "B00"
+      ],
+      "eco_family": "B00",
+      "moves_san": [
+        "e4",
+        "b6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "b7b6"
+      ],
+      "fen": "rnbqkbnr/p1pppppp/1p6/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/p1pppppp/1p6/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Owen Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Owens-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "other-e4",
+      "family_label": "Other replies to 1.e4",
+      "family_order": 4,
+      "opening_order": 5
+    },
+    {
+      "slug": "alekhine-defense",
+      "name": "Alekhine Defense",
+      "aliases": [
+        "Alekhine's Defence"
+      ],
+      "group": "Semi-Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "B02"
+      ],
+      "eco_family": "B02-B05",
+      "moves_san": [
+        "e4",
+        "Nf6"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "g8f6"
+      ],
+      "fen": "rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2",
+      "position_key": "rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Alekhine Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Alekhines-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "other-e4",
+      "family_label": "Other replies to 1.e4",
+      "family_order": 4,
+      "opening_order": 1
+    },
+    {
+      "slug": "vienna-game",
+      "name": "Vienna Game",
+      "aliases": [
+        "Vienna Opening"
+      ],
+      "group": "Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "C25"
+      ],
+      "eco_family": "C25-C29",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nc3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "b1c3"
+      ],
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq - 1 2",
+      "position_key": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR b KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Vienna Game"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Vienna-Game",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "e4-e5",
+      "family_label": "1...e5 · Open games",
+      "family_order": 0,
+      "opening_order": 3
+    },
+    {
+      "slug": "ponziani-opening",
+      "name": "Ponziani Opening",
+      "aliases": [
+        "Ponziani Game"
+      ],
+      "group": "Open Games",
+      "parents": [
+        "King's Pawn Game"
+      ],
+      "eco": [
+        "C44"
+      ],
+      "eco_family": "C44",
+      "moves_san": [
+        "e4",
+        "e5",
+        "Nf3",
+        "Nc6",
+        "c3"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "b8c6",
+        "c2c3"
+      ],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2P2N2/PP1P1PPP/RNBQKB1R b KQkq - 0 3",
+      "position_key": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/2P2N2/PP1P1PPP/RNBQKB1R b KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Ponziani Opening"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Ponziani-Opening",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "1.e4",
+      "section_label": "1.e4 openings",
+      "section_order": 0,
+      "family": "e4-e5",
+      "family_label": "1...e5 · Open games",
+      "family_order": 0,
+      "opening_order": 6
+    },
+    {
+      "slug": "kings-indian-defense",
+      "name": "King's Indian Defense",
+      "aliases": [
+        "King's Indian Defence"
+      ],
+      "group": "Indian Defenses",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "E60"
+      ],
+      "eco_family": "E60-E99",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "g6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "g7g6"
+      ],
+      "fen": "rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Indian Defense: West Indian Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Kings-Indian-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-d4",
+      "section_label": "Other 1.d4 openings",
+      "section_order": 2,
+      "family": "indian-defenses",
+      "family_label": "Indian defenses",
+      "family_order": 0,
+      "opening_order": 0
+    },
+    {
+      "slug": "grunfeld-defense",
+      "name": "Grünfeld Defense",
+      "aliases": [
+        "Grunfeld Defense",
+        "Grünfeld Defence"
+      ],
+      "group": "Indian Defenses",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "D80"
+      ],
+      "eco_family": "D70-D99",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "g6",
+        "Nc3",
+        "d5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "g7g6",
+        "b1c3",
+        "d7d5"
+      ],
+      "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
+      "position_key": "rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Grünfeld Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Grunfeld-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-d4",
+      "section_label": "Other 1.d4 openings",
+      "section_order": 2,
+      "family": "indian-defenses",
+      "family_label": "Indian defenses",
+      "family_order": 0,
+      "opening_order": 1
+    },
+    {
+      "slug": "benoni-defense",
+      "name": "Benoni Defense",
+      "aliases": [
+        "Benoni Defence"
+      ],
+      "group": "Indian Defenses",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "A56"
+      ],
+      "eco_family": "A56-A79",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "c5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "c7c5"
+      ],
+      "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkb1r/pp1ppppp/5n2/2p5/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Benoni Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Benoni-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-d4",
+      "section_label": "Other 1.d4 openings",
+      "section_order": 2,
+      "family": "indian-defenses",
+      "family_label": "Indian defenses",
+      "family_order": 0,
+      "opening_order": 5
+    },
+    {
+      "slug": "budapest-gambit",
+      "name": "Budapest Gambit",
+      "aliases": [
+        "Budapest Defense"
+      ],
+      "group": "Indian Defenses",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "A51"
+      ],
+      "eco_family": "A51-A52",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "e5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "e7e5"
+      ],
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkb1r/pppp1ppp/5n2/4p3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Indian Defense: Budapest Gambit"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Budapest-Gambit",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-d4",
+      "section_label": "Other 1.d4 openings",
+      "section_order": 2,
+      "family": "indian-defenses",
+      "family_label": "Indian defenses",
+      "family_order": 0,
+      "opening_order": 6
+    },
+    {
+      "slug": "queens-indian-defense",
+      "name": "Queen's Indian Defense",
+      "aliases": [
+        "Queen's Indian Defence"
+      ],
+      "group": "Indian Defenses",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "E12"
+      ],
+      "eco_family": "E12-E19",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "e6",
+        "Nf3",
+        "b6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "e7e6",
+        "g1f3",
+        "b7b6"
+      ],
+      "fen": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 0 4",
+      "position_key": "rnbqkb1r/p1pp1ppp/1p2pn2/8/2PP4/5N2/PP2PPPP/RNBQKB1R w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Queen's Indian Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Queens-Indian-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-d4",
+      "section_label": "Other 1.d4 openings",
+      "section_order": 2,
+      "family": "indian-defenses",
+      "family_label": "Indian defenses",
+      "family_order": 0,
+      "opening_order": 3
+    },
+    {
+      "slug": "queens-gambit",
+      "name": "Queen's Gambit",
+      "aliases": [
+        "Aleppo Gambit"
+      ],
+      "group": "Closed Games",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "D06"
+      ],
+      "eco_family": "D06-D69",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4"
+      ],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2",
+      "position_key": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -",
+      "alternate_move_orders": [
+        {
+          "san": "d4 d5 c4",
+          "uci": [
+            "d2d4",
+            "d7d5",
+            "c2c4"
+          ],
+          "position_key": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq -",
+          "same_defining_position": true
+        }
+      ],
+      "position_names": [
+        "Queen's Gambit"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Queens-Gambit",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": true,
+      "catalogue_role": "umbrella"
+    },
+    {
+      "slug": "queens-gambit-declined",
+      "name": "Queen's Gambit Declined",
+      "aliases": [
+        "QGD"
+      ],
+      "group": "Closed Games",
+      "parents": [
+        "Queen's Gambit"
+      ],
+      "eco": [
+        "D30"
+      ],
+      "eco_family": "D30-D69",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "e6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "e7e6"
+      ],
+      "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkbnr/ppp2ppp/4p3/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Queen's Gambit Declined"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Queens-Gambit-Declined",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "queens-gambit-complex",
+      "section_label": "Queen's Gambit complex",
+      "section_order": 1,
+      "family": "qgd-family",
+      "family_label": "Queen's Gambit Declined",
+      "family_order": 1,
+      "opening_order": 0
+    },
+    {
+      "slug": "queens-gambit-accepted",
+      "name": "Queen's Gambit Accepted",
+      "aliases": [
+        "QGA"
+      ],
+      "group": "Closed Games",
+      "parents": [
+        "Queen's Gambit"
+      ],
+      "eco": [
+        "D20"
+      ],
+      "eco_family": "D20-D29",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "dxc4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "d5c4"
+      ],
+      "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Queen's Gambit Accepted"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Queens-Gambit-Accepted",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "queens-gambit-complex",
+      "section_label": "Queen's Gambit complex",
+      "section_order": 1,
+      "family": "qga-and-sidelines",
+      "family_label": "Queen's Gambit Accepted + other replies",
+      "family_order": 2,
+      "opening_order": 0
+    },
+    {
+      "slug": "slav-defense",
+      "name": "Slav Defense",
+      "aliases": [
+        "Slav Defence"
+      ],
+      "group": "Closed Games",
+      "parents": [
+        "Queen's Gambit"
+      ],
+      "eco": [
+        "D10"
+      ],
+      "eco_family": "D10-D19",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "c6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "c7c6"
+      ],
+      "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Slav Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Slav-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "queens-gambit-complex",
+      "section_label": "Queen's Gambit complex",
+      "section_order": 1,
+      "family": "slav-family",
+      "family_label": "Slav families",
+      "family_order": 0,
+      "opening_order": 0
+    },
+    {
+      "slug": "semi-slav-defense",
+      "name": "Semi-Slav Defense",
+      "aliases": [
+        "Semi-Slav Defence"
+      ],
+      "group": "Closed Games",
+      "parents": [
+        "Queen's Gambit",
+        "Slav Defense"
+      ],
+      "eco": [
+        "D43"
+      ],
+      "eco_family": "D43-D49",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "c6",
+        "Nf3",
+        "Nf6",
+        "Nc3",
+        "e6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "c7c6",
+        "g1f3",
+        "g8f6",
+        "b1c3",
+        "e7e6"
+      ],
+      "fen": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 0 5",
+      "position_key": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Semi-Slav Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Semi-Slav-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "queens-gambit-complex",
+      "section_label": "Queen's Gambit complex",
+      "section_order": 1,
+      "family": "slav-family",
+      "family_label": "Slav families",
+      "family_order": 0,
+      "opening_order": 1
+    },
+    {
+      "slug": "colle-system",
+      "name": "Colle System",
+      "aliases": [
+        "Colle Opening"
+      ],
+      "group": "Closed Games",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "D04"
+      ],
+      "eco_family": "D04-D05",
+      "moves_san": [
+        "d4",
+        "d5",
+        "Nf3",
+        "Nf6",
+        "e3"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "g1f3",
+        "g8f6",
+        "e2e3"
+      ],
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq - 0 3",
+      "position_key": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq -",
+      "alternate_move_orders": [
+        {
+          "san": "d4 d5 e3 Nf6 Nf3",
+          "uci": [
+            "d2d4",
+            "d7d5",
+            "e2e3",
+            "g8f6",
+            "g1f3"
+          ],
+          "position_key": "rnbqkb1r/ppp1pppp/5n2/3p4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq -",
+          "same_defining_position": true
+        }
+      ],
+      "position_names": [
+        "Queen's Pawn Game: Colle System"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Colle-System",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-d4",
+      "section_label": "Other 1.d4 openings",
+      "section_order": 2,
+      "family": "d4-systems",
+      "family_label": "Queen's-pawn systems",
+      "family_order": 1,
+      "opening_order": 1
+    },
+    {
+      "slug": "london-system",
+      "name": "London System",
+      "aliases": [],
+      "group": "Closed Games",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "D00"
+      ],
+      "eco_family": "D00-D02",
+      "moves_san": [
+        "d4",
+        "d5",
+        "Bf4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c1f4"
+      ],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P1B2/8/PPP1PPPP/RN1QKBNR b KQkq - 1 2",
+      "position_key": "rnbqkbnr/ppp1pppp/8/3p4/3P1B2/8/PPP1PPPP/RN1QKBNR b KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Queen's Pawn Game: Accelerated London System"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/London-System",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-d4",
+      "section_label": "Other 1.d4 openings",
+      "section_order": 2,
+      "family": "d4-systems",
+      "family_label": "Queen's-pawn systems",
+      "family_order": 1,
+      "opening_order": 0
+    },
+    {
+      "slug": "chigorin-defense",
+      "name": "Chigorin Defense",
+      "aliases": [
+        "Chigorin Defence"
+      ],
+      "group": "Closed Games",
+      "parents": [
+        "Queen's Gambit"
+      ],
+      "eco": [
+        "D07"
+      ],
+      "eco_family": "D07",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "Nc6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "b8c6"
+      ],
+      "fen": "r1bqkbnr/ppp1pppp/2n5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+      "position_key": "r1bqkbnr/ppp1pppp/2n5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Queen's Gambit Declined: Chigorin Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Chigorin-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "queens-gambit-complex",
+      "section_label": "Queen's Gambit complex",
+      "section_order": 1,
+      "family": "qga-and-sidelines",
+      "family_label": "Queen's Gambit Accepted + other replies",
+      "family_order": 2,
+      "opening_order": 1
+    },
+    {
+      "slug": "marshall-defense",
+      "name": "Marshall Defense",
+      "aliases": [
+        "Marshall Defence"
+      ],
+      "group": "Closed Games",
+      "parents": [
+        "Queen's Gambit"
+      ],
+      "eco": [
+        "D06"
+      ],
+      "eco_family": "D06",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "Nf6"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "g8f6"
+      ],
+      "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+      "position_key": "rnbqkb1r/ppp1pppp/5n2/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Queen's Gambit Declined: Marshall Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Marshall-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "queens-gambit-complex",
+      "section_label": "Queen's Gambit complex",
+      "section_order": 1,
+      "family": "qga-and-sidelines",
+      "family_label": "Queen's Gambit Accepted + other replies",
+      "family_order": 2,
+      "opening_order": 2
+    },
+    {
+      "slug": "albin-countergambit",
+      "name": "Albin Countergambit",
+      "aliases": [
+        "Albin Counter-Gambit"
+      ],
+      "group": "Closed Games",
+      "parents": [
+        "Queen's Gambit"
+      ],
+      "eco": [
+        "D08"
+      ],
+      "eco_family": "D08-D09",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "e5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "e7e5"
+      ],
+      "fen": "rnbqkbnr/ppp2ppp/8/3pp3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
+      "position_key": "rnbqkbnr/ppp2ppp/8/3pp3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Queen's Gambit Declined: Albin Countergambit"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Albin-Counter-Gambit",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "queens-gambit-complex",
+      "section_label": "Queen's Gambit complex",
+      "section_order": 1,
+      "family": "qga-and-sidelines",
+      "family_label": "Queen's Gambit Accepted + other replies",
+      "family_order": 2,
+      "opening_order": 3
+    },
+    {
+      "slug": "baltic-defense",
+      "name": "Baltic Defense",
+      "aliases": [
+        "Grau Defense",
+        "Sahović Defense"
+      ],
+      "group": "Closed Games",
+      "parents": [
+        "Queen's Gambit"
+      ],
+      "eco": [
+        "D06"
+      ],
+      "eco_family": "D06",
+      "moves_san": [
+        "d4",
+        "d5",
+        "c4",
+        "Bf5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "d7d5",
+        "c2c4",
+        "c8f5"
+      ],
+      "fen": "rn1qkbnr/ppp1pppp/8/3p1b2/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 1 3",
+      "position_key": "rn1qkbnr/ppp1pppp/8/3p1b2/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Queen's Gambit Declined: Baltic Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Baltic-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "queens-gambit-complex",
+      "section_label": "Queen's Gambit complex",
+      "section_order": 1,
+      "family": "qga-and-sidelines",
+      "family_label": "Queen's Gambit Accepted + other replies",
+      "family_order": 2,
+      "opening_order": 4
+    },
+    {
+      "slug": "nimzo-indian-defense",
+      "name": "Nimzo-Indian Defense",
+      "aliases": [
+        "Nimzo-Indian Defence"
+      ],
+      "group": "Indian Defenses",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "E20"
+      ],
+      "eco_family": "E20-E59",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "e6",
+        "Nc3",
+        "Bb4"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "e7e6",
+        "b1c3",
+        "f8b4"
+      ],
+      "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
+      "position_key": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Nimzo-Indian Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Nimzo-Indian-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-d4",
+      "section_label": "Other 1.d4 openings",
+      "section_order": 2,
+      "family": "indian-defenses",
+      "family_label": "Indian defenses",
+      "family_order": 0,
+      "opening_order": 2
+    },
+    {
+      "slug": "bogo-indian-defense",
+      "name": "Bogo-Indian Defense",
+      "aliases": [
+        "Bogo-Indian Defence"
+      ],
+      "group": "Indian Defenses",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "E11"
+      ],
+      "eco_family": "E11",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "e6",
+        "Nf3",
+        "Bb4+"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "e7e6",
+        "g1f3",
+        "f8b4"
+      ],
+      "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP2PPPP/RNBQKB1R w KQkq - 2 4",
+      "position_key": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/5N2/PP2PPPP/RNBQKB1R w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Bogo-Indian Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Bogo-Indian-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-d4",
+      "section_label": "Other 1.d4 openings",
+      "section_order": 2,
+      "family": "indian-defenses",
+      "family_label": "Indian defenses",
+      "family_order": 0,
+      "opening_order": 4
+    },
+    {
+      "slug": "trompowsky-attack",
+      "name": "Trompowsky Attack",
+      "aliases": [
+        "Trompowsky Opening"
+      ],
+      "group": "Indian Defenses",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "A45"
+      ],
+      "eco_family": "A45",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "Bg5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c1g5"
+      ],
+      "fen": "rnbqkb1r/pppppppp/5n2/6B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq - 2 2",
+      "position_key": "rnbqkb1r/pppppppp/5n2/6B1/3P4/8/PPP1PPPP/RN1QKBNR b KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Trompowsky Attack"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Trompowsky-Attack",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-d4",
+      "section_label": "Other 1.d4 openings",
+      "section_order": 2,
+      "family": "indian-defenses",
+      "family_label": "Indian defenses",
+      "family_order": 0,
+      "opening_order": 8
+    },
+    {
+      "slug": "dutch-defense",
+      "name": "Dutch Defense",
+      "aliases": [
+        "Dutch Defence"
+      ],
+      "group": "Flank and Other Openings",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "A80"
+      ],
+      "eco_family": "A80-A99",
+      "moves_san": [
+        "d4",
+        "f5"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "f7f5"
+      ],
+      "fen": "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Dutch Defense"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Dutch-Defense",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "bird-dutch",
+      "section_label": "Bird & Dutch",
+      "section_order": 4,
+      "family": "bird-dutch",
+      "family_label": "Related f-pawn openings",
+      "family_order": 0,
+      "opening_order": 1
+    },
+    {
+      "slug": "catalan-opening",
+      "name": "Catalan Opening",
+      "aliases": [
+        "Catalan"
+      ],
+      "group": "Indian Defenses",
+      "parents": [
+        "Queen's Pawn Game"
+      ],
+      "eco": [
+        "E00"
+      ],
+      "eco_family": "E00-E09",
+      "moves_san": [
+        "d4",
+        "Nf6",
+        "c4",
+        "e6",
+        "g3"
+      ],
+      "moves_uci": [
+        "d2d4",
+        "g8f6",
+        "c2c4",
+        "e7e6",
+        "g2g3"
+      ],
+      "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq - 0 3",
+      "position_key": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq -",
+      "alternate_move_orders": [
+        {
+          "san": "d4 Nf6 c4 e6 g3",
+          "uci": [
+            "d2d4",
+            "g8f6",
+            "c2c4",
+            "e7e6",
+            "g2g3"
+          ],
+          "position_key": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/6P1/PP2PP1P/RNBQKBNR b KQkq -",
+          "same_defining_position": true
+        },
+        {
+          "san": "Nf3 Nf6 g3 e6 Bg2 d5 d4 Be7 O-O O-O c4",
+          "uci": [
+            "g1f3",
+            "g8f6",
+            "g2g3",
+            "e7e6",
+            "f1g2",
+            "d7d5",
+            "d2d4",
+            "f8e7",
+            "e1g1",
+            "e8g8",
+            "c2c4"
+          ],
+          "position_key": "rnbq1rk1/ppp1bppp/4pn2/3p4/2PP4/5NP1/PP2PPBP/RNBQ1RK1 b - -",
+          "same_defining_position": false
+        }
+      ],
+      "position_names": [
+        "Catalan Opening"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Catalan-Opening",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-d4",
+      "section_label": "Other 1.d4 openings",
+      "section_order": 2,
+      "family": "indian-defenses",
+      "family_label": "Indian defenses",
+      "family_order": 0,
+      "opening_order": 7
+    },
+    {
+      "slug": "english-opening",
+      "name": "English Opening",
+      "aliases": [],
+      "group": "Flank and Other Openings",
+      "parents": [
+        "Flank Opening"
+      ],
+      "eco": [
+        "A10"
+      ],
+      "eco_family": "A10-A39",
+      "moves_san": [
+        "c4"
+      ],
+      "moves_uci": [
+        "c2c4"
+      ],
+      "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "English Opening"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/English-Opening",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "umbrella"
+    },
+    {
+      "slug": "english-reversed-sicilian",
+      "name": "English: Reversed Sicilian",
+      "aliases": [
+        "King's English"
+      ],
+      "group": "Flank and Other Openings",
+      "parents": [
+        "English Opening"
+      ],
+      "eco": [
+        "A20"
+      ],
+      "eco_family": "A20-A29",
+      "moves_san": [
+        "c4",
+        "e5"
+      ],
+      "moves_uci": [
+        "c2c4",
+        "e7e5"
+      ],
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/pppp1ppp/8/4p3/2P5/8/PP1PPPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "English Opening: King's English Variation"
+      ],
+      "source_url": "https://www.365chess.com/eco/A20-A29_English_opening",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "english",
+      "section_label": "English Opening · 1.c4",
+      "section_order": 3,
+      "family": "english-main",
+      "family_label": "English families",
+      "family_order": 0,
+      "opening_order": 0
+    },
+    {
+      "slug": "english-symmetrical",
+      "name": "English: Symmetrical",
+      "aliases": [
+        "Symmetrical English"
+      ],
+      "group": "Flank and Other Openings",
+      "parents": [
+        "English Opening"
+      ],
+      "eco": [
+        "A30"
+      ],
+      "eco_family": "A30-A39",
+      "moves_san": [
+        "c4",
+        "c5"
+      ],
+      "moves_uci": [
+        "c2c4",
+        "c7c5"
+      ],
+      "fen": "rnbqkbnr/pp1ppppp/8/2p5/2P5/8/PP1PPPPP/RNBQKBNR w KQkq - 0 2",
+      "position_key": "rnbqkbnr/pp1ppppp/8/2p5/2P5/8/PP1PPPPP/RNBQKBNR w KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "English Opening: Symmetrical Variation"
+      ],
+      "source_url": "https://www.365chess.com/eco/A30-A39_English_symmetrical",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "english",
+      "section_label": "English Opening · 1.c4",
+      "section_order": 3,
+      "family": "english-main",
+      "family_label": "English families",
+      "family_order": 0,
+      "opening_order": 1
+    },
+    {
+      "slug": "english-neo-catalan",
+      "name": "English: Neo-Catalan",
+      "aliases": [
+        "Neo-Catalan Opening"
+      ],
+      "group": "Flank and Other Openings",
+      "parents": [
+        "English Opening"
+      ],
+      "eco": [
+        "A13-A14"
+      ],
+      "eco_family": "A13-A14",
+      "moves_san": [
+        "c4",
+        "Nf6",
+        "Nf3",
+        "e6",
+        "g3",
+        "d5",
+        "Bg2",
+        "Be7",
+        "O-O",
+        "O-O"
+      ],
+      "moves_uci": [
+        "c2c4",
+        "g8f6",
+        "g1f3",
+        "e7e6",
+        "g2g3",
+        "d7d5",
+        "f1g2",
+        "f8e7",
+        "e1g1",
+        "e8g8"
+      ],
+      "fen": "rnbq1rk1/ppp1bppp/4pn2/3p4/2P5/5NP1/PP1PPPBP/RNBQ1RK1 w - - 4 6",
+      "position_key": "rnbq1rk1/ppp1bppp/4pn2/3p4/2P5/5NP1/PP1PPPBP/RNBQ1RK1 w - -",
+      "alternate_move_orders": [],
+      "position_names": [],
+      "source_url": "https://www.365chess.com/eco/A13-A14_English_Neo-Catalan",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "english",
+      "section_label": "English Opening · 1.c4",
+      "section_order": 3,
+      "family": "english-main",
+      "family_label": "English families",
+      "family_order": 0,
+      "opening_order": 2
+    },
+    {
+      "slug": "reti-opening",
+      "name": "Réti Opening",
+      "aliases": [
+        "Reti Opening"
+      ],
+      "group": "Flank and Other Openings",
+      "parents": [
+        "Flank Opening"
+      ],
+      "eco": [
+        "A04"
+      ],
+      "eco_family": "A04-A09",
+      "moves_san": [
+        "Nf3"
+      ],
+      "moves_uci": [
+        "g1f3"
+      ],
+      "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Zukertort Opening"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Reti-Opening",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-flank",
+      "section_label": "Other flank openings",
+      "section_order": 5,
+      "family": "other-flank",
+      "family_label": "Réti and other flank systems",
+      "family_order": 0,
+      "opening_order": 0
+    },
+    {
+      "slug": "kings-indian-attack",
+      "name": "King's Indian Attack",
+      "aliases": [
+        "KIA"
+      ],
+      "group": "Flank and Other Openings",
+      "parents": [
+        "Réti Opening"
+      ],
+      "eco": [
+        "A06"
+      ],
+      "eco_family": "A05-A08",
+      "moves_san": [
+        "Nf3",
+        "d5",
+        "d3"
+      ],
+      "moves_uci": [
+        "g1f3",
+        "d7d5",
+        "d2d3"
+      ],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/3P1N2/PPP1PPPP/RNBQKB1R b KQkq - 0 2",
+      "position_key": "rnbqkbnr/ppp1pppp/8/3p4/8/3P1N2/PPP1PPPP/RNBQKB1R b KQkq -",
+      "alternate_move_orders": [
+        {
+          "san": "e4 e6 d3 d5 Nd2 Nf6 Ngf3",
+          "uci": [
+            "e2e4",
+            "e7e6",
+            "d2d3",
+            "d7d5",
+            "b1d2",
+            "g8f6",
+            "g1f3"
+          ],
+          "position_key": "rnbqkb1r/ppp2ppp/4pn2/3p4/4P3/3P1N2/PPPN1PPP/R1BQKB1R b KQkq -",
+          "same_defining_position": false
+        }
+      ],
+      "position_names": [
+        "Zukertort Opening: Old Indian Attack"
+      ],
+      "source_url": "https://www.365chess.com/eco/A06_Reti_old_Indian_attack",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-flank",
+      "section_label": "Other flank openings",
+      "section_order": 5,
+      "family": "other-flank",
+      "family_label": "Réti and other flank systems",
+      "family_order": 0,
+      "opening_order": 1
+    },
+    {
+      "slug": "larsen-opening",
+      "name": "Larsen's Opening",
+      "aliases": [
+        "Nimzo-Larsen Attack",
+        "Nimzowitsch-Larsen Attack"
+      ],
+      "group": "Flank and Other Openings",
+      "parents": [
+        "Flank Opening"
+      ],
+      "eco": [
+        "A01"
+      ],
+      "eco_family": "A01",
+      "moves_san": [
+        "b3"
+      ],
+      "moves_uci": [
+        "b2b3"
+      ],
+      "fen": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq - 0 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/8/1P6/P1PPPPPP/RNBQKBNR b KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Nimzo-Larsen Attack"
+      ],
+      "source_url": "https://www.365chess.com/eco/A01_Nimzovich-Larsen_attack",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "other-flank",
+      "section_label": "Other flank openings",
+      "section_order": 5,
+      "family": "other-flank",
+      "family_label": "Réti and other flank systems",
+      "family_order": 0,
+      "opening_order": 2
+    },
+    {
+      "slug": "birds-opening",
+      "name": "Bird's Opening",
+      "aliases": [
+        "Bird Opening"
+      ],
+      "group": "Flank and Other Openings",
+      "parents": [
+        "Flank Opening"
+      ],
+      "eco": [
+        "A02"
+      ],
+      "eco_family": "A02-A03",
+      "moves_san": [
+        "f4"
+      ],
+      "moves_uci": [
+        "f2f4"
+      ],
+      "fen": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq - 0 1",
+      "position_key": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq -",
+      "alternate_move_orders": [],
+      "position_names": [
+        "Bird Opening"
+      ],
+      "source_url": "https://www.365chess.com/chess-openings/Birds-Opening",
+      "independent_reference_url": "https://github.com/lichess-org/chess-openings",
+      "source_correction": null,
+      "guide_available": false,
+      "catalogue_role": "opening",
+      "section": "bird-dutch",
+      "section_label": "Bird & Dutch",
+      "section_order": 4,
+      "family": "bird-dutch",
+      "family_label": "Related f-pawn openings",
+      "family_order": 0,
+      "opening_order": 0
+    }
+  ]
+}
