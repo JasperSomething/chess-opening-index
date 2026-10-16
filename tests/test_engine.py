@@ -12,7 +12,7 @@ class StockfishTests(unittest.TestCase):
             self.skipTest("Stockfish is not installed")
         board = chess.Board()
         result = analyse(board, executable, depth=8, multipv=2)
-        self.assertEqual(result["perspective"], "side_to_move")
+        self.assertEqual(result["perspective"], "white")
         self.assertEqual(result["perspective_color"], "white")
         self.assertEqual(result["position_key"], "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -")
         self.assertEqual(len(result["lines"]), 2)
@@ -30,16 +30,16 @@ class StockfishTests(unittest.TestCase):
         self.assertTrue(result["terminal"])
         self.assertEqual(result["lines"], [])
 
-    def test_black_to_move_uses_black_perspective(self):
+    def test_black_to_move_score_is_converted_to_white_perspective(self):
         executable = find_stockfish()
         if executable is None:
             self.skipTest("Stockfish is not installed")
-        board = chess.Board()
-        board.push_san("e4")
+        board = chess.Board("4k3/8/8/8/8/8/4Q3/4K3 b - - 0 1")
         result = analyse(board, executable, depth=8, multipv=1)
-        self.assertEqual(result["perspective"], "side_to_move")
-        self.assertEqual(result["perspective_color"], "black")
-        self.assertTrue(result["position_key"].endswith(" b KQkq -"))
+        self.assertEqual(result["perspective"], "white")
+        self.assertEqual(result["perspective_color"], "white")
+        self.assertTrue(result["position_key"].endswith(" b - -"))
+        self.assertGreater(result["lines"][0]["evaluation"]["value"], 0)
         self.assertIn(chess.Move.from_uci(result["lines"][0]["first_move_uci"]), board.legal_moves)
 
 

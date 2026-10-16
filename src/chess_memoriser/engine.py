@@ -18,6 +18,11 @@ class StockfishError(RuntimeError):
     pass
 
 
+def _white_pov_score(value: int, turn: chess.Color) -> int:
+    """Convert a UCI side-to-move score to a stable White point of view."""
+    return value if turn == chess.WHITE else -value
+
+
 def find_stockfish(configured: Path | None = None) -> Path | None:
     candidates = [
         configured,
@@ -55,8 +60,8 @@ def analyse(
             "engine": "Stockfish",
             "depth": depth,
             "multipv": multipv,
-            "perspective": "side_to_move",
-            "perspective_color": "white" if board.turn else "black",
+            "perspective": "white",
+            "perspective_color": "white",
             "position_key": " ".join(board.fen(en_passant="legal").split()[:4]),
             "terminal": True,
             "lines": [],
@@ -156,10 +161,13 @@ def analyse(
     lines = []
     for rank, info in sorted(raw_lines.items()):
         pv = info["pv"]
-        # UCI scores are reported from the side-to-move perspective. Keeping that
-        # convention makes a positive value mean the player whose turn is shown
-        # on the board is favoured.
-        evaluation = {"unit": info["unit"], "value": info["value"]}
+        # UCI scores are relative to the side to move. The interface uses the
+        # conventional fixed White point of view, so Black-to-move values need
+        # their sign reversed. This applies equally to centipawn and mate scores.
+        evaluation = {
+            "unit": info["unit"],
+            "value": _white_pov_score(info["value"], board.turn),
+        }
         lines.append(
             {
                 "rank": rank,
@@ -177,8 +185,8 @@ def analyse(
         "engine": name,
         "depth": max((line["depth"] or 0 for line in lines), default=depth),
         "multipv": multipv,
-        "perspective": "side_to_move",
-        "perspective_color": "white" if board.turn else "black",
+        "perspective": "white",
+        "perspective_color": "white",
         "position_key": " ".join(board.fen(en_passant="legal").split()[:4]),
         "terminal": False,
         "lines": lines,

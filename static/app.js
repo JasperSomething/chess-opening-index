@@ -569,7 +569,7 @@ function renderEngine(payload) {
       lines.append(button);
     }
   }
-  const color = (payload.perspective_color || data.position.turn).toUpperCase();
+  const color = (payload.perspective_color || "white").toUpperCase();
   $("#engine-perspective").textContent = `STOCKFISH · ${color} POV`;
   $("#engine-status").textContent = payload.engine.toUpperCase() + " · DEPTH " + payload.depth;
 }
@@ -582,7 +582,7 @@ function cancelEngine(status="WAITING") {
 }
 function clearEngineForPosition() {
   cancelEngine("WAITING FOR POSITION");
-  $("#engine-perspective").textContent = "STOCKFISH · SIDE TO MOVE";
+  $("#engine-perspective").textContent = "STOCKFISH · WHITE POV";
   $("#engine-lines").innerHTML = '<span class="empty">Updating board position…</span>';
 }
 function scheduleEngine() {
@@ -659,7 +659,7 @@ function applyPositionState(state, id) {
   selected = null;
   renderPosition();
   showStatisticsLoading();
-  $("#engine-perspective").textContent = `STOCKFISH · ${data.position.turn.toUpperCase()} POV`;
+  $("#engine-perspective").textContent = "STOCKFISH · WHITE POV";
   $("#engine-lines").innerHTML = `<span class="empty">Waiting to analyse ${data.position.turn} to move…</span>`;
   scheduleEngine();
   scheduleStatistics(id);
