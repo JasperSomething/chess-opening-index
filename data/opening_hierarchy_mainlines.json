@@ -1377,7 +1377,7 @@
       ]
     },
     "e4/Sicilian/e6 open/Scheveningen": {
-      "definition_position_key": "rnbqkbnr/pp3ppp/3pp3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -",
+      "definition_position_key": "rnbqkb1r/pp3ppp/3ppn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
       "moves_san": [
         "e4",
         "c5",
@@ -1386,6 +1386,8 @@
         "d4",
         "cxd4",
         "Nxd4",
+        "Nf6",
+        "Nc3",
         "d6"
       ],
       "moves_uci": [
@@ -1396,38 +1398,40 @@
         "d2d4",
         "c5d4",
         "f3d4",
+        "g8f6",
+        "b1c3",
         "d7d6"
       ],
-      "pgn": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 d6",
-      "fen": "rnbqkbnr/pp3ppp/3pp3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 5",
-      "position_key": "rnbqkbnr/pp3ppp/3pp3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq -",
+      "pgn": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6",
+      "fen": "rnbqkb1r/pp3ppp/3ppn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "position_key": "rnbqkb1r/pp3ppp/3ppn2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq -",
       "stop_reason": "wide_choice",
-      "continuation_games_at_stop": 422,
+      "continuation_games_at_stop": 17161,
       "choices_at_stop": [
         {
-          "san": "Nc3",
-          "games": 247,
-          "frequency": 0.5853080568720379
-        },
-        {
-          "san": "c4",
-          "games": 129,
-          "frequency": 0.3056872037914692
-        },
-        {
-          "san": "Bd3",
-          "games": 12,
-          "frequency": 0.02843601895734597
+          "san": "g4",
+          "games": 4921,
+          "frequency": 0.2867548511159023
         },
         {
           "san": "Be2",
-          "games": 8,
-          "frequency": 0.018957345971563982
+          "games": 4679,
+          "frequency": 0.2726531087931939
         },
         {
-          "san": "g3",
-          "games": 8,
-          "frequency": 0.018957345971563982
+          "san": "Be3",
+          "games": 3051,
+          "frequency": 0.17778684225860963
+        },
+        {
+          "san": "f4",
+          "games": 1466,
+          "frequency": 0.08542625721111824
+        },
+        {
+          "san": "Bc4",
+          "games": 1174,
+          "frequency": 0.06841093176388323
         }
       ]
     },

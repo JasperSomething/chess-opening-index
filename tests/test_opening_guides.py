@@ -59,6 +59,26 @@ class OpeningGuideTests(unittest.TestCase):
         jobava = next(node for node in nodes if node["label"] == "Jobava London")
         self.assertEqual(jobava["position_data"]["moves_san"][-1], "Bf4")
 
+    def test_e6_scheveningen_plays_knight_before_d6(self):
+        e4 = catalogue_response()["hierarchy_draft"]["roots"][0]
+        sicilian = next(node for node in e4["children"] if node["label"] == "Sicilian")
+        d6_open = next(node for node in sicilian["children"] if node["label"] == "d6 open")
+        e6_open = next(node for node in sicilian["children"] if node["label"] == "e6 open")
+        direct = next(node for node in d6_open["children"] if node["label"] == "Scheveningen")
+        anti_maroczy = next(node for node in e6_open["children"] if node["label"] == "Scheveningen")
+        self.assertEqual(
+            anti_maroczy["position_data"]["moves_san"],
+            ["e4", "c5", "Nf3", "e6", "d4", "cxd4", "Nxd4", "Nf6", "Nc3", "d6"],
+        )
+        self.assertLess(
+            anti_maroczy["position_data"]["moves_san"].index("Nf6"),
+            anti_maroczy["position_data"]["moves_san"].index("d6"),
+        )
+        self.assertEqual(
+            anti_maroczy["position_data"]["position_key"],
+            direct["position_data"]["position_key"],
+        )
+
     def test_hierarchy_mainlines_extend_definitions_and_explain_the_stop(self):
         hierarchy = catalogue_response()["hierarchy_draft"]
         nodes = []

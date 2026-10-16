@@ -75,7 +75,7 @@ HIERARCHY_LINES = {
     "e4/Sicilian/e6 open": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4",
     "e4/Sicilian/e6 open/Kan": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6",
     "e4/Sicilian/e6 open/Taimanov": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6",
-    "e4/Sicilian/e6 open/Scheveningen": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 d6",
+    "e4/Sicilian/e6 open/Scheveningen": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6",
     "e4/Sicilian/e6 open/4 Knights": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Nf6",
     "e4/Sicilian/Nc6 open": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4",
     "e4/Sicilian/Nc6 open/Rossolimo": "1. e4 c5 2. Nf3 Nc6 3. Bb5",
