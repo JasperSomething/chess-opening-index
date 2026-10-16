@@ -36,7 +36,10 @@ class OpeningGuideTests(unittest.TestCase):
         ])
         sicilian = e4["children"][1]
         self.assertEqual([item["label"] for item in sicilian["children"]], [
-            "d6 open", "e6 open", "Nc6 open", "Closed", "Alternatives"
+            "Najdorf", "Classical", "Dragon", "Scheveningen", "4 Knights",
+            "Moscow variation", "Kan", "Taimanov", "Rossolimo", "Sveshnikov",
+            "Closed", "Alapin", "O-Kelly Variation", "Nimsowitsch variation",
+            "Katalimov variation",
         ])
         qg = opening_data()["hierarchy_draft"]["roots"][1]["children"][1]
         self.assertEqual(qg["opening_slugs"], ["queens-gambit"])
@@ -51,7 +54,7 @@ class OpeningGuideTests(unittest.TestCase):
                 collect(child)
         for root in hierarchy["roots"]:
             collect(root)
-        self.assertEqual(len(nodes), 112)
+        self.assertEqual(len(nodes), 114)
         self.assertTrue(all(node["pgn"] for node in nodes))
         self.assertTrue(all(node["position_data"]["fen"] for node in nodes))
         najdorf = next(node for node in nodes if node["label"] == "Najdorf")
@@ -59,13 +62,25 @@ class OpeningGuideTests(unittest.TestCase):
         jobava = next(node for node in nodes if node["label"] == "Jobava London")
         self.assertEqual(jobava["position_data"]["moves_san"][-1], "Bf4")
 
-    def test_e6_scheveningen_plays_knight_before_d6(self):
+    def test_sicilian_families_are_merged_into_key_positions(self):
         e4 = catalogue_response()["hierarchy_draft"]["roots"][0]
         sicilian = next(node for node in e4["children"] if node["label"] == "Sicilian")
-        d6_open = next(node for node in sicilian["children"] if node["label"] == "d6 open")
-        e6_open = next(node for node in sicilian["children"] if node["label"] == "e6 open")
-        direct = next(node for node in d6_open["children"] if node["label"] == "Scheveningen")
-        anti_maroczy = next(node for node in e6_open["children"] if node["label"] == "Scheveningen")
+        families = {node["label"]: node for node in sicilian["children"]}
+        self.assertNotIn("Kupreichik variation", families)
+        self.assertTrue({"d6 open", "e6 open", "Nc6 open", "Alternatives"}.isdisjoint(families))
+
+        dragon = families["Dragon"]
+        self.assertEqual(dragon["child_role"], "key_positions")
+        self.assertEqual([node["label"] for node in dragon["children"]], [
+            "Dragon Sicilian", "Hyper Accelerated Dragon", "Accelerated Dragon"
+        ])
+
+        scheveningen = families["Scheveningen"]
+        self.assertEqual(scheveningen["child_role"], "key_positions")
+        self.assertEqual([node["label"] for node in scheveningen["children"]], [
+            "Nf6 before d6", "Direct d6 Move Order"
+        ])
+        anti_maroczy, direct = scheveningen["children"]
         self.assertEqual(
             anti_maroczy["position_data"]["moves_san"],
             ["e4", "c5", "Nf3", "e6", "d4", "cxd4", "Nxd4", "Nf6", "Nc3", "d6"],
@@ -78,6 +93,24 @@ class OpeningGuideTests(unittest.TestCase):
             anti_maroczy["position_data"]["position_key"],
             direct["position_data"]["position_key"],
         )
+
+        four_knights = families["4 Knights"]
+        self.assertEqual([node["label"] for node in four_knights["children"]], [
+            "e6 Move Order", "Nc6 Move Order"
+        ])
+        self.assertEqual(
+            four_knights["children"][0]["position_data"]["position_key"],
+            four_knights["children"][1]["position_data"]["position_key"],
+        )
+
+        sveshnikov = families["Sveshnikov"]
+        self.assertEqual([node["label"] for node in sveshnikov["children"]], [
+            "Sveshnikov Main Line", "Kalashnikov Sideline"
+        ])
+        alapin = families["Alapin"]
+        self.assertEqual([node["label"] for node in alapin["children"]], [
+            "Alapin", "Delayed Alapin Transposition"
+        ])
 
     def test_hierarchy_mainlines_extend_definitions_and_explain_the_stop(self):
         hierarchy = catalogue_response()["hierarchy_draft"]

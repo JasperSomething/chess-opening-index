@@ -1,4 +1,4 @@
-# Opening catalogue hierarchy — user draft 1
+# Opening catalogue hierarchy — user draft 2
 # Saved verbatim as the editable information architecture. Markers:
 # & major category; % lesser major category; = minor category; \ subcategory.
 
@@ -16,32 +16,34 @@
 \ King's Gambit
 \ Philidor
 % Sicilian
-= d6 open
-\ Najdorf
-\ Classical
-\ Dragon
-\ Scheveningen
-\ Kupreichik variation
-\ Delayed alapin transposition
-\ Moscow variation
-= e6 open
-\ Kan
-\ Taimanov
-\ Scheveningen
-\ 4 Knights
-= Nc6 open
-\ Rossolimo
-\ Sveshnikov
-\ Accelerated Dragon
-\ Transpositions (4 Knights, Classical)
-\ Kalashnikov
-= Closed
-= Alternatives
-\ O-Kelly Variation
-\ Nimsowitsch variation
-\ Katalimov variation
+= Najdorf
+= Classical
+\ Direct d6 Move Order
+\ Nc6 Transposition
+= Dragon
+\ Dragon Sicilian
 \ Hyper Accelerated Dragon
+\ Accelerated Dragon
+= Scheveningen
+\ Nf6 before d6
+\ Direct d6 Move Order
+= 4 Knights
+\ e6 Move Order
+\ Nc6 Move Order
+= Moscow variation
+= Kan
+= Taimanov
+= Rossolimo
+= Sveshnikov
+\ Sveshnikov Main Line
+\ Kalashnikov Sideline
+= Closed
+= Alapin
 \ Alapin
+\ Delayed Alapin Transposition
+= O-Kelly Variation
+= Nimsowitsch variation
+= Katalimov variation
 % French
 = Advance
 = Tarrasch

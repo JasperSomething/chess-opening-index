@@ -13,6 +13,15 @@ GUIDES_PATH = PROJECT_ROOT / "data" / "pilot_guides.json"
 HIERARCHY_PATH = PROJECT_ROOT / "data" / "opening_hierarchy_draft.txt"
 HIERARCHY_MAINLINES_PATH = PROJECT_ROOT / "data" / "opening_hierarchy_mainlines.json"
 
+KEY_POSITION_FAMILIES = {
+    "e4/Sicilian/Classical",
+    "e4/Sicilian/Dragon",
+    "e4/Sicilian/Scheveningen",
+    "e4/Sicilian/4 Knights",
+    "e4/Sicilian/Sveshnikov",
+    "e4/Sicilian/Alapin",
+}
+
 HIERARCHY_OPENINGS = {
     "Ruy Lopez": ["ruy-lopez"],
     "Italian": ["italian-game"],
@@ -64,32 +73,34 @@ HIERARCHY_LINES = {
     "e4/e5/4 Knights": "1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6",
     "e4/e5/Sidelines / Transpositions": "1. e4 e5",
     "e4/e5/Sidelines / Transpositions/Bishops opening": "1. e4 e5 2. Bc4",
-    "e4/Sicilian/d6 open": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4",
-    "e4/Sicilian/d6 open/Najdorf": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6",
-    "e4/Sicilian/d6 open/Classical": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6",
-    "e4/Sicilian/d6 open/Dragon": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6",
-    "e4/Sicilian/d6 open/Scheveningen": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6",
-    "e4/Sicilian/d6 open/Kupreichik variation": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 b5",
-    "e4/Sicilian/d6 open/Delayed alapin transposition": "1. e4 c5 2. Nf3 d6 3. c3 Nf6",
-    "e4/Sicilian/d6 open/Moscow variation": "1. e4 c5 2. Nf3 d6 3. Bb5+",
-    "e4/Sicilian/e6 open": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4",
-    "e4/Sicilian/e6 open/Kan": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6",
-    "e4/Sicilian/e6 open/Taimanov": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6",
-    "e4/Sicilian/e6 open/Scheveningen": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6",
-    "e4/Sicilian/e6 open/4 Knights": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Nf6",
-    "e4/Sicilian/Nc6 open": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4",
-    "e4/Sicilian/Nc6 open/Rossolimo": "1. e4 c5 2. Nf3 Nc6 3. Bb5",
-    "e4/Sicilian/Nc6 open/Sveshnikov": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5",
-    "e4/Sicilian/Nc6 open/Accelerated Dragon": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6",
-    "e4/Sicilian/Nc6 open/Transpositions (4 Knights, Classical)": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3",
-    "e4/Sicilian/Nc6 open/Kalashnikov": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5 5. Nb5 d6",
+    "e4/Sicilian/Najdorf": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6",
+    "e4/Sicilian/Classical": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6",
+    "e4/Sicilian/Classical/Direct d6 Move Order": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6",
+    "e4/Sicilian/Classical/Nc6 Transposition": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6",
+    "e4/Sicilian/Dragon": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6",
+    "e4/Sicilian/Dragon/Dragon Sicilian": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6",
+    "e4/Sicilian/Dragon/Hyper Accelerated Dragon": "1. e4 c5 2. Nf3 g6",
+    "e4/Sicilian/Dragon/Accelerated Dragon": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6",
+    "e4/Sicilian/Scheveningen": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6",
+    "e4/Sicilian/Scheveningen/Nf6 before d6": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6",
+    "e4/Sicilian/Scheveningen/Direct d6 Move Order": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6",
+    "e4/Sicilian/4 Knights": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Nf6",
+    "e4/Sicilian/4 Knights/e6 Move Order": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Nf6",
+    "e4/Sicilian/4 Knights/Nc6 Move Order": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6",
+    "e4/Sicilian/Moscow variation": "1. e4 c5 2. Nf3 d6 3. Bb5+",
+    "e4/Sicilian/Kan": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6",
+    "e4/Sicilian/Taimanov": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6",
+    "e4/Sicilian/Rossolimo": "1. e4 c5 2. Nf3 Nc6 3. Bb5",
+    "e4/Sicilian/Sveshnikov": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5",
+    "e4/Sicilian/Sveshnikov/Sveshnikov Main Line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5",
+    "e4/Sicilian/Sveshnikov/Kalashnikov Sideline": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5 5. Nb5 d6",
     "e4/Sicilian/Closed": "1. e4 c5 2. Nc3 Nc6 3. g3",
-    "e4/Sicilian/Alternatives": "1. e4 c5",
-    "e4/Sicilian/Alternatives/O-Kelly Variation": "1. e4 c5 2. Nf3 a6",
-    "e4/Sicilian/Alternatives/Nimsowitsch variation": "1. e4 c5 2. Nf3 Nf6",
-    "e4/Sicilian/Alternatives/Katalimov variation": "1. e4 c5 2. Nf3 b6",
-    "e4/Sicilian/Alternatives/Hyper Accelerated Dragon": "1. e4 c5 2. Nf3 g6",
-    "e4/Sicilian/Alternatives/Alapin": "1. e4 c5 2. c3",
+    "e4/Sicilian/Alapin": "1. e4 c5 2. c3",
+    "e4/Sicilian/Alapin/Alapin": "1. e4 c5 2. c3",
+    "e4/Sicilian/Alapin/Delayed Alapin Transposition": "1. e4 c5 2. Nf3 d6 3. c3 Nf6",
+    "e4/Sicilian/O-Kelly Variation": "1. e4 c5 2. Nf3 a6",
+    "e4/Sicilian/Nimsowitsch variation": "1. e4 c5 2. Nf3 Nf6",
+    "e4/Sicilian/Katalimov variation": "1. e4 c5 2. Nf3 b6",
     "e4/French/Advance": "1. e4 e6 2. d4 d5 3. e5",
     "e4/French/Tarrasch": "1. e4 e6 2. d4 d5 3. Nd2",
     "e4/French/Classical": "1. e4 e6 2. d4 d5 3. Nc3 Nf6",
@@ -147,11 +158,11 @@ def _pgn(sans: list[str] | tuple[str, ...]) -> str:
     return " ".join(parts) if parts else "Starting position"
 
 
-def _hierarchy_draft(catalogue_by_slug: dict[str, dict]) -> dict:
+def _hierarchy_draft(catalogue_by_slug: dict[str, dict], *, load_mainlines: bool = True) -> dict:
     valid_slugs = set(catalogue_by_slug)
     mainline_payload = (
         json.loads(HIERARCHY_MAINLINES_PATH.read_text())
-        if HIERARCHY_MAINLINES_PATH.is_file()
+        if load_mainlines and HIERARCHY_MAINLINES_PATH.is_file()
         else {"entries": {}, "method": {}, "source": None}
     )
     mainline_entries = mainline_payload.get("entries", {})
@@ -193,6 +204,7 @@ def _hierarchy_draft(catalogue_by_slug: dict[str, dict]) -> dict:
     def enrich(node: dict, path: tuple[str, ...], inherited_line: str) -> None:
         current_path = (*path, node["label"])
         path_key = "/".join(current_path)
+        node["child_role"] = "key_positions" if path_key in KEY_POSITION_FAMILIES else "categories"
         line = HIERARCHY_LINES.get(path_key)
         if line is None and node["opening_slugs"]:
             line = " ".join(catalogue_by_slug[node["opening_slugs"][0]]["moves_san"])
@@ -227,12 +239,19 @@ def _hierarchy_draft(catalogue_by_slug: dict[str, dict]) -> dict:
     for root in roots:
         enrich(root, (), "")
     return {
-        "name": "User opening hierarchy draft 1",
+        "name": "User opening hierarchy draft 2",
         "legend": {"major": "&", "lesser": "%", "minor": "=", "sub": "\\"},
         "mainline_source": mainline_payload.get("source"),
         "mainline_method": mainline_payload.get("method", {}),
         "roots": roots,
     }
+
+
+def hierarchy_draft_for_generation() -> dict:
+    """Build the hierarchy without consulting the generated mainline file."""
+    catalogue = _enrich_catalogue(json.loads(CATALOGUE_PATH.read_text()))
+    catalogue_by_slug = {entry["slug"]: entry for entry in catalogue["openings"]}
+    return _hierarchy_draft(catalogue_by_slug, load_mainlines=False)
 
 
 def _position(text: str, context: str) -> ParsedPosition:

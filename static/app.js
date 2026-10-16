@@ -341,7 +341,10 @@ function taxonomyCard(node, path, openingBySlug) {
     const browse = document.createElement("button");
     browse.type = "button";
     browse.className = "opening-map-browse";
-    browse.textContent = `BROWSE ${node.children.length} ${node.children.length === 1 ? "OPTION" : "OPTIONS"} →`;
+    const childLabel = node.child_role === "key_positions"
+      ? `KEY POSITION${node.children.length === 1 ? "" : "S"}`
+      : (node.children.length === 1 ? "OPTION" : "OPTIONS");
+    browse.textContent = `BROWSE ${node.children.length} ${childLabel} →`;
     browse.onclick = () => browseTaxonomy(path);
     actions.append(browse);
   } else {

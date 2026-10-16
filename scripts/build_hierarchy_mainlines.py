@@ -8,7 +8,7 @@ import chess
 
 from chess_memoriser.adapters.master import MasterDatabaseAdapter
 from chess_memoriser.config import DEFAULT_MASTER_DB, PROJECT_ROOT
-from chess_memoriser.opening_guides import catalogue_response
+from chess_memoriser.opening_guides import hierarchy_draft_for_generation
 from chess_memoriser.position import from_uci_sequence, position_key
 
 
@@ -37,7 +37,7 @@ def hierarchy_nodes(roots: list[dict]):
 
 
 def build(master_db: Path) -> dict:
-    hierarchy = catalogue_response()["hierarchy_draft"]
+    hierarchy = hierarchy_draft_for_generation()
     query_cache: dict[str, dict] = {}
     entries = {}
     with MasterDatabaseAdapter(master_db) as masters:
