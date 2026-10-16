@@ -66,6 +66,7 @@ class OpeningGuideTests(unittest.TestCase):
         e4 = catalogue_response()["hierarchy_draft"]["roots"][0]
         sicilian = next(node for node in e4["children"] if node["label"] == "Sicilian")
         families = {node["label"]: node for node in sicilian["children"]}
+        self.assertTrue(all(node["level"] == "family" for node in families.values()))
         self.assertNotIn("Kupreichik variation", families)
         self.assertTrue({"d6 open", "e6 open", "Nc6 open", "Alternatives"}.isdisjoint(families))
 

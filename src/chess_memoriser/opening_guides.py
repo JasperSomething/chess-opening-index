@@ -204,6 +204,8 @@ def _hierarchy_draft(catalogue_by_slug: dict[str, dict], *, load_mainlines: bool
     def enrich(node: dict, path: tuple[str, ...], inherited_line: str) -> None:
         current_path = (*path, node["label"])
         path_key = "/".join(current_path)
+        if len(current_path) == 3 and current_path[:2] == ("e4", "Sicilian"):
+            node["level"] = "family"
         node["child_role"] = "key_positions" if path_key in KEY_POSITION_FAMILIES else "categories"
         line = HIERARCHY_LINES.get(path_key)
         if line is None and node["opening_slugs"]:
