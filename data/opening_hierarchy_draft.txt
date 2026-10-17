@@ -35,8 +35,6 @@
 = Taimanov
 = Rossolimo
 = Sveshnikov
-\ Sveshnikov Main Line
-\ Kalashnikov Sideline
 = Closed
 = Alapin
 \ Alapin

@@ -54,7 +54,7 @@ class OpeningGuideTests(unittest.TestCase):
                 collect(child)
         for root in hierarchy["roots"]:
             collect(root)
-        self.assertEqual(len(nodes), 119)
+        self.assertEqual(len(nodes), 128)
         self.assertTrue(all(node["pgn"] for node in nodes))
         self.assertTrue(all(node["position_data"]["fen"] for node in nodes))
         najdorf = next(node for node in nodes if node["label"] == "Najdorf")
@@ -150,6 +150,20 @@ class OpeningGuideTests(unittest.TestCase):
             ["e4", "c5", "Nf3", "g6", "d4", "cxd4", "Nxd4", "Bg7"],
         )
 
+        najdorf = families["Najdorf"]
+        self.assertEqual(najdorf["child_role"], "key_positions")
+        self.assertEqual(
+            [node["label"] for node in najdorf["children"]],
+            [
+                "English Attack", "Opocensky Variation", "Adams Attack",
+                "Lipnitsky Attack", "Amsterdam Variation", "Zagreb Variation",
+            ],
+        )
+        self.assertEqual(
+            [node["position_data"]["moves_san"][-1] for node in najdorf["children"]],
+            ["Be3", "Be2", "h3", "Bc4", "f4", "g3"],
+        )
+
         scheveningen = families["Scheveningen"]
         self.assertEqual(scheveningen["child_role"], "key_positions")
         self.assertEqual([node["label"] for node in scheveningen["children"]], [
@@ -180,8 +194,18 @@ class OpeningGuideTests(unittest.TestCase):
 
         sveshnikov = families["Sveshnikov"]
         self.assertEqual([node["label"] for node in sveshnikov["children"]], [
-            "Sveshnikov Main Line", "Kalashnikov Sideline"
+            "Bg5 Mainline", "Bxf6 gxf6 Line", "Early 7.Nd5 Line",
+            "9.Nd5 Mainline", "Kalashnikov Sideline",
         ])
+        bg5, doubled, early_nd5, main_nd5, kalashnikov = sveshnikov["children"]
+        self.assertEqual(bg5["position_data"]["moves_san"][-4:], ["Bg5", "a6", "Na3", "b5"])
+        self.assertEqual(doubled["position_data"]["moves_san"][-2:], ["Bxf6", "gxf6"])
+        self.assertEqual(early_nd5["position_data"]["moves_san"][-4:], ["Nd5", "Nxd5", "exd5", "Nb8"])
+        self.assertEqual(main_nd5["position_data"]["moves_san"][-2:], ["Nd5", "Be7"])
+        self.assertEqual(
+            kalashnikov["position_data"]["moves_san"],
+            ["e4", "c5", "Nf3", "Nc6", "d4", "cxd4", "Nxd4", "e5", "Nb5", "d6"],
+        )
         alapin = families["Alapin"]
         self.assertEqual([node["label"] for node in alapin["children"]], [
             "Alapin", "Delayed Alapin Transposition"

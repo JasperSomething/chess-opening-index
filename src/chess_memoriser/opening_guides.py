@@ -15,6 +15,7 @@ HIERARCHY_MAINLINES_PATH = PROJECT_ROOT / "data" / "opening_hierarchy_mainlines.
 
 KEY_POSITION_FAMILIES = {
     "e4/Sicilian/Classical",
+    "e4/Sicilian/Najdorf",
     "e4/Sicilian/Dragon",
     "e4/Sicilian/Scheveningen",
     "e4/Sicilian/4 Knights",
@@ -26,6 +27,65 @@ KEY_POSITION_FAMILIES = {
 }
 
 HIERARCHY_POSITION_GROUPS = {
+    "e4/Sicilian/Najdorf": [
+        {
+            "label": "English Attack",
+            "line": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be3",
+            "sidelines": [],
+        },
+        {
+            "label": "Opocensky Variation",
+            "line": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be2",
+            "sidelines": [],
+        },
+        {
+            "label": "Adams Attack",
+            "line": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. h3",
+            "sidelines": [],
+        },
+        {
+            "label": "Lipnitsky Attack",
+            "line": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bc4",
+            "sidelines": [],
+        },
+        {
+            "label": "Amsterdam Variation",
+            "line": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. f4",
+            "sidelines": [],
+        },
+        {
+            "label": "Zagreb Variation",
+            "line": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. g3",
+            "sidelines": [],
+        },
+    ],
+    "e4/Sicilian/Sveshnikov": [
+        {
+            "label": "Bg5 Mainline",
+            "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5",
+            "sidelines": [],
+        },
+        {
+            "label": "Bxf6 gxf6 Line",
+            "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Bxf6 gxf6",
+            "sidelines": [],
+        },
+        {
+            "label": "Early 7.Nd5 Line",
+            "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Nd5 Nxd5 8. exd5 Nb8",
+            "sidelines": [],
+        },
+        {
+            "label": "9.Nd5 Mainline",
+            "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Nd5 Be7",
+            "sidelines": [],
+        },
+        {
+            "label": "Kalashnikov Sideline",
+            "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5 5. Nb5 d6",
+            "sidelines": [],
+        },
+    ],
     "e4/Sicilian/Dragon/Dragon Sicilian": [
         {
             "label": "Yugoslav Approach",
@@ -139,8 +199,6 @@ HIERARCHY_LINES = {
     "e4/Sicilian/Taimanov": "1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6",
     "e4/Sicilian/Rossolimo": "1. e4 c5 2. Nf3 Nc6 3. Bb5",
     "e4/Sicilian/Sveshnikov": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5",
-    "e4/Sicilian/Sveshnikov/Sveshnikov Main Line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5",
-    "e4/Sicilian/Sveshnikov/Kalashnikov Sideline": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5 5. Nb5 d6",
     "e4/Sicilian/Closed": "1. e4 c5 2. Nc3 Nc6 3. g3",
     "e4/Sicilian/Alapin": "1. e4 c5 2. c3",
     "e4/Sicilian/Alapin/Alapin": "1. e4 c5 2. c3",
