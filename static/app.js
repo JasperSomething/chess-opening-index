@@ -27,6 +27,7 @@ const OPENING_DISPLAY_NAMES = {
   "e4/Alternatives/Nimsowitsch Defense": "Nimzowitsch Defense",
   "e4/Sicilian/Nimsowitsch variation": "Sicilian Defense: Nimzowitsch Variation",
   "e4/Sicilian/Katalimov variation": "Sicilian Defense: Katalimov Variation",
+  "e4/Sicilian/Moscow variation": "Moscow Variation",
   "d4/Queen's Gambit/QG Sidelines": "Queen's Gambit",
   "d4/Sidelines": "Queen's Pawn Opening",
   "c4 (English)/Sidelines/ Alternatives": "English Opening",
@@ -354,6 +355,9 @@ function wikiMoveRows(items) {
   const result = [];
   const routeLabels = {
     "e2e4,c7c5|g1f3": "Open Sicilian routes",
+    "e2e4,c7c5,g1f3,d7d6|d2d4": "Open Sicilian setup",
+    "e2e4,c7c5,g1f3,e7e6|d2d4": "Open Sicilian setup",
+    "e2e4,c7c5,g1f3,b8c6|d2d4": "Open Sicilian setup",
   };
   for (const [uci, linked] of groups) {
     const exact = linked.filter(item => !item.isContainer && item.node.position_data.moves_uci.length === moves.length + 1);
@@ -361,32 +365,30 @@ function wikiMoveRows(items) {
     const routeLabel = POSITION_MOVE_DISPLAY_NAMES[moveKey] || routeLabels[moveKey];
     const labels = routeLabel ? [routeLabel] : exact.length
       ? exact.map(item => {
-          return commonOpeningLabel(item, true);
+          return commonOpeningLabel(item, false);
         }).filter((label, index, all) => all.indexOf(label) === index).slice(0, 2)
-      : [linked.length === 1 ? commonOpeningLabel(linked[0]) : `${linked.length} mapped theory routes`];
+      : [linked.length === 1 ? commonOpeningLabel(linked[0], false) : `${linked.length} mapped theory routes`];
+    const theoryLines = linked
+      .filter(item => !item.isContainer)
+      .map(item => item.node.position_data.moves_uci)
+      .filter(line => line.length > moves.length && sameMovePrefix(moves, line));
+    const candidates = theoryLines.length ? theoryLines : [[...moves, uci]];
+    let sharedLength = Math.min(...candidates.map(line => line.length));
+    for (let index = moves.length; index < sharedLength; index++) {
+      if (!candidates.every(line => line[index] === candidates[0][index])) {
+        sharedLength = index;
+        break;
+      }
+    }
     result.push({
       uci,
       san: legal.get(uci).san,
       labels,
+      targetUcis: candidates[0].slice(0, sharedLength),
       master: sourceMove(master, uci),
       lichess: sourceMove(lichess, uci),
       known: true,
     });
-  }
-  if (!result.length && data.distributions) {
-    const seen = new Set();
-    for (const move of [...(master?.moves || []), ...(lichess?.moves || [])]) {
-      if (!legal.has(move.uci) || seen.has(move.uci)) continue;
-      seen.add(move.uci);
-      result.push({
-        uci: move.uci,
-        san: legal.get(move.uci).san,
-        labels: ["Database continuation"],
-        master: sourceMove(master, move.uci),
-        lichess: sourceMove(lichess, move.uci),
-        known: false,
-      });
-    }
   }
   return result.sort((a, b) =>
     (b.master?.games || 0) - (a.master?.games || 0) ||
@@ -443,7 +445,7 @@ function renderOpeningWiki() {
       button.innerHTML = `<span class="wiki-rank">${index + 1}</span><strong>${escapeHtml(row.san)}</strong>
         <span class="wiki-move-name">${escapeHtml(row.labels.join(" · "))}</span>
         <span class="wiki-frequency"><i>OTB ${formatPercent(row.master?.frequency)}</i><i>Lichess ${formatPercent(row.lichess?.frequency)}</i></span>`;
-      button.onclick = () => play(row.uci);
+      button.onclick = () => loadLine(row.targetUcis);
       movesPanel.append(button);
     });
   }
