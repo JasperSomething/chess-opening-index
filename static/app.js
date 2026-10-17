@@ -19,6 +19,32 @@ let activeGuide = null;
 let guideRequestId = 0;
 let cataloguePath = [];
 
+const OPENING_DISPLAY_NAMES = {
+  "e4/e5/Sidelines / Transpositions": "Open Games",
+  "e4/French/Sidlines": "French Defense",
+  "e4/Caro-Kann/Sidelines": "Caro-Kann Defense",
+  "e4/Alternatives/Modern/ Pirc": "Pirc Defense",
+  "e4/Alternatives/Nimsowitsch Defense": "Nimzowitsch Defense",
+  "e4/Sicilian/Nimsowitsch variation": "Sicilian Defense: Nimzowitsch Variation",
+  "e4/Sicilian/Katalimov variation": "Sicilian Defense: Katalimov Variation",
+  "d4/Queen's Gambit/QG Sidelines": "Queen's Gambit",
+  "d4/Sidelines": "Queen's Pawn Opening",
+  "c4 (English)/Sidelines/ Alternatives": "English Opening",
+};
+
+const POSITION_MOVE_DISPLAY_NAMES = {
+  "e2e4|c7c5": "Sicilian Defense",
+  "e2e4|e7e5": "Open Game",
+  "e2e4|e7e6": "French Defense",
+  "e2e4|c7c6": "Caro-Kann Defense",
+  "e2e4|d7d6": "Pirc Defense",
+  "e2e4|g7g6": "Modern Defense",
+  "e2e4|d7d5": "Scandinavian Defense",
+  "e2e4|g8f6": "Alekhine's Defense",
+  "e2e4|b8c6": "Nimzowitsch Defense",
+  "e2e4|b7b6": "Owen's Defense",
+};
+
 function formatNumber(value) {
   return value === null || value === undefined ? "—" : new Intl.NumberFormat().format(value);
 }
@@ -174,7 +200,8 @@ function statusText(source, kind) {
 function renderSources() {
   const lichess = data.distributions.lichess_player_games;
   const master = data.distributions.installed_master_database;
-  $("#lichess-total").textContent = formatNumber(lichess.position_games);
+  const lichessTotal = $("#lichess-total");
+  if (lichessTotal) lichessTotal.textContent = formatNumber(lichess.position_games);
   const masterTotal = $("#master-total");
   if (masterTotal) masterTotal.textContent = formatNumber(master.position_games);
   statusText(lichess, "lichess"); statusText(master, "master");
@@ -193,7 +220,8 @@ function renderMoves() {
   const label = thresholdLabel();
   const masterSourceName = $("#master-source-name");
   if (masterSourceName) masterSourceName.textContent = `Lumbra OTB · both 2200+ · display ≥${label}`;
-  $("#lichess-source-name").textContent = `Lichess players · display ≥${label}`;
+  const lichessSourceName = $("#lichess-source-name");
+  if (lichessSourceName) lichessSourceName.textContent = `Lichess players · display ≥${label}`;
   $("#master-table-head").textContent = `OTB 2200+ · ≥${label}`;
   $("#lichess-table-head").textContent = `Lichess players · ≥${label}`;
   for (const move of lichess.moves) {
@@ -329,13 +357,13 @@ function wikiMoveRows(items) {
   };
   for (const [uci, linked] of groups) {
     const exact = linked.filter(item => !item.isContainer && item.node.position_data.moves_uci.length === moves.length + 1);
-    const routeLabel = routeLabels[`${moves.join(",")}|${uci}`];
+    const moveKey = `${moves.join(",")}|${uci}`;
+    const routeLabel = POSITION_MOVE_DISPLAY_NAMES[moveKey] || routeLabels[moveKey];
     const labels = routeLabel ? [routeLabel] : exact.length
       ? exact.map(item => {
-          const match = wikiArticleFor(item.pathKey);
-          return match.sourcePath === item.pathKey ? match.article?.title : item.node.label;
+          return commonOpeningLabel(item, true);
         }).filter((label, index, all) => all.indexOf(label) === index).slice(0, 2)
-      : [linked.length === 1 ? linked[0].node.label : `${linked.length} mapped theory routes`];
+      : [linked.length === 1 ? commonOpeningLabel(linked[0]) : `${linked.length} mapped theory routes`];
     result.push({
       uci,
       san: legal.get(uci).san,
@@ -366,14 +394,24 @@ function wikiMoveRows(items) {
     a.san.localeCompare(b.san)
   ).slice(0, 10);
 }
+function commonOpeningLabel(item, allowInherited=false) {
+  if (!item) return "Opening";
+  if (OPENING_DISPLAY_NAMES[item.pathKey]) return OPENING_DISPLAY_NAMES[item.pathKey];
+  const match = wikiArticleFor(item.pathKey);
+  if (match.article?.title && (allowInherited || match.sourcePath === item.pathKey)) return match.article.title;
+  return item.node.label
+    .replaceAll("Nimsowitsch", "Nimzowitsch")
+    .replaceAll("Sidlines", "Sidelines")
+    .replaceAll("Modern/ Pirc", "Pirc Defense");
+}
 function renderOpeningWiki() {
   if (!openingCatalogue || !data || !$("#wiki-article")) return;
   const items = wikiTaxonomy();
   const classification = currentWikiClassification(items);
   const pathKey = classification.primary?.pathKey || "";
   const {article, sourcePath} = wikiArticleFor(pathKey);
-  const title = classification.primary && sourcePath !== pathKey
-    ? classification.primary.node.label
+  const title = classification.primary
+    ? commonOpeningLabel(classification.primary, false)
     : article.title;
   const trail = pathKey ? pathKey.split("/") : ["Starting position"];
   const related = classification.matches
@@ -409,7 +447,7 @@ function renderOpeningWiki() {
       movesPanel.append(button);
     });
   }
-  $("#catalogue-count").textContent = classification.primary ? classification.primary.node.label : "Start";
+  $("#catalogue-count").textContent = classification.primary ? commonOpeningLabel(classification.primary, false) : "Start";
 }
 function taxonomyNodeAt(path) {
   let nodes = openingCatalogue.hierarchy_draft.roots;
@@ -817,7 +855,8 @@ function showStatisticsLoading() {
     status.textContent = "Loading";
     status.classList.remove("error");
   }
-  $("#lichess-total").textContent = "—";
+  const lichessTotal = $("#lichess-total");
+  if (lichessTotal) lichessTotal.textContent = "—";
   const masterTotal = $("#master-total");
   if (masterTotal) masterTotal.textContent = "—";
   $("#moves").innerHTML = '<tr><td colspan="7" class="missing">Loading statistics for this position…</td></tr>';
