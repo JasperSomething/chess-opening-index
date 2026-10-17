@@ -320,6 +320,139 @@ tbody tr:hover { background: #22292f; }
 .result-unavailable { color: #606a72; }
 .missing { color: #606a72; }
 footer { color: var(--muted); padding: 13px 2px; line-height: 1.55; }
+
+/* Palantir/Blueprint-inspired operations-console shell. The board renderer is intentionally untouched. */
+:root {
+  --bg: #091018;
+  --panel: #111b26;
+  --panel-2: #172432;
+  --line: #2c3f50;
+  --text: #e8eef4;
+  --muted: #91a3b3;
+  --accent: #4c9bd6;
+  --danger: #f07a6a;
+}
+body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(79, 119, 148, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 119, 148, .035) 1px, transparent 1px),
+    radial-gradient(circle at 72% 8%, #14273a80, transparent 34%);
+  background-size: 32px 32px, 32px 32px, auto;
+  color: var(--text);
+}
+header {
+  min-height: 76px;
+  padding: 15px 26px;
+  align-items: center;
+  border-bottom: 1px solid #31485c;
+  background: #0d1721e8;
+  box-shadow: 0 1px 0 #05090d, 0 12px 34px #02070c55;
+}
+.eyebrow, .label, label, th, .source-name, .status, footer { letter-spacing: .075em; }
+.eyebrow { color: #75b7e5; font-size: 10px; }
+h1 { margin-top: 5px; color: #f3f7fa; font-size: clamp(20px, 2vw, 28px); font-weight: 560; letter-spacing: -.025em; }
+.turn {
+  border: 1px solid #376485;
+  border-left: 3px solid #5aa9df;
+  padding: 8px 11px;
+  background: #132331;
+  color: #b9dcf3;
+  box-shadow: inset 0 0 0 1px #0a1219;
+  font-size: 10px;
+}
+main { grid-template-columns: minmax(420px, 570px) minmax(560px, 1fr); gap: 24px; padding: 24px 26px 38px; }
+.navigation { gap: 5px; margin: 10px 0; }
+button, select, input {
+  min-height: 34px;
+  border-color: #304658;
+  background: linear-gradient(#1a2a38, #152330);
+  color: #dce7ef;
+  box-shadow: inset 0 1px #ffffff08, 0 1px 1px #02070c66;
+  font-size: 10px;
+  letter-spacing: .035em;
+}
+button:hover:not(:disabled), select:hover, input:focus { border-color: #579ed0; background: #1c3142; }
+button:active:not(:disabled) { background: #102333; box-shadow: inset 0 1px 3px #02070caa; }
+.navigation button { background: #14212c; }
+.line-panel {
+  min-height: 67px;
+  border-color: #2e4354;
+  background: #101923e8;
+  box-shadow: inset 0 1px #ffffff05;
+}
+.ply { background: #1b2a36; color: #afc0cd; }
+.ply.current { background: #245d85; color: #f4f8fb; box-shadow: inset 2px 0 #75b9e8; }
+.view-tabs {
+  gap: 4px;
+  margin-bottom: 9px;
+  border: 1px solid #2d4354;
+  padding: 3px;
+  background: #0e1822;
+}
+.view-tabs button { min-height: 31px; flex: 1; border: 1px solid transparent; background: transparent; }
+.view-tabs button.active { border-color: #315978; border-bottom-color: #315978; background: #193047; color: #a9d6f4; box-shadow: inset 0 1px #ffffff09; }
+.opening-browser, .opening-guide, .source-card, .engine-panel, .table-wrap {
+  border-color: #304657;
+  background: #101a24ee;
+  box-shadow: 0 7px 22px #02070c4d, inset 0 1px #ffffff05;
+}
+.opening-wiki .opening-browser-head {
+  min-height: 61px;
+  padding: 11px 14px;
+  border-bottom-color: #304657;
+  background: linear-gradient(90deg, #142330, #101a24 68%);
+}
+.opening-browser-head strong { font-size: 17px; font-weight: 590; }
+.opening-browser-head .status { padding: 4px 7px; border: 1px solid #315978; background: #132b3c; }
+.wiki-layout { grid-template-columns: minmax(235px, .78fr) minmax(320px, 1.22fr); min-height: 390px; max-height: 525px; }
+.wiki-move-panel { padding: 11px; border-right-color: #304657; background: #0c151e; }
+.wiki-section-head { margin-bottom: 8px; }
+.wiki-section-head small { color: #60798c; }
+.wiki-moves { gap: 4px; }
+.wiki-move {
+  min-height: 52px;
+  border-color: #293f50;
+  background: #121f2a;
+  box-shadow: inset 0 1px #ffffff05;
+}
+.wiki-move.known { border-left: 3px solid #448fc2; }
+.wiki-rank { color: #557087; }
+.wiki-move strong { color: #8bc7ee; font-size: 13px; }
+.wiki-move-name { color: #d2dee6; font-size: 10px; }
+.wiki-frequency i { color: #7f96a7; }
+.wiki-article { padding: 20px 22px; background: linear-gradient(145deg, #152430, #0f1922 76%); }
+.wiki-trail { margin-bottom: 14px; }
+.wiki-trail span { color: #718a9d; }
+.wiki-kicker { color: #68addb; }
+.wiki-article h2 { margin-top: 5px; color: #f0f5f8; font-weight: 580; }
+.wiki-summary { color: #bdcbd5; }
+.wiki-article ul { border-left-color: #397aa6; background: #0d1922; color: #a9bbc8; }
+.wiki-related span { border-color: #2f4657; background: #13222d; }
+.wiki-sources { border-top-color: #2d4252; }
+.wiki-sources a { color: #77bce8; }
+.filters { gap: 7px; margin-bottom: 9px; padding: 10px; border: 1px solid #2e4354; background: #0e1822; }
+label { color: #7f96a8; }
+label select { margin-top: 5px; }
+.source-grid { gap: 7px; margin-bottom: 9px; }
+.source-card { position: relative; padding: 11px 13px; gap: 4px; overflow: hidden; }
+.source-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: #397da9; }
+.source-card strong { color: #eaf1f6; font-size: 22px; font-weight: 580; }
+.source-name { color: #7f96a8; font-size: 9px; }
+.status { color: #68b2e2; font-size: 9px; }
+.engine-panel { margin-bottom: 9px; padding: 11px 13px; }
+.engine-line { min-height: 31px; border-color: #2c4253; background: #13212c; }
+.engine-score { color: #75bae5; font-size: 13px; }
+.engine-pv { color: #b7c6d0; font-size: 11px; }
+.table-wrap { border-color: #304657; }
+th { background: #14222d; color: #8299aa; border-bottom-color: #385063; }
+tbody tr { border-bottom-color: #263b4a; }
+tbody tr:hover { background: #172a38; }
+td { color: #c4d1da; }
+.pct, .result-values span:first-child { color: #83bfe5; }
+.result-bar .draw { background: #60788b; }
+.notice { border-color: #7d493f; background: #281815; }
+footer { color: #6f8494; }
 @media (max-width: 980px) {
   header { padding: 24px; }
   main { grid-template-columns: 1fr; padding: 24px; }
