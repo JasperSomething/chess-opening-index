@@ -2718,7 +2718,7 @@
       ]
     },
     "e4/Sicilian/Sveshnikov/Bg5 Mainline": {
-      "definition_position_key": "r1bqkb1r/5ppp/p1np1n2/1p2p1B1/4P3/N1N5/PPP2PPP/R2QKB1R w KQkq -",
+      "definition_position_key": "r1bqk2r/5ppp/p1np1b2/1p1Np3/4P3/N7/PPP2PPP/R2QKB1R w KQkq -",
       "moves_san": [
         "e4",
         "c5",
@@ -2735,7 +2735,12 @@
         "Bg5",
         "a6",
         "Na3",
-        "b5"
+        "b5",
+        "Nd5",
+        "Be7",
+        "Bxf6",
+        "Bxf6",
+        "c3"
       ],
       "moves_uci": [
         "e2e4",
@@ -2753,35 +2758,207 @@
         "c1g5",
         "a7a6",
         "b5a3",
-        "b7b5"
+        "b7b5",
+        "c3d5",
+        "f8e7",
+        "g5f6",
+        "e7f6",
+        "c2c3"
       ],
-      "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5",
-      "fen": "r1bqkb1r/5ppp/p1np1n2/1p2p1B1/4P3/N1N5/PPP2PPP/R2QKB1R w KQkq - 0 9",
-      "position_key": "r1bqkb1r/5ppp/p1np1n2/1p2p1B1/4P3/N1N5/PPP2PPP/R2QKB1R w KQkq -",
+      "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Nd5 Be7 10. Bxf6 Bxf6 11. c3",
+      "fen": "r1bqk2r/5ppp/p1np1b2/1p1Np3/4P3/N1P5/PP3PPP/R2QKB1R b KQkq - 0 11",
+      "position_key": "r1bqk2r/5ppp/p1np1b2/1p1Np3/4P3/N1P5/PP3PPP/R2QKB1R b KQkq -",
       "stop_reason": "wide_choice",
-      "continuation_games_at_stop": 22777,
+      "continuation_games_at_stop": 8672,
       "choices_at_stop": [
         {
-          "san": "Nd5",
-          "games": 12522,
-          "frequency": 0.5497651139307196
+          "san": "O-O",
+          "games": 4269,
+          "frequency": 0.4922739852398524
         },
         {
-          "san": "Bxf6",
-          "games": 10037,
-          "frequency": 0.4406638275453308
+          "san": "Bg5",
+          "games": 2166,
+          "frequency": 0.24976937269372693
         },
         {
-          "san": "Nab1",
-          "games": 216,
-          "frequency": 0.009483250647583088
+          "san": "Ne7",
+          "games": 973,
+          "frequency": 0.11220018450184502
         },
         {
-          "san": "Naxb5",
-          "games": 2,
-          "frequency": 8.780787636651008e-05
+          "san": "Rb8",
+          "games": 935,
+          "frequency": 0.10781826568265683
+        },
+        {
+          "san": "Bb7",
+          "games": 313,
+          "frequency": 0.036093173431734314
         }
       ]
+    },
+    "e4/Sicilian/Sveshnikov/Bg5 Mainline/11.c4 Branch": {
+      "definition_position_key": "r1bqk2r/5ppp/p1np1b2/3Np3/1pP1P3/8/PPN2PPP/R2QKB1R b KQkq -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "Nc6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "e5",
+        "Ndb5",
+        "d6",
+        "Bg5",
+        "a6",
+        "Na3",
+        "b5",
+        "Nd5",
+        "Be7",
+        "Bxf6",
+        "Bxf6",
+        "c4",
+        "b4",
+        "Nc2"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "b8c6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "e7e5",
+        "d4b5",
+        "d7d6",
+        "c1g5",
+        "a7a6",
+        "b5a3",
+        "b7b5",
+        "c3d5",
+        "f8e7",
+        "g5f6",
+        "e7f6",
+        "c2c4",
+        "b5b4",
+        "a3c2"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Nd5 Be7 10. Bxf6 Bxf6 11. c4 b4 12. Nc2",
+      "fen": "r1bqk2r/5ppp/p1np1b2/3Np3/1pP1P3/8/PPN2PPP/R2QKB1R b KQkq - 1 12",
+      "position_key": "r1bqk2r/5ppp/p1np1b2/3Np3/1pP1P3/8/PPN2PPP/R2QKB1R b KQkq -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 2515,
+      "choices_at_stop": [
+        {
+          "san": "a5",
+          "games": 1211,
+          "frequency": 0.4815109343936382
+        },
+        {
+          "san": "O-O",
+          "games": 962,
+          "frequency": 0.38250497017892643
+        },
+        {
+          "san": "Rb8",
+          "games": 321,
+          "frequency": 0.1276341948310139
+        },
+        {
+          "san": "Bg5",
+          "games": 18,
+          "frequency": 0.007157057654075547
+        },
+        {
+          "san": "Bb7",
+          "games": 1,
+          "frequency": 0.00039761431411530816
+        }
+      ]
+    },
+    "e4/Sicilian/Sveshnikov/Bg5 Mainline/11.c3 Branch": {
+      "definition_position_key": "1rbq1r1k/5ppp/2np4/p2Np1b1/R1B1P3/1PP5/2N2PPP/3QK2R w K -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "Nc6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "e5",
+        "Ndb5",
+        "d6",
+        "Bg5",
+        "a6",
+        "Na3",
+        "b5",
+        "Nd5",
+        "Be7",
+        "Bxf6",
+        "Bxf6",
+        "c3",
+        "O-O",
+        "Nc2",
+        "Bg5",
+        "a4",
+        "bxa4",
+        "Rxa4",
+        "a5",
+        "Bc4",
+        "Rb8",
+        "b3",
+        "Kh8"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "b8c6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "e7e5",
+        "d4b5",
+        "d7d6",
+        "c1g5",
+        "a7a6",
+        "b5a3",
+        "b7b5",
+        "c3d5",
+        "f8e7",
+        "g5f6",
+        "e7f6",
+        "c2c3",
+        "e8g8",
+        "a3c2",
+        "f6g5",
+        "a2a4",
+        "b5a4",
+        "a1a4",
+        "a6a5",
+        "f1c4",
+        "a8b8",
+        "b2b3",
+        "g8h8"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Nd5 Be7 10. Bxf6 Bxf6 11. c3 O-O 12. Nc2 Bg5 13. a4 bxa4 14. Rxa4 a5 15. Bc4 Rb8 16. b3 Kh8",
+      "fen": "1rbq1r1k/5ppp/2np4/p2Np1b1/R1B1P3/1PP5/2N2PPP/3QK2R w K - 1 17",
+      "position_key": "1rbq1r1k/5ppp/2np4/p2Np1b1/R1B1P3/1PP5/2N2PPP/3QK2R w K -",
+      "stop_reason": "middlegame_depth",
+      "continuation_games_at_stop": null,
+      "choices_at_stop": []
     },
     "e4/Sicilian/Sveshnikov/Bxf6 gxf6 Line": {
       "definition_position_key": "r1bqkb1r/5p1p/p1np1p2/1p2p3/4P3/N1N5/PPP2PPP/R2QKB1R w KQkq -",
@@ -2928,87 +3105,6 @@
           "san": "g4",
           "games": 22,
           "frequency": 0.009598603839441536
-        }
-      ]
-    },
-    "e4/Sicilian/Sveshnikov/9.Nd5 Mainline": {
-      "definition_position_key": "r1bqk2r/4bppp/p1np1n2/1p1Np1B1/4P3/N7/PPP2PPP/R2QKB1R w KQkq -",
-      "moves_san": [
-        "e4",
-        "c5",
-        "Nf3",
-        "Nc6",
-        "d4",
-        "cxd4",
-        "Nxd4",
-        "Nf6",
-        "Nc3",
-        "e5",
-        "Ndb5",
-        "d6",
-        "Bg5",
-        "a6",
-        "Na3",
-        "b5",
-        "Nd5",
-        "Be7",
-        "Bxf6",
-        "Bxf6",
-        "c3"
-      ],
-      "moves_uci": [
-        "e2e4",
-        "c7c5",
-        "g1f3",
-        "b8c6",
-        "d2d4",
-        "c5d4",
-        "f3d4",
-        "g8f6",
-        "b1c3",
-        "e7e5",
-        "d4b5",
-        "d7d6",
-        "c1g5",
-        "a7a6",
-        "b5a3",
-        "b7b5",
-        "c3d5",
-        "f8e7",
-        "g5f6",
-        "e7f6",
-        "c2c3"
-      ],
-      "pgn": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Nd5 Be7 10. Bxf6 Bxf6 11. c3",
-      "fen": "r1bqk2r/5ppp/p1np1b2/1p1Np3/4P3/N1P5/PP3PPP/R2QKB1R b KQkq - 0 11",
-      "position_key": "r1bqk2r/5ppp/p1np1b2/1p1Np3/4P3/N1P5/PP3PPP/R2QKB1R b KQkq -",
-      "stop_reason": "wide_choice",
-      "continuation_games_at_stop": 8672,
-      "choices_at_stop": [
-        {
-          "san": "O-O",
-          "games": 4269,
-          "frequency": 0.4922739852398524
-        },
-        {
-          "san": "Bg5",
-          "games": 2166,
-          "frequency": 0.24976937269372693
-        },
-        {
-          "san": "Ne7",
-          "games": 973,
-          "frequency": 0.11220018450184502
-        },
-        {
-          "san": "Rb8",
-          "games": 935,
-          "frequency": 0.10781826568265683
-        },
-        {
-          "san": "Bb7",
-          "games": 313,
-          "frequency": 0.036093173431734314
         }
       ]
     },

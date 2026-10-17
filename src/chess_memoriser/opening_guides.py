@@ -20,6 +20,7 @@ KEY_POSITION_FAMILIES = {
     "e4/Sicilian/Scheveningen",
     "e4/Sicilian/4 Knights",
     "e4/Sicilian/Sveshnikov",
+    "e4/Sicilian/Sveshnikov/Bg5 Mainline",
     "e4/Sicilian/Alapin",
     "e4/Sicilian/Dragon/Dragon Sicilian",
     "e4/Sicilian/Dragon/Hyper Accelerated Dragon",
@@ -62,8 +63,20 @@ HIERARCHY_POSITION_GROUPS = {
     "e4/Sicilian/Sveshnikov": [
         {
             "label": "Bg5 Mainline",
-            "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5",
+            "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Nd5 Be7 10. Bxf6 Bxf6",
             "sidelines": [],
+            "children": [
+                {
+                    "label": "11.c4 Branch",
+                    "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Nd5 Be7 10. Bxf6 Bxf6 11. c4 b4 12. Nc2",
+                    "sidelines": [],
+                },
+                {
+                    "label": "11.c3 Branch",
+                    "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Nd5 Be7 10. Bxf6 Bxf6 11. c3 O-O 12. Nc2 Bg5 13. a4 bxa4 14. Rxa4 a5 15. Bc4 Rb8 16. b3 Kh8",
+                    "sidelines": [],
+                },
+            ],
         },
         {
             "label": "Bxf6 gxf6 Line",
@@ -73,11 +86,6 @@ HIERARCHY_POSITION_GROUPS = {
         {
             "label": "Early 7.Nd5 Line",
             "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Nd5 Nxd5 8. exd5 Nb8",
-            "sidelines": [],
-        },
-        {
-            "label": "9.Nd5 Mainline",
-            "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Nd5 Be7",
             "sidelines": [],
         },
         {
@@ -307,19 +315,22 @@ def _hierarchy_draft(catalogue_by_slug: dict[str, dict], *, load_mainlines: bool
                 raise GuideDataError(f"subcategory without minor: {label}")
             current_minor["children"].append(node)
 
+    def position_node(position: dict) -> dict:
+        return {
+            "label": position["label"],
+            "level": "position",
+            "opening_slugs": [],
+            "children": [position_node(child) for child in position.get("children", [])],
+            "_line": position["line"],
+            "_sidelines": position.get("sidelines", []),
+        }
+
     def inject_position_groups(nodes: list[dict], path: tuple[str, ...]) -> None:
         for node in nodes:
             current_path = (*path, node["label"])
             path_key = "/".join(current_path)
             for position in HIERARCHY_POSITION_GROUPS.get(path_key, []):
-                node["children"].append({
-                    "label": position["label"],
-                    "level": "position",
-                    "opening_slugs": [],
-                    "children": [],
-                    "_line": position["line"],
-                    "_sidelines": position.get("sidelines", []),
-                })
+                node["children"].append(position_node(position))
             inject_position_groups(node["children"], current_path)
 
     inject_position_groups(roots, ())

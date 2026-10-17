@@ -54,7 +54,7 @@ class OpeningGuideTests(unittest.TestCase):
                 collect(child)
         for root in hierarchy["roots"]:
             collect(root)
-        self.assertEqual(len(nodes), 128)
+        self.assertEqual(len(nodes), 129)
         self.assertTrue(all(node["pgn"] for node in nodes))
         self.assertTrue(all(node["position_data"]["fen"] for node in nodes))
         najdorf = next(node for node in nodes if node["label"] == "Najdorf")
@@ -195,13 +195,26 @@ class OpeningGuideTests(unittest.TestCase):
         sveshnikov = families["Sveshnikov"]
         self.assertEqual([node["label"] for node in sveshnikov["children"]], [
             "Bg5 Mainline", "Bxf6 gxf6 Line", "Early 7.Nd5 Line",
-            "9.Nd5 Mainline", "Kalashnikov Sideline",
+            "Kalashnikov Sideline",
         ])
-        bg5, doubled, early_nd5, main_nd5, kalashnikov = sveshnikov["children"]
-        self.assertEqual(bg5["position_data"]["moves_san"][-4:], ["Bg5", "a6", "Na3", "b5"])
+        bg5, doubled, early_nd5, kalashnikov = sveshnikov["children"]
+        self.assertEqual(
+            bg5["position_data"]["moves_san"][-8:],
+            ["Bg5", "a6", "Na3", "b5", "Nd5", "Be7", "Bxf6", "Bxf6"],
+        )
+        self.assertEqual(bg5["child_role"], "key_positions")
+        self.assertEqual(
+            [node["label"] for node in bg5["children"]],
+            ["11.c4 Branch", "11.c3 Branch"],
+        )
+        c4_branch, c3_branch = bg5["children"]
+        self.assertEqual(c4_branch["position_data"]["moves_san"][-3:], ["c4", "b4", "Nc2"])
+        self.assertEqual(
+            c3_branch["position_data"]["moves_san"][-12:],
+            ["c3", "O-O", "Nc2", "Bg5", "a4", "bxa4", "Rxa4", "a5", "Bc4", "Rb8", "b3", "Kh8"],
+        )
         self.assertEqual(doubled["position_data"]["moves_san"][-2:], ["Bxf6", "gxf6"])
         self.assertEqual(early_nd5["position_data"]["moves_san"][-4:], ["Nd5", "Nxd5", "exd5", "Nb8"])
-        self.assertEqual(main_nd5["position_data"]["moves_san"][-2:], ["Nd5", "Be7"])
         self.assertEqual(
             kalashnikov["position_data"]["moves_san"],
             ["e4", "c5", "Nf3", "Nc6", "d4", "cxd4", "Nxd4", "e5", "Nb5", "d6"],
