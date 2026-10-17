@@ -1,0 +1,270 @@
+{
+  "version": 1,
+  "home": {
+    "title": "Opening theory map",
+    "summary": "Opening theory begins with competing claims on the centre. Choose a move on the board or from the ranked move list to enter the taxonomy; the article will follow the position rather than forcing you through a directory.",
+    "ideas": [
+      "Direct central moves such as e4 and d4 claim space immediately.",
+      "Flank openings such as c4, Nf3, b3 and f4 influence the centre while keeping more pawn structures available.",
+      "Move order matters: the same position may carry several useful opening names."
+    ],
+    "sources": [
+      {"label": "Lichess opening explorer", "url": "https://lichess.org/opening"},
+      {"label": "Chess.com openings", "url": "https://www.chess.com/openings"}
+    ]
+  },
+  "entries": {
+    "e4": {
+      "title": "King's Pawn openings",
+      "summary": "1.e4 occupies the centre, releases the queen and king's bishop, and often produces positions where development and king safety become urgent quickly. Black's reply decides whether the game is symmetrical, as after ...e5, or structurally unbalanced from the outset.",
+      "ideas": ["Fast development and open lines are recurring themes.", "Black can challenge e4 directly or build a later ...d5 break."],
+      "sources": [{"label": "Lichess: King's Pawn Game", "url": "https://lichess.org/opening/Kings_Pawn_Game"}]
+    },
+    "e4/e5": {
+      "title": "Open Games: 1.e4 e5",
+      "summary": "Black mirrors White's central claim and opens both bishops. White's next choice determines whether the game focuses on pressure against e5, an immediate central break, or rapid piece activity before the pawn structure settles.",
+      "ideas": ["Nf3 attacks e5 while developing.", "Central breaks with d4 are often prepared or played immediately."],
+      "sources": [{"label": "Chess.com: King's Pawn Opening", "url": "https://www.chess.com/openings/Kings-Pawn-Opening"}]
+    },
+    "e4/e5/Ruy Lopez": {
+      "title": "Ruy Lopez",
+      "summary": "White develops with Bb5 and indirectly increases pressure on e5 by questioning the c6-knight. The opening is less about winning the knight than about building lasting central pressure while both sides complete development.",
+      "ideas": ["White commonly prepares c3 and d4.", "Black chooses between maintaining e5, active counterplay, and simplifying systems."],
+      "sources": [{"label": "Lichess: Ruy Lopez", "url": "https://lichess.org/opening/Ruy_Lopez"}]
+    },
+    "e4/e5/Italian": {
+      "title": "Italian Game",
+      "summary": "Bc4 points at f7 and encourages rapid castling. Quiet Italian structures build with d3 and c3 before d4, while sharper branches open the centre before either side has fully consolidated.",
+      "ideas": ["White balances immediate pressure with a later d4 break.", "Black often counters in the centre rather than passively defending f7."],
+      "sources": [{"label": "Lichess: Italian Game", "url": "https://lichess.org/opening/Italian_Game"}]
+    },
+    "e4/e5/Scotch": {
+      "title": "Scotch Game",
+      "summary": "White plays an early d4 to challenge e5 before Black can settle into a closed Spanish-style centre. Exchanges usually create open files and active piece play, but White must avoid letting the advanced central pieces become targets.",
+      "ideas": ["The centre opens earlier than in the Ruy Lopez.", "Piece activity often matters more than preserving pawn symmetry."],
+      "sources": [{"label": "Lichess: Scotch Game", "url": "https://lichess.org/opening/Scotch_Game"}]
+    },
+    "e4/e5/4 Knights": {
+      "title": "Four Knights Game",
+      "summary": "Both sides develop naturally and reinforce the central pawns before committing the bishops. The apparent symmetry can break through Bb5, d4, or a transposition into Spanish, Scotch, or Italian structures.",
+      "ideas": ["Sound development leaves several transpositions available.", "Breaking symmetry at the right moment is more important than copying moves."],
+      "sources": [{"label": "Lichess: Four Knights Game", "url": "https://lichess.org/opening/Four_Knights_Game"}]
+    },
+    "e4/e5/Petroff": {
+      "title": "Petrov Defense",
+      "summary": "Black answers the attack on e5 by counterattacking e4. Accurate play can simplify, but the opening is strategically rich: both sides must calculate the central exchanges before deciding whether to seek activity or a stable structure.",
+      "ideas": ["The apparent pawn race contains tactical move-order traps.", "Black seeks equality through active central play, not passive defence."],
+      "sources": [{"label": "Lichess: Petrov Defense", "url": "https://lichess.org/opening/Petrov_Defense"}]
+    },
+    "e4/e5/Vienna": {
+      "title": "Vienna Game",
+      "summary": "White develops Nc3 before Nf3, keeping the f-pawn free and supporting aggressive kingside ideas. Black can respond classically in the centre or challenge the setup before White builds an attack.",
+      "ideas": ["The f4 advance is a characteristic option.", "Delayed Nf3 changes the normal Open Game move orders."],
+      "sources": [{"label": "Lichess: Vienna Game", "url": "https://lichess.org/opening/Vienna_Game"}]
+    },
+    "e4/Sicilian": {
+      "title": "Sicilian Defense",
+      "summary": "With 1...c5 Black contests d4 without mirroring White's e-pawn. The resulting asymmetry gives Black a queenside pawn majority and open c-file, while White often uses extra space and faster development to attack the centre or kingside.",
+      "ideas": ["Open Sicilians arise after Nf3 and d4.", "Anti-Sicilians avoid the main open structures but concede different forms of central control."],
+      "sources": [{"label": "Lichess: Sicilian Defense", "url": "https://lichess.org/opening/Sicilian_Defense"}]
+    },
+    "e4/Sicilian/Najdorf": {
+      "title": "Najdorf Variation",
+      "summary": "The move ...a6 prevents checks on b5, prepares queenside expansion, and delays Black's decision between ...e5 and ...e6. White has several major systems, each changing the preferred central structure and attacking plan.",
+      "ideas": ["Black remains flexible but accepts a demanding theoretical burden.", "White's sixth move defines much of the character of the game."],
+      "sources": [{"label": "Chess.com: Najdorf Variation", "url": "https://www.chess.com/openings/Sicilian-Defense-Open-Najdorf-Variation"}]
+    },
+    "e4/Sicilian/Classical": {
+      "title": "Classical Sicilian",
+      "summary": "Black develops both knights naturally with ...d6 and ...Nc6. White can attack with Bg5 and f4 or choose quieter development, while Black seeks pressure on the centre and counterplay along the c-file.",
+      "ideas": ["Black develops quickly without committing to ...a6.", "White's Bg5 systems can create sharp kingside play."],
+      "sources": [{"label": "Lichess: Classical Sicilian", "url": "https://lichess.org/opening/Sicilian_Defense_Classical_Variation"}]
+    },
+    "e4/Sicilian/Dragon": {
+      "title": "Dragon families",
+      "summary": "Black fianchettoes the dark-squared bishop toward the queenside and accepts a sharp contrast between long-diagonal pressure and White's central space. The placement and timing of ...d6 and ...Nc6 distinguish the traditional, accelerated, and hyper-accelerated move orders.",
+      "ideas": ["The g7-bishop is Black's main strategic piece.", "White may choose a direct kingside attack or the positional Maroczy Bind."],
+      "sources": [{"label": "Lichess: Dragon Variation", "url": "https://lichess.org/opening/Sicilian_Defense_Dragon_Variation"}]
+    },
+    "e4/Sicilian/Scheveningen": {
+      "title": "Scheveningen structure",
+      "summary": "Black's pawns on e6 and d6 form a compact centre that controls key fifth-rank squares without overextending. White has more space and often attacks quickly; Black relies on timely breaks with ...d5 or ...e5 and queenside activity.",
+      "ideas": ["The centre is resilient but Black can fall behind in development.", "Move order can determine whether White gets an immediate c4 or g4 setup."],
+      "sources": [{"label": "Lichess: Scheveningen Variation", "url": "https://lichess.org/opening/Sicilian_Defense_Scheveningen_Variation"}]
+    },
+    "e4/Sicilian/Sveshnikov": {
+      "title": "Sveshnikov Variation",
+      "summary": "Black accepts a backward d-pawn and a permanent hole on d5 in exchange for central space, active pieces, and the possibility of ...f5. White tries to occupy d5 and exploit the queenside before Black's activity becomes dangerous.",
+      "ideas": ["The weak d5-square is balanced by Black's dynamic central control.", "The main branches differ according to how White handles the f6-knight and the b5 advance."],
+      "sources": [{"label": "Lichess: Sveshnikov Variation", "url": "https://lichess.org/opening/Sicilian_Defense_Lasker-Pelikan_Variation_Sveshnikov_Variation"}]
+    },
+    "e4/Sicilian/Kan": {
+      "title": "Kan Variation",
+      "summary": "Black combines ...e6 and ...a6 while delaying knight development. This flexible order avoids some forcing lines but gives White freedom to build a broad centre, often with c4.",
+      "ideas": ["Black chooses piece placement after seeing White's setup.", "White can claim space with a Maroczy-style structure."],
+      "sources": [{"label": "Lichess: Kan Variation", "url": "https://lichess.org/opening/Sicilian_Defense_Kan_Variation"}]
+    },
+    "e4/Sicilian/Taimanov": {
+      "title": "Taimanov Variation",
+      "summary": "Black develops ...Nc6 behind an ...e6 structure and keeps the queen and kingside pieces flexible. The setup aims for pressure on d4 and timely ...d5 while avoiding an early commitment to ...d6.",
+      "ideas": ["The ...d5 break is a central strategic goal.", "White frequently uses Be3, Qd2, and long-castling ideas."],
+      "sources": [{"label": "Lichess: Taimanov Variation", "url": "https://lichess.org/opening/Sicilian_Defense_Taimanov_Variation"}]
+    },
+    "e4/Sicilian/Rossolimo": {
+      "title": "Rossolimo Variation",
+      "summary": "White develops Bb5 against an early ...Nc6 and often exchanges the bishop to damage Black's queenside pawns. In return Black receives the bishop pair and central possibilities, producing a strategic alternative to the Open Sicilian.",
+      "ideas": ["White often plays against structural weaknesses rather than launching a direct attack.", "Black values the bishop pair and central pawn breaks."],
+      "sources": [{"label": "Lichess: Rossolimo Variation", "url": "https://lichess.org/opening/Sicilian_Defense_Nimzowitsch-Rossolimo_Attack"}]
+    },
+    "e4/Sicilian/Alapin": {
+      "title": "Alapin Sicilian",
+      "summary": "White prepares d4 with c3 and builds a classical pawn centre. Black normally challenges that centre immediately with ...d5 or develops with ...Nf6 to pressure e4.",
+      "ideas": ["White trades some development speed for a strong central duo.", "Black should attack the centre before it becomes stable."],
+      "sources": [{"label": "Lichess: Alapin Variation", "url": "https://lichess.org/opening/Sicilian_Defense_Alapin_Variation"}]
+    },
+    "e4/French": {
+      "title": "French Defense",
+      "summary": "Black prepares ...d5 and builds a resilient central chain, accepting that the c8-bishop may initially be restricted. White's central choice determines whether the game features a locked chain, immediate exchanges, or sustained pressure on d5.",
+      "ideas": ["Black commonly attacks White's centre with ...c5 and sometimes ...f6.", "White uses the space advantage to organise kingside play."],
+      "sources": [{"label": "Lichess: French Defense", "url": "https://lichess.org/opening/French_Defense"}]
+    },
+    "e4/Caro-Kann": {
+      "title": "Caro-Kann Defense",
+      "summary": "Black prepares ...d5 with ...c6, aiming for a sound centre while keeping the light-squared bishop outside the pawn chain. The cost is slower development and less immediate pressure on White's centre.",
+      "ideas": ["Black often seeks a durable structure and a favourable endgame.", "White chooses between space, exchanges, and direct central expansion."],
+      "sources": [{"label": "Lichess: Caro-Kann Defense", "url": "https://lichess.org/opening/Caro-Kann_Defense"}]
+    },
+    "e4/Alternatives": {
+      "title": "Alternative replies to 1.e4",
+      "summary": "These defenses avoid the four largest 1.e4 complexes. Some challenge e4 immediately, while others invite White to build a centre before attacking it with pieces or a delayed pawn break.",
+      "ideas": ["The Scandinavian uses an immediate ...d5.", "The Pirc, Modern, Alekhine and Owen systems provoke or undermine White's centre in different ways."],
+      "sources": [{"label": "Chess.com: King's Pawn openings", "url": "https://www.chess.com/openings/Kings-Pawn-Opening"}]
+    },
+    "d4": {
+      "title": "Queen's Pawn openings",
+      "summary": "1.d4 claims central space while protecting the pawn with the queen. The game often develops around the c- and e-pawn breaks, with strategic tension lasting longer than in many open 1.e4 positions.",
+      "ideas": ["c4 is the most common way to increase pressure on d5.", "Black chooses between occupying the centre and controlling it with pieces."],
+      "sources": [{"label": "Lichess: Queen's Pawn Game", "url": "https://lichess.org/opening/Queens_Pawn_Game"}]
+    },
+    "d4/Nf6": {
+      "title": "Indian-defense complex",
+      "summary": "With ...Nf6 Black prevents e4 without immediately occupying the centre with a pawn. White usually builds with c4, after which Black chooses a central, fianchetto, or pin-based strategy.",
+      "ideas": ["Black delays the final pawn structure to retain flexibility.", "Many systems transpose according to ...e6, ...g6, ...c5, and White's knight development."],
+      "sources": [{"label": "Lichess: Indian Game", "url": "https://lichess.org/opening/Indian_Game"}]
+    },
+    "d4/Nf6/King's Indian Defense": {
+      "title": "King's Indian Defense",
+      "summary": "Black allows White a broad pawn centre, then attacks it with ...e5 or ...c5. Closed centres often produce opposite-wing play: White expands on the queenside while Black attacks the king.",
+      "ideas": ["The centre is intentionally conceded before being challenged.", "Pawn breaks, rather than early exchanges, drive the middlegame."],
+      "sources": [{"label": "Lichess: King's Indian Defense", "url": "https://lichess.org/opening/Kings_Indian_Defense"}]
+    },
+    "d4/Nf6/Nimzo Indian": {
+      "title": "Nimzo-Indian Defense",
+      "summary": "Black pins the c3-knight with ...Bb4 and is willing to exchange the bishop for structural control. White receives the bishop pair in many lines but may accept doubled c-pawns or delayed central expansion.",
+      "ideas": ["Control of e4 is the opening's central issue.", "The bishop pair is weighed against structure and development."],
+      "sources": [{"label": "Lichess: Nimzo-Indian Defense", "url": "https://lichess.org/opening/Nimzo-Indian_Defense"}]
+    },
+    "d4/Nf6/Grunfeld": {
+      "title": "Grünfeld Defense",
+      "summary": "Black permits a large White centre and immediately attacks it with ...d5 and the g7-bishop. White gains space; Black argues that the centre can become a target for pieces and pawn breaks.",
+      "ideas": ["Long-range pressure is directed at d4.", "Concrete calculation supports a hypermodern strategic idea."],
+      "sources": [{"label": "Lichess: Grünfeld Defense", "url": "https://lichess.org/opening/Grunfeld_Defense"}]
+    },
+    "d4/Nf6/Benoni": {
+      "title": "Benoni structures",
+      "summary": "Black concedes central space and creates an asymmetric pawn structure with ...c5 and ...e6. White owns the central majority; Black seeks queenside activity, dark-square pressure, and dynamic breaks.",
+      "ideas": ["White's d5 pawn restricts Black but can also become a target.", "Black's queenside majority is a major source of counterplay."],
+      "sources": [{"label": "Lichess: Benoni Defense", "url": "https://lichess.org/opening/Benoni_Defense"}]
+    },
+    "d4/Nf6/Catalan": {
+      "title": "Catalan Opening",
+      "summary": "White combines Queen's Gambit pressure with a kingside fianchetto. The g2-bishop exerts long-term influence on the queenside, while Black decides whether to hold, return, or avoid taking the c4-pawn.",
+      "ideas": ["White often accepts a temporary pawn sacrifice for lasting pressure.", "The long diagonal shapes both opening and endgame plans."],
+      "sources": [{"label": "Lichess: Catalan Opening", "url": "https://lichess.org/opening/Catalan_Opening"}]
+    },
+    "d4/Queen's Gambit": {
+      "title": "Queen's Gambit complex",
+      "summary": "With c4 White challenges Black's d5 pawn and seeks greater central influence. Black can maintain d5, accept the pawn temporarily, support it with ...c6, or choose an independent counterattack.",
+      "ideas": ["The c-pawn is offered to deflect Black's d-pawn, not usually as a permanent sacrifice.", "The resulting pawn structure determines the long-term piece plans."],
+      "sources": [{"label": "Lichess: Queen's Gambit", "url": "https://lichess.org/opening/Queens_Gambit"}]
+    },
+    "d4/Queen's Gambit/QGD": {
+      "title": "Queen's Gambit Declined",
+      "summary": "Black supports d5 with ...e6 and keeps a strong central foothold, at the cost of restricting the c8-bishop. White presses the centre and often chooses between an exchange structure and maintaining tension.",
+      "ideas": ["The c8-bishop is Black's traditional development problem.", "Central tension can be resolved into the Carlsbad structure."],
+      "sources": [{"label": "Lichess: Queen's Gambit Declined", "url": "https://lichess.org/opening/Queens_Gambit_Declined"}]
+    },
+    "d4/Queen's Gambit/QGA": {
+      "title": "Queen's Gambit Accepted",
+      "summary": "Black releases the central tension by taking on c4, usually intending to return the pawn while developing freely. White builds the centre and tries to use the temporary displacement of Black's d-pawn.",
+      "ideas": ["Holding the extra pawn is rarely Black's only objective.", "White commonly establishes e4 and recovers c4 later."],
+      "sources": [{"label": "Lichess: Queen's Gambit Accepted", "url": "https://lichess.org/opening/Queens_Gambit_Accepted"}]
+    },
+    "d4/Queen's Gambit/Slav": {
+      "title": "Slav Defense",
+      "summary": "Black supports d5 with ...c6 while leaving the light-squared bishop free. The structure is sound, but Black must choose carefully when to develop the bishop and whether to capture on c4.",
+      "ideas": ["Black avoids locking in the c8-bishop with an early ...e6.", "White can maintain tension or force structural decisions."],
+      "sources": [{"label": "Lichess: Slav Defense", "url": "https://lichess.org/opening/Slav_Defense"}]
+    },
+    "d4/d4 d5": {
+      "title": "Independent 1.d4 d5 systems",
+      "summary": "These systems develop around a stable d4 pawn without immediately entering the Queen's Gambit. White often uses Bf4 or e3-based setups; Black should contest the centre rather than treating the setup as harmless.",
+      "ideas": ["The London, Colle, and Jobava use different piece placements around the same first move.", "Black's ...c5 and ...e5 breaks remain central questions."],
+      "sources": [{"label": "Chess.com: Queen's Pawn Opening", "url": "https://www.chess.com/openings/Queens-Pawn-Opening"}]
+    },
+    "c4 (English)": {
+      "title": "English Opening",
+      "summary": "1.c4 controls d5 from the flank and preserves several central pawn structures. The opening can remain independent or transpose into Queen's Gambit, Catalan, Réti, or reversed Sicilian positions.",
+      "ideas": ["White delays committing the d- and e-pawns.", "Transpositional awareness is part of the opening's theory."],
+      "sources": [{"label": "Lichess: English Opening", "url": "https://lichess.org/opening/English_Opening"}]
+    },
+    "c4 (English)/Reverse Sicilian": {
+      "title": "Reversed Sicilian",
+      "summary": "After 1.c4 e5 White plays a Sicilian-type structure with an extra tempo. That tempo matters, but Black's central space and straightforward development make the position strategically distinct from a literal Sicilian with colours reversed.",
+      "ideas": ["White pressures d5 and often uses a kingside fianchetto.", "Black can build with ...Nf6, ...d5, or a Botvinnik-style centre."],
+      "sources": [{"label": "Lichess: English, King's English", "url": "https://lichess.org/opening/English_Opening_Kings_English_Variation"}]
+    },
+    "c4 (English)/Symmetrical English": {
+      "title": "Symmetrical English",
+      "summary": "Black mirrors 1.c4 with ...c5, creating a fluid fight over d4 and d5. The symmetry is usually temporary: pawn breaks, knight routes, and move-order choices create the imbalance.",
+      "ideas": ["Both sides contest the same central dark squares.", "Early d4 or ...d5 can transpose or break symmetry."],
+      "sources": [{"label": "Lichess: Symmetrical English", "url": "https://lichess.org/opening/English_Opening_Symmetrical_Variation"}]
+    },
+    "c4 (English)/Neo-Catalan": {
+      "title": "Neo-Catalan structures",
+      "summary": "White combines c4, Nf3, and g3 without committing to an early d4. The g2-bishop and pressure on the queenside resemble the Catalan, while the delayed central pawns retain English-opening flexibility.",
+      "ideas": ["The long diagonal is developed before the centre is fixed.", "The position may transpose into a Catalan or remain an English system."],
+      "sources": [{"label": "Chess.com: English Opening", "url": "https://www.chess.com/openings/English-Opening"}]
+    },
+    "Alternatives/ Sidelines/ Other": {
+      "title": "Flank and alternative first moves",
+      "summary": "These openings influence the centre with pieces or wing pawns before occupying it. They often transpose, but each move also preserves an independent strategic identity when the opponent responds directly.",
+      "ideas": ["Nf3 is maximally flexible and frequently becomes a Réti or another major opening.", "b3 and f4 announce more specific piece or pawn plans."],
+      "sources": [{"label": "Lichess opening explorer", "url": "https://lichess.org/opening"}]
+    },
+    "Alternatives/ Sidelines/ Other/King's Indian Attack": {
+      "title": "King's Indian Attack",
+      "summary": "White develops with Nf3, g3, Bg2, d3, and e4, using a setup rather than forcing a fixed move order. The usual plan is kingside expansion after the centre becomes closed or stable.",
+      "ideas": ["The setup is portable against several Black structures.", "Its effectiveness depends on choosing the right central and kingside breaks."],
+      "sources": [{"label": "Lichess: King's Indian Attack", "url": "https://lichess.org/opening/Kings_Indian_Attack"}]
+    },
+    "Alternatives/ Sidelines/ Other/Nimzo-Larsen Attack": {
+      "title": "Nimzo-Larsen Attack",
+      "summary": "White prepares Bb2 and places long-range pressure on the centre from the queenside. The setup is flexible, but White must still challenge Black's central expansion rather than relying on the bishop alone.",
+      "ideas": ["The b2-bishop targets e5 and the kingside diagonal.", "White commonly follows with e3, Nf3, and either c4 or f4."],
+      "sources": [{"label": "Lichess: Nimzo-Larsen Attack", "url": "https://lichess.org/opening/Nimzo-Larsen_Attack"}]
+    },
+    "Alternatives/ Sidelines/ Other/Bird's": {
+      "title": "Bird Opening",
+      "summary": "1.f4 controls e5 and aims for a Dutch Defense with colours reversed. White gains attacking possibilities but weakens the king and must respect immediate central counterplay.",
+      "ideas": ["The e5-square is White's first strategic claim.", "King safety and the e1-h4 diagonal require care."],
+      "sources": [{"label": "Lichess: Bird Opening", "url": "https://lichess.org/opening/Bird_Opening"}]
+    },
+    "Alternatives/ Sidelines/ Other/Reti (transpositions)": {
+      "title": "Réti Opening",
+      "summary": "1.Nf3 develops without fixing the pawn centre. White often combines c4 and g3 to pressure Black's centre from the flanks, while retaining many transpositions into English, Catalan, and queen's-pawn systems.",
+      "ideas": ["White invites Black to reveal the central setup first.", "The opening is defined as much by transposition choices as by a single pawn structure."],
+      "sources": [{"label": "Lichess: Réti Opening", "url": "https://lichess.org/opening/Reti_Opening"}]
+    }
+  }
+}

@@ -5,7 +5,7 @@ This milestone accepts a legal SAN sequence or FEN and returns two explicitly se
 1. aggregated rated **Lichess player games**, using the official Opening Explorer and compatible cached responses;
 2. the already-installed **Lumbra master database**, restricted to games where both players are rated 2200+.
 
-The application now combines the database explorer, compact Stockfish analysis, and a searchable, grouped opening catalogue. Strategic pilot guides are available for the Scandinavian Defense, Italian Game, and the Queen's Gambit family overview; the command-line data API remains available for scripts. It deliberately has no repertoire builder, drill system, or account layer.
+The application combines the database explorer, compact Stockfish analysis, and a board-driven opening wiki. The wiki follows legal board moves, ranks mapped theory choices by the active local OTB and Lichess data, and explains the current high-level opening family; the command-line data API remains available for scripts. It deliberately has no repertoire builder, drill system, or account layer.
 
 ## Setup
 
@@ -87,9 +87,9 @@ The legacy Lichess cache is partial coverage: a cache miss is unknown, not zero.
 
 Open <http://127.0.0.1:8879>. The board accepts legal moves by square click; database, guide, and Stockfish rows also play moves. Back, forward, reset, move-line navigation, and rating/speed changes automatically load compatible cached statistics or fetch them live. Loading, cache origin, and source errors are visible in the interface.
 
-The **Openings** view searches 39 validated families by name, alias, or ECO and loads each defining position. Its three pilot guides present position-linked decisions for both sides, representative lines, practical sidelines, transpositions, and plans. The **Database Explorer** view remains unrestricted. Display thresholds are configurable and never change the source denominator.
+The **Openings** view is an interactive wiki navigated by the board, its move history, or the ranked theory-move buttons. It uses the saved user taxonomy for classification, recognises transposed positions, and keeps concise sourced explanations separate from measured move frequency. The **Database Explorer** view remains unrestricted. Display thresholds are configurable and never change the source denominator.
 
-Catalogue names and starting sequences were transcribed from [365Chess](https://www.365chess.com/chess-openings/) and checked against the independent [Lichess opening-name dataset](https://github.com/lichess-org/chess-openings). Every stored sequence is parsed by `python-chess` at application startup. The catalogue corrects the source index's King's Gambit typo to `1. e4 e5 2. f4`; the original URL and a correction note remain in its metadata. Explanations are original and the guide source links include the relevant 365Chess and Chess.com opening references.
+Catalogue names and starting sequences were transcribed from [365Chess](https://www.365chess.com/chess-openings/) and checked against the independent [Lichess opening-name dataset](https://github.com/lichess-org/chess-openings). Every stored sequence is parsed by `python-chess` at application startup. The catalogue corrects the source index's King's Gambit typo to `1. e4 e5 2. f4`; the original URL and a correction note remain in its metadata. Wiki explanations are original summaries informed by the linked Lichess and Chess.com references rather than copied article text.
 
 Pilot alternatives were selected when they reached at least 1% in either the active Lichess population or the local both-2200+ OTB index, with lower-frequency forcing or theoretically important exceptions retained. The interface exposes 0.5%, 1%, 2%, and 5% display thresholds. Frequencies are conditional on the exact current position; line frequencies are never multiplied into a purported complete-line probability.
 

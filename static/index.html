@@ -37,23 +37,26 @@
         <button id="explorer-tab" type="button">DATABASE EXPLORER</button>
       </nav>
 
-      <section id="opening-browser" class="opening-browser" aria-label="Opening catalogue">
+      <section id="opening-browser" class="opening-browser opening-wiki" aria-label="Interactive opening wiki">
         <div class="opening-browser-head">
           <div>
-            <span class="label">OPENING CATALOGUE</span>
-            <strong>Browse the opening map.</strong>
+            <span class="label">INTERACTIVE OPENING WIKI</span>
+            <strong>Explore theory by playing moves.</strong>
           </div>
           <span id="catalogue-count" class="status">LOADING</span>
         </div>
-        <div class="catalogue-tools">
-          <label>SEARCH
-            <input id="opening-search" type="search" placeholder="Name, alias, ECO…" autocomplete="off">
-          </label>
-          <label>MAJOR CATEGORY
-            <select id="opening-group"><option value="">ALL MAJOR CATEGORIES</option></select>
-          </label>
+        <div class="wiki-layout">
+          <aside class="wiki-move-panel">
+            <div class="wiki-section-head">
+              <span class="label">AVAILABLE THEORY MOVES</span>
+              <small>MOST COMMON FIRST</small>
+            </div>
+            <div id="wiki-moves" class="wiki-moves"><span class="empty">Loading moves…</span></div>
+          </aside>
+          <article id="wiki-article" class="wiki-article">
+            <span class="empty">Loading opening article…</span>
+          </article>
         </div>
-        <div id="opening-list" class="opening-list"><span class="empty">Loading catalogue…</span></div>
       </section>
 
       <section id="opening-guide" class="opening-guide hidden" aria-label="Opening guide"></section>

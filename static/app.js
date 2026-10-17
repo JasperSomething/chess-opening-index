@@ -256,6 +256,158 @@ function flattenTaxonomy(nodes) {
   nodes.forEach((node, index) => visit(node, [index]));
   return result;
 }
+function sameMovePrefix(prefix, line) {
+  return prefix.length <= line.length && prefix.every((move, index) => line[index] === move);
+}
+function wikiTaxonomy() {
+  if (!openingCatalogue) return [];
+  return flattenTaxonomy(openingCatalogue.hierarchy_draft.roots)
+    .filter(({node}) => node.level !== "position")
+    .map(item => {
+      const parent = item.path.length > 1 ? taxonomyNodeAt(item.path.slice(0, -1)) : null;
+      const line = item.node.position_data.moves_uci;
+      const parentLine = parent?.position_data.moves_uci || [];
+      const isContainer = Boolean(parent && line.length === parentLine.length && line.every((move, index) => parentLine[index] === move));
+      const pathKey = item.path.map((index, depth) => {
+      let nodes = openingCatalogue.hierarchy_draft.roots;
+      let node = null;
+      for (const step of item.path.slice(0, depth + 1)) {
+        node = nodes[step];
+        nodes = node.children;
+      }
+      return node.label;
+      }).join("/");
+      return {...item, pathKey, isContainer};
+    });
+}
+function wikiArticleFor(pathKey) {
+  const entries = openingCatalogue?.wiki?.entries || {};
+  const parts = pathKey ? pathKey.split("/") : [];
+  while (parts.length) {
+    const key = parts.join("/");
+    if (entries[key]) return {article: entries[key], sourcePath: key};
+    parts.pop();
+  }
+  return {article: openingCatalogue?.wiki?.home, sourcePath: ""};
+}
+function currentWikiClassification(items) {
+  const moves = history.slice(0, cursor);
+  if (!moves.length) return {matches: [], primary: null};
+  const exactPosition = items.filter(({node, isContainer}) => !isContainer && node.position_data.position_key === data?.position?.position_key);
+  const reached = items.filter(({node, isContainer}) => {
+    if (isContainer) return false;
+    const line = node.position_data.moves_uci;
+    return line.length && line.length <= moves.length && sameMovePrefix(line, moves);
+  });
+  const pool = exactPosition.length ? exactPosition : reached;
+  pool.sort((a, b) => b.node.position_data.moves_uci.length - a.node.position_data.moves_uci.length || b.path.length - a.path.length);
+  const primary = pool[0] || null;
+  const matches = pool.filter(item => item.node.position_data.position_key === primary?.node.position_data.position_key);
+  return {matches, primary};
+}
+function wikiMoveRows(items) {
+  if (!data) return [];
+  const moves = history.slice(0, cursor);
+  const legal = new Map(data.legal_moves.map(move => [move.uci, move]));
+  const groups = new Map();
+  for (const item of items) {
+    const line = item.node.position_data.moves_uci;
+    if (line.length <= moves.length || !sameMovePrefix(moves, line)) continue;
+    const uci = line[moves.length];
+    if (!legal.has(uci)) continue;
+    if (!groups.has(uci)) groups.set(uci, []);
+    groups.get(uci).push(item);
+  }
+  const master = data.distributions?.installed_master_database;
+  const lichess = data.distributions?.lichess_player_games;
+  const result = [];
+  const routeLabels = {
+    "e2e4,c7c5|g1f3": "Open Sicilian routes",
+  };
+  for (const [uci, linked] of groups) {
+    const exact = linked.filter(item => !item.isContainer && item.node.position_data.moves_uci.length === moves.length + 1);
+    const routeLabel = routeLabels[`${moves.join(",")}|${uci}`];
+    const labels = routeLabel ? [routeLabel] : exact.length
+      ? exact.map(item => {
+          const match = wikiArticleFor(item.pathKey);
+          return match.sourcePath === item.pathKey ? match.article?.title : item.node.label;
+        }).filter((label, index, all) => all.indexOf(label) === index).slice(0, 2)
+      : [linked.length === 1 ? linked[0].node.label : `${linked.length} mapped theory routes`];
+    result.push({
+      uci,
+      san: legal.get(uci).san,
+      labels,
+      master: sourceMove(master, uci),
+      lichess: sourceMove(lichess, uci),
+      known: true,
+    });
+  }
+  if (!result.length && data.distributions) {
+    const seen = new Set();
+    for (const move of [...(master?.moves || []), ...(lichess?.moves || [])]) {
+      if (!legal.has(move.uci) || seen.has(move.uci)) continue;
+      seen.add(move.uci);
+      result.push({
+        uci: move.uci,
+        san: legal.get(move.uci).san,
+        labels: ["Database continuation"],
+        master: sourceMove(master, move.uci),
+        lichess: sourceMove(lichess, move.uci),
+        known: false,
+      });
+    }
+  }
+  return result.sort((a, b) =>
+    (b.master?.games || 0) - (a.master?.games || 0) ||
+    (b.lichess?.games || 0) - (a.lichess?.games || 0) ||
+    a.san.localeCompare(b.san)
+  ).slice(0, 10);
+}
+function renderOpeningWiki() {
+  if (!openingCatalogue || !data || !$("#wiki-article")) return;
+  const items = wikiTaxonomy();
+  const classification = currentWikiClassification(items);
+  const pathKey = classification.primary?.pathKey || "";
+  const {article, sourcePath} = wikiArticleFor(pathKey);
+  const title = classification.primary && sourcePath !== pathKey
+    ? classification.primary.node.label
+    : article.title;
+  const trail = pathKey ? pathKey.split("/") : ["Starting position"];
+  const related = classification.matches
+    .map(item => item.node.label)
+    .filter((label, index, all) => label !== classification.primary?.node.label && all.indexOf(label) === index);
+  const sources = (article.sources || []).map(source =>
+    `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label)} ↗</a>`
+  ).join("");
+  $("#wiki-article").innerHTML = `
+    <div class="wiki-trail">${trail.map(part => `<span>${escapeHtml(part)}</span>`).join("")}</div>
+    <span class="wiki-kicker">${classification.primary ? "CURRENT OPENING FAMILY" : "STARTING POSITION"}</span>
+    <h2>${escapeHtml(title)}</h2>
+    ${classification.primary && sourcePath !== pathKey ? `<p class="wiki-inherits">High-level context: ${escapeHtml(article.title)}</p>` : ""}
+    <p class="wiki-summary">${escapeHtml(article.summary)}</p>
+    ${(article.ideas || []).length ? `<ul>${article.ideas.map(idea => `<li>${escapeHtml(idea)}</li>`).join("")}</ul>` : ""}
+    ${related.length ? `<div class="wiki-related"><b>ALSO RECOGNISED AS</b>${related.map(name => `<span>${escapeHtml(name)}</span>`).join("")}</div>` : ""}
+    <div class="wiki-sources"><b>SOURCES</b>${sources}</div>`;
+
+  const rows = wikiMoveRows(items);
+  const movesPanel = $("#wiki-moves");
+  movesPanel.replaceChildren();
+  if (!rows.length) {
+    movesPanel.innerHTML = '<span class="empty">No mapped theory moves from this position.</span>';
+  } else {
+    rows.forEach((row, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "wiki-move" + (row.known ? " known" : "");
+      button.innerHTML = `<span class="wiki-rank">${index + 1}</span><strong>${escapeHtml(row.san)}</strong>
+        <span class="wiki-move-name">${escapeHtml(row.labels.join(" · "))}</span>
+        <span class="wiki-frequency"><i>OTB ${formatPercent(row.master?.frequency)}</i><i>LICHESS ${formatPercent(row.lichess?.frequency)}</i></span>`;
+      button.onclick = () => play(row.uci);
+      movesPanel.append(button);
+    });
+  }
+  $("#catalogue-count").textContent = classification.primary ? classification.primary.node.label.toUpperCase() : "START";
+}
 function taxonomyNodeAt(path) {
   let nodes = openingCatalogue.hierarchy_draft.roots;
   let node = null;
@@ -548,15 +700,10 @@ async function initOpenings() {
     const payload = await readJsonResponse(response, "Opening catalogue");
     if (!response.ok) throw new Error(payload.error || `HTTP ${response.status}`);
     openingCatalogue = payload;
-    payload.hierarchy_draft.roots.forEach((root, index) => {
-      const option = document.createElement("option");
-      option.value = String(index);
-      option.textContent = root.label.toUpperCase();
-      $("#opening-group").append(option);
-    });
-    renderOpeningCatalogue();
+    renderOpeningWiki();
   } catch (error) {
-    $("#opening-list").innerHTML = `<span class="engine-error">${escapeHtml(error.message)}</span>`;
+    $("#wiki-article").innerHTML = `<span class="engine-error">${escapeHtml(error.message)}</span>`;
+    $("#wiki-moves").innerHTML = '<span class="empty">Opening moves unavailable.</span>';
     $("#catalogue-count").textContent = "UNAVAILABLE";
   }
 }
@@ -649,13 +796,14 @@ function renderPosition() {
   $("#forward").disabled = cursor >= history.length;
   renderBoard();
   renderLine();
-  if (activeOpening) renderOpeningGuide();
+  renderOpeningWiki();
 }
 function render() {
   renderPosition();
   if (!data.distributions) return;
   renderSources();
   renderMoves();
+  renderOpeningWiki();
   const l = data.distributions.lichess_player_games, m = data.distributions.installed_master_database;
   $("#position-meta").textContent = `${data.position.position_key} · Lichess denominator ${formatNumber(l.continuation_games)} · OTB denominator ${formatNumber(m.continuation_games)}`;
 }
@@ -757,24 +905,13 @@ $("#forward").onclick = () => { if (cursor < history.length) { cursor++; selecte
 $("#reset").onclick = () => { history=[]; cursor=0; selected=null; load(true); };
 $("#ratings").onchange = () => load();
 $("#speeds").onchange = () => load();
-$("#frequency-threshold").onchange = () => { if (data) { renderMoves(); if (activeOpening) renderOpeningGuide(); } };
-$("#opening-search").oninput = () => {
-  if ($("#opening-search").value.trim()) {
-    cataloguePath = [];
-    $("#opening-group").value = "";
-  }
-  renderOpeningCatalogue();
-};
-$("#opening-group").onchange = () => {
-  const value = $("#opening-group").value;
-  cataloguePath = value === "" ? [] : [Number(value)];
-  $("#opening-search").value = "";
-  renderOpeningCatalogue();
-};
+$("#frequency-threshold").onchange = () => { if (data) { renderMoves(); renderOpeningWiki(); } };
 $("#openings-tab").onclick = () => {
   $("#openings-tab").classList.add("active");
   $("#explorer-tab").classList.remove("active");
-  (activeOpening ? $("#opening-guide") : $("#opening-browser")).classList.remove("hidden");
+  $("#opening-browser").classList.remove("hidden");
+  $("#opening-guide").classList.add("hidden");
+  renderOpeningWiki();
 };
 $("#explorer-tab").onclick = () => {
   $("#explorer-tab").classList.add("active");

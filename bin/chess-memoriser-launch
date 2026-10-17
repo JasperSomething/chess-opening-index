@@ -19,7 +19,7 @@ mkdir -p "$STATE_DIR"
 is_running() {
   response=$(curl --silent --show-error --fail --max-time 1 "$HEALTH_URL" 2>/dev/null) || return 1
   printf '%s' "$response" | grep -Eq '"app"[[:space:]]*:[[:space:]]*"chess-memoriser"' || return 1
-  printf '%s' "$response" | grep -Eq '"launcher_api"[[:space:]]*:[[:space:]]*17'
+  printf '%s' "$response" | grep -Eq '"launcher_api"[[:space:]]*:[[:space:]]*18'
 }
 
 if ! is_running; then

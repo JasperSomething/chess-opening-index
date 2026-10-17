@@ -62,6 +62,16 @@ class OpeningGuideTests(unittest.TestCase):
         jobava = next(node for node in nodes if node["label"] == "Jobava London")
         self.assertEqual(jobava["position_data"]["moves_san"][-1], "Bf4")
 
+    def test_opening_wiki_is_attached_to_valid_taxonomy_paths(self):
+        payload = catalogue_response()
+        self.assertEqual(payload["wiki"]["home"]["title"], "Opening theory map")
+        self.assertIn("e4/Sicilian", payload["wiki"]["entries"])
+        self.assertIn("d4/Queen's Gambit", payload["wiki"]["entries"])
+        self.assertIn("c4 (English)", payload["wiki"]["entries"])
+        for article in [payload["wiki"]["home"], *payload["wiki"]["entries"].values()]:
+            self.assertTrue(article["summary"])
+            self.assertTrue(all(source["url"].startswith("https://") for source in article.get("sources", [])))
+
     def test_sicilian_families_are_merged_into_key_positions(self):
         e4 = catalogue_response()["hierarchy_draft"]["roots"][0]
         sicilian = next(node for node in e4["children"] if node["label"] == "Sicilian")

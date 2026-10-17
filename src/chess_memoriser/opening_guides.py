@@ -12,6 +12,7 @@ CATALOGUE_PATH = PROJECT_ROOT / "data" / "opening_catalogue.json"
 GUIDES_PATH = PROJECT_ROOT / "data" / "pilot_guides.json"
 HIERARCHY_PATH = PROJECT_ROOT / "data" / "opening_hierarchy_draft.txt"
 HIERARCHY_MAINLINES_PATH = PROJECT_ROOT / "data" / "opening_hierarchy_mainlines.json"
+WIKI_PATH = PROJECT_ROOT / "data" / "opening_wiki.json"
 
 KEY_POSITION_FAMILIES = {
     "e4/Sicilian/Classical",
@@ -489,6 +490,33 @@ def _enrich_guide(slug: str, guide: dict, catalogue_entry: dict) -> dict:
     return guide
 
 
+def _opening_wiki(hierarchy: dict) -> dict:
+    wiki = json.loads(WIKI_PATH.read_text())
+    entries = wiki.get("entries", {})
+    home = wiki.get("home")
+    if not isinstance(home, dict) or not home.get("title") or not home.get("summary"):
+        raise GuideDataError("opening wiki has no valid home article")
+    valid_paths: set[str] = set()
+
+    def collect(nodes: list[dict], path: tuple[str, ...]) -> None:
+        for node in nodes:
+            current = (*path, node["label"])
+            valid_paths.add("/".join(current))
+            collect(node["children"], current)
+
+    collect(hierarchy["roots"], ())
+    unknown = set(entries) - valid_paths
+    if unknown:
+        raise GuideDataError(f"opening wiki has unknown taxonomy paths: {sorted(unknown)}")
+    for path, article in {"home": home, **entries}.items():
+        if not article.get("title") or not article.get("summary"):
+            raise GuideDataError(f"opening wiki article {path!r} is incomplete")
+        for source in article.get("sources", []):
+            if not source.get("label") or not str(source.get("url", "")).startswith("https://"):
+                raise GuideDataError(f"opening wiki article {path!r} has an invalid source")
+    return wiki
+
+
 @lru_cache(maxsize=1)
 def opening_data() -> dict:
     catalogue = _enrich_catalogue(json.loads(CATALOGUE_PATH.read_text()))
@@ -504,6 +532,7 @@ def opening_data() -> dict:
     if expected != set(guides):
         raise GuideDataError(f"guide availability mismatch: expected {sorted(expected)}, got {sorted(guides)}")
     hierarchy = _hierarchy_draft(catalogue_by_slug)
+    wiki = _opening_wiki(hierarchy)
     return {
         "version": max(catalogue.get("version", 1), guide_payload.get("version", 1)),
         "catalogue_source": catalogue["catalogue_source"],
@@ -512,6 +541,7 @@ def opening_data() -> dict:
         "selection_criteria": guide_payload["selection_criteria"],
         "openings": catalogue["openings"],
         "hierarchy_draft": hierarchy,
+        "wiki": wiki,
         "guides": guides,
     }
 
@@ -525,6 +555,7 @@ def catalogue_response() -> dict:
         "selection_criteria": payload["selection_criteria"],
         "sections": payload["sections"],
         "hierarchy_draft": payload["hierarchy_draft"],
+        "wiki": payload["wiki"],
         "openings": payload["openings"],
     }
 
