@@ -161,6 +161,7 @@ function renderBoard() {
 }
 function statusText(source, kind) {
   const el = $(`#${kind}-status`);
+  if (!el) return;
   if (!source.available) {
     el.textContent = "Unavailable"; el.classList.add("error"); return;
   }
@@ -174,7 +175,8 @@ function renderSources() {
   const lichess = data.distributions.lichess_player_games;
   const master = data.distributions.installed_master_database;
   $("#lichess-total").textContent = formatNumber(lichess.position_games);
-  $("#master-total").textContent = formatNumber(master.position_games);
+  const masterTotal = $("#master-total");
+  if (masterTotal) masterTotal.textContent = formatNumber(master.position_games);
   statusText(lichess, "lichess"); statusText(master, "master");
   const failures = [lichess, master].filter(source => !source.available).flatMap(source => source.limitations);
   const notice = $("#notice");
@@ -189,7 +191,8 @@ function renderMoves() {
   for (const move of data.legal_moves) byUci.set(move.uci, {uci:move.uci, san:move.san});
   const minimum = threshold();
   const label = thresholdLabel();
-  $("#master-source-name").textContent = `Lumbra OTB · both 2200+ · display ≥${label}`;
+  const masterSourceName = $("#master-source-name");
+  if (masterSourceName) masterSourceName.textContent = `Lumbra OTB · both 2200+ · display ≥${label}`;
   $("#lichess-source-name").textContent = `Lichess players · display ≥${label}`;
   $("#master-table-head").textContent = `OTB 2200+ · ≥${label}`;
   $("#lichess-table-head").textContent = `Lichess players · ≥${label}`;
@@ -401,7 +404,7 @@ function renderOpeningWiki() {
       button.className = "wiki-move" + (row.known ? " known" : "");
       button.innerHTML = `<span class="wiki-rank">${index + 1}</span><strong>${escapeHtml(row.san)}</strong>
         <span class="wiki-move-name">${escapeHtml(row.labels.join(" · "))}</span>
-        <span class="wiki-frequency"><i>OTB ${formatPercent(row.master?.frequency)}</i><i>LICHESS ${formatPercent(row.lichess?.frequency)}</i></span>`;
+        <span class="wiki-frequency"><i>OTB ${formatPercent(row.master?.frequency)}</i><i>Lichess ${formatPercent(row.lichess?.frequency)}</i></span>`;
       button.onclick = () => play(row.uci);
       movesPanel.append(button);
     });
@@ -810,11 +813,13 @@ function render() {
 function showStatisticsLoading() {
   for (const kind of ["lichess", "master"]) {
     const status = $(`#${kind}-status`);
+    if (!status) continue;
     status.textContent = "Loading";
     status.classList.remove("error");
   }
   $("#lichess-total").textContent = "—";
-  $("#master-total").textContent = "—";
+  const masterTotal = $("#master-total");
+  if (masterTotal) masterTotal.textContent = "—";
   $("#moves").innerHTML = '<tr><td colspan="7" class="missing">Loading statistics for this position…</td></tr>';
   $("#position-meta").textContent = data?.position?.position_key || "Loading position…";
   $("#notice").classList.add("hidden");
