@@ -70,7 +70,7 @@ def serve(
                     json.dumps({
                         "app": "chess-memoriser",
                         "status": "ok",
-                        "launcher_api": 21,
+                        "launcher_api": 22,
                         "stockfish_available": stockfish is not None,
                     }).encode(),
                     "application/json",
