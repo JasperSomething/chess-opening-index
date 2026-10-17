@@ -20,10 +20,18 @@ KEY_POSITION_FAMILIES = {
     "e4/Sicilian/4 Knights",
     "e4/Sicilian/Sveshnikov",
     "e4/Sicilian/Alapin",
+    "e4/Sicilian/Dragon/Dragon Sicilian",
     "e4/Sicilian/Dragon/Accelerated Dragon",
 }
 
 HIERARCHY_POSITION_GROUPS = {
+    "e4/Sicilian/Dragon/Dragon Sicilian": [
+        {
+            "label": "Yugoslav Approach",
+            "line": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 O-O 8. Qd2 Nc6 9. Bc4 Bd7 10. O-O-O",
+            "sidelines": [],
+        },
+    ],
     "e4/Sicilian/Dragon/Accelerated Dragon": [
         {
             "label": "Maroczy Approach",

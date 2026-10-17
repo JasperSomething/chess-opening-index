@@ -1168,6 +1168,89 @@
         }
       ]
     },
+    "e4/Sicilian/Dragon/Dragon Sicilian/Yugoslav Approach": {
+      "definition_position_key": "r2q1rk1/pp1bppbp/2np1np1/8/2BNP3/2N1BP2/PPPQ2PP/2KR3R b - -",
+      "moves_san": [
+        "e4",
+        "c5",
+        "Nf3",
+        "d6",
+        "d4",
+        "cxd4",
+        "Nxd4",
+        "Nf6",
+        "Nc3",
+        "g6",
+        "Be3",
+        "Bg7",
+        "f3",
+        "O-O",
+        "Qd2",
+        "Nc6",
+        "Bc4",
+        "Bd7",
+        "O-O-O",
+        "Rc8",
+        "Bb3",
+        "Ne5"
+      ],
+      "moves_uci": [
+        "e2e4",
+        "c7c5",
+        "g1f3",
+        "d7d6",
+        "d2d4",
+        "c5d4",
+        "f3d4",
+        "g8f6",
+        "b1c3",
+        "g7g6",
+        "c1e3",
+        "f8g7",
+        "f2f3",
+        "e8g8",
+        "d1d2",
+        "b8c6",
+        "f1c4",
+        "c8d7",
+        "e1c1",
+        "a8c8",
+        "c4b3",
+        "c6e5"
+      ],
+      "pgn": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 O-O 8. Qd2 Nc6 9. Bc4 Bd7 10. O-O-O Rc8 11. Bb3 Ne5",
+      "fen": "2rq1rk1/pp1bppbp/3p1np1/4n3/3NP3/1BN1BP2/PPPQ2PP/2KR3R w - - 9 12",
+      "position_key": "2rq1rk1/pp1bppbp/3p1np1/4n3/3NP3/1BN1BP2/PPPQ2PP/2KR3R w - -",
+      "stop_reason": "wide_choice",
+      "continuation_games_at_stop": 2391,
+      "choices_at_stop": [
+        {
+          "san": "h4",
+          "games": 1167,
+          "frequency": 0.4880803011292346
+        },
+        {
+          "san": "Kb1",
+          "games": 977,
+          "frequency": 0.4086156419907988
+        },
+        {
+          "san": "Bg5",
+          "games": 123,
+          "frequency": 0.05144291091593475
+        },
+        {
+          "san": "g4",
+          "games": 79,
+          "frequency": 0.03304056879966541
+        },
+        {
+          "san": "Bh6",
+          "games": 34,
+          "frequency": 0.014219991635299039
+        }
+      ]
+    },
     "e4/Sicilian/Dragon/Hyper Accelerated Dragon": {
       "definition_position_key": "rnbqkbnr/pp1ppp1p/6p1/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq -",
       "moves_san": [

@@ -54,7 +54,7 @@ class OpeningGuideTests(unittest.TestCase):
                 collect(child)
         for root in hierarchy["roots"]:
             collect(root)
-        self.assertEqual(len(nodes), 116)
+        self.assertEqual(len(nodes), 117)
         self.assertTrue(all(node["pgn"] for node in nodes))
         self.assertTrue(all(node["position_data"]["fen"] for node in nodes))
         najdorf = next(node for node in nodes if node["label"] == "Najdorf")
@@ -75,6 +75,21 @@ class OpeningGuideTests(unittest.TestCase):
         self.assertEqual([node["label"] for node in dragon["children"]], [
             "Dragon Sicilian", "Hyper Accelerated Dragon", "Accelerated Dragon"
         ])
+        traditional = dragon["children"][0]
+        self.assertEqual(traditional["child_role"], "key_positions")
+        self.assertEqual(
+            [node["label"] for node in traditional["children"]],
+            ["Yugoslav Approach"],
+        )
+        traditional_yugoslav = traditional["children"][0]
+        self.assertEqual(
+            traditional_yugoslav["position_data"]["moves_san"],
+            [
+                "e4", "c5", "Nf3", "d6", "d4", "cxd4", "Nxd4", "Nf6",
+                "Nc3", "g6", "Be3", "Bg7", "f3", "O-O", "Qd2", "Nc6",
+                "Bc4", "Bd7", "O-O-O",
+            ],
+        )
         accelerated = dragon["children"][2]
         self.assertEqual(accelerated["child_role"], "key_positions")
         self.assertEqual([node["label"] for node in accelerated["children"]], [
@@ -93,6 +108,14 @@ class OpeningGuideTests(unittest.TestCase):
         self.assertEqual(
             yugoslav["position_data"]["moves_san"][-11:],
             ["Nc3", "Bg7", "Be3", "Nf6", "Bc4", "O-O", "Bb3", "d6", "f3", "Bd7", "Qd2"],
+        )
+        self.assertEqual(
+            traditional_yugoslav["position_data"]["moves_san"][:10],
+            ["e4", "c5", "Nf3", "d6", "d4", "cxd4", "Nxd4", "Nf6", "Nc3", "g6"],
+        )
+        self.assertEqual(
+            yugoslav["position_data"]["moves_san"][:8],
+            ["e4", "c5", "Nf3", "Nc6", "d4", "cxd4", "Nxd4", "g6"],
         )
 
         scheveningen = families["Scheveningen"]
