@@ -54,7 +54,7 @@ class OpeningGuideTests(unittest.TestCase):
                 collect(child)
         for root in hierarchy["roots"]:
             collect(root)
-        self.assertEqual(len(nodes), 117)
+        self.assertEqual(len(nodes), 119)
         self.assertTrue(all(node["pgn"] for node in nodes))
         self.assertTrue(all(node["position_data"]["fen"] for node in nodes))
         najdorf = next(node for node in nodes if node["label"] == "Najdorf")
@@ -90,6 +90,34 @@ class OpeningGuideTests(unittest.TestCase):
                 "Bc4", "Bd7", "O-O-O",
             ],
         )
+        hyper = dragon["children"][1]
+        self.assertEqual(hyper["child_role"], "key_positions")
+        self.assertEqual(
+            [node["label"] for node in hyper["children"]],
+            ["Maroczy Approach", "Yugoslav Approach"],
+        )
+        hyper_maroczy, hyper_yugoslav = hyper["children"]
+        self.assertEqual(
+            hyper_maroczy["position_data"]["moves_san"],
+            [
+                "e4", "c5", "Nf3", "g6", "d4", "cxd4", "Nxd4", "Bg7",
+                "c4", "Nc6", "Be3", "Nf6", "Nc3", "O-O", "Be2", "d6",
+                "O-O", "Bd7",
+            ],
+        )
+        self.assertEqual(len(hyper_maroczy["sidelines"]), 1)
+        self.assertEqual(
+            hyper_maroczy["sidelines"][0]["position_data"]["moves_san"][-4:],
+            ["Ng4", "Qxg4", "Nxd4", "Qd1"],
+        )
+        self.assertEqual(
+            hyper_yugoslav["position_data"]["moves_san"],
+            [
+                "e4", "c5", "Nf3", "g6", "d4", "cxd4", "Nxd4", "Bg7",
+                "Nc3", "Nc6", "Be3", "Nf6", "Bc4", "O-O", "Bb3", "d6",
+                "f3", "Bd7", "Qd2",
+            ],
+        )
         accelerated = dragon["children"][2]
         self.assertEqual(accelerated["child_role"], "key_positions")
         self.assertEqual([node["label"] for node in accelerated["children"]], [
@@ -116,6 +144,10 @@ class OpeningGuideTests(unittest.TestCase):
         self.assertEqual(
             yugoslav["position_data"]["moves_san"][:8],
             ["e4", "c5", "Nf3", "Nc6", "d4", "cxd4", "Nxd4", "g6"],
+        )
+        self.assertEqual(
+            hyper_yugoslav["position_data"]["moves_san"][:8],
+            ["e4", "c5", "Nf3", "g6", "d4", "cxd4", "Nxd4", "Bg7"],
         )
 
         scheveningen = families["Scheveningen"]

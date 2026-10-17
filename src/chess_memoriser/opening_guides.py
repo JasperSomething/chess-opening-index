@@ -21,6 +21,7 @@ KEY_POSITION_FAMILIES = {
     "e4/Sicilian/Sveshnikov",
     "e4/Sicilian/Alapin",
     "e4/Sicilian/Dragon/Dragon Sicilian",
+    "e4/Sicilian/Dragon/Hyper Accelerated Dragon",
     "e4/Sicilian/Dragon/Accelerated Dragon",
 }
 
@@ -29,6 +30,23 @@ HIERARCHY_POSITION_GROUPS = {
         {
             "label": "Yugoslav Approach",
             "line": "1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 O-O 8. Qd2 Nc6 9. Bc4 Bd7 10. O-O-O",
+            "sidelines": [],
+        },
+    ],
+    "e4/Sicilian/Dragon/Hyper Accelerated Dragon": [
+        {
+            "label": "Maroczy Approach",
+            "line": "1. e4 c5 2. Nf3 g6 3. d4 cxd4 4. Nxd4 Bg7 5. c4 Nc6 6. Be3 Nf6 7. Nc3 O-O 8. Be2 d6 9. O-O Bd7",
+            "sidelines": [
+                {
+                    "label": "7...Ng4 tactical sideline",
+                    "line": "1. e4 c5 2. Nf3 g6 3. d4 cxd4 4. Nxd4 Bg7 5. c4 Nc6 6. Be3 Nf6 7. Nc3 Ng4 8. Qxg4 Nxd4 9. Qd1",
+                }
+            ],
+        },
+        {
+            "label": "Yugoslav Approach",
+            "line": "1. e4 c5 2. Nf3 g6 3. d4 cxd4 4. Nxd4 Bg7 5. Nc3 Nc6 6. Be3 Nf6 7. Bc4 O-O 8. Bb3 d6 9. f3 Bd7 10. Qd2",
             "sidelines": [],
         },
     ],
