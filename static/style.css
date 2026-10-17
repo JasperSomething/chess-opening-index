@@ -109,6 +109,11 @@ button:disabled { opacity: .35; cursor: default; }
 .opening-map-branches { display: flex; flex-wrap: wrap; gap: 3px 7px; margin-top: 4px; color: #aab3b9; font: 650 8px/1.2 ui-monospace, monospace; }
 .opening-map-branches b { color: #657179; font-size: 7px; letter-spacing: .08em; }
 .opening-map-branches i { color: var(--accent); font-style: normal; }
+.opening-map-sidelines { margin-top: 5px; border-left: 2px solid #4b5726; padding-left: 6px; }
+.opening-map-sidelines summary { cursor: pointer; color: var(--accent); font: 800 7px/1.3 ui-monospace, monospace; letter-spacing: .06em; }
+.opening-map-sidelines button { width: 100%; min-height: 0; margin-top: 4px; padding: 4px 5px; display: grid; gap: 2px; text-align: left; background: #171d20; }
+.opening-map-sidelines b { color: #d7dddf; font-size: 8px; }
+.opening-map-sidelines span { overflow: hidden; color: #8f9aa0; font: 600 7px/1.25 ui-monospace, monospace; text-overflow: ellipsis; white-space: nowrap; }
 .opening-map-actions { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; padding-top: 6px; }
 .opening-map-actions button { min-height: 24px; padding: 3px 6px; font-size: 7px; }
 .opening-map-browse { flex: 1 1 auto; color: #dce2e5; }

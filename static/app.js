@@ -297,11 +297,14 @@ function browseTaxonomy(path) {
 function taxonomyCard(node, path, openingBySlug) {
   const card = document.createElement("article");
   card.className = `opening-map-card level-${node.level}`;
-  card.append(miniBoard(node.mainline_position_data.fen));
+  const isKeyPosition = node.level === "position";
+  const displayedPosition = isKeyPosition ? node.position_data : node.mainline_position_data;
+  const displayedPgn = isKeyPosition ? node.pgn : node.mainline_pgn;
+  card.append(miniBoard(displayedPosition.fen));
   const content = document.createElement("div");
   content.className = "opening-map-content";
   content.innerHTML = `<span class="opening-map-level">${escapeHtml(node.level.toUpperCase())}</span><h3>${escapeHtml(node.label)}</h3>`;
-  if (node.mainline_pgn !== node.pgn) {
+  if (!isKeyPosition && node.mainline_pgn !== node.pgn) {
     const definition = document.createElement("p");
     definition.className = "opening-map-definition";
     definition.textContent = `Defines: ${node.pgn}`;
@@ -311,9 +314,9 @@ function taxonomyCard(node, path, openingBySlug) {
   const pgn = document.createElement("button");
   pgn.type = "button";
   pgn.className = "opening-map-pgn";
-  pgn.title = `Load ${node.mainline_pgn}`;
-  pgn.innerHTML = `<span>DATABASE MAINLINE TRUNK</span><strong>${escapeHtml(node.mainline_pgn)}</strong>`;
-  pgn.onclick = () => loadLine(node.mainline_position_data.moves_uci);
+  pgn.title = `Load ${displayedPgn}`;
+  pgn.innerHTML = `<span>${isKeyPosition ? "KEY POSITION" : "DATABASE MAINLINE TRUNK"}</span><strong>${escapeHtml(displayedPgn)}</strong>`;
+  pgn.onclick = () => loadLine(displayedPosition.moves_uci);
   content.append(pgn);
   const stopLabels = {
     wide_choice: "CHOICE POINT",
@@ -322,18 +325,33 @@ function taxonomyCard(node, path, openingBySlug) {
     no_continuations: "END OF DATA",
     definition_only: "DEFINING POSITION",
   };
-  const stop = document.createElement("span");
-  stop.className = "opening-map-stop";
-  const games = node.mainline_stop_games === null ? "" : ` · ${formatNumber(node.mainline_stop_games)} OTB games`;
-  stop.textContent = `${stopLabels[node.mainline_stop_reason] || "STOP POSITION"}${games}`;
-  content.append(stop);
-  if (node.mainline_choices.length) {
-    const branches = document.createElement("div");
-    branches.className = "opening-map-branches";
-    branches.innerHTML = `<b>NEXT</b>${node.mainline_choices.slice(0, 3).map(choice =>
-      `<span>${escapeHtml(choice.san)} <i>${formatPercent(choice.frequency)}</i></span>`
-    ).join("")}`;
-    content.append(branches);
+  if (!isKeyPosition) {
+    const stop = document.createElement("span");
+    stop.className = "opening-map-stop";
+    const games = node.mainline_stop_games === null ? "" : ` · ${formatNumber(node.mainline_stop_games)} OTB games`;
+    stop.textContent = `${stopLabels[node.mainline_stop_reason] || "STOP POSITION"}${games}`;
+    content.append(stop);
+    if (node.mainline_choices.length) {
+      const branches = document.createElement("div");
+      branches.className = "opening-map-branches";
+      branches.innerHTML = `<b>NEXT</b>${node.mainline_choices.slice(0, 3).map(choice =>
+        `<span>${escapeHtml(choice.san)} <i>${formatPercent(choice.frequency)}</i></span>`
+      ).join("")}`;
+      content.append(branches);
+    }
+  }
+  if (node.sidelines?.length) {
+    const sidelines = document.createElement("details");
+    sidelines.className = "opening-map-sidelines";
+    sidelines.innerHTML = `<summary>${node.sidelines.length} TACTICAL SIDELINE${node.sidelines.length === 1 ? "" : "S"}</summary>`;
+    node.sidelines.forEach(sideline => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.innerHTML = `<b>${escapeHtml(sideline.label)}</b><span>${escapeHtml(sideline.pgn)}</span>`;
+      button.onclick = () => loadLine(sideline.position_data.moves_uci);
+      sidelines.append(button);
+    });
+    content.append(sidelines);
   }
   const actions = document.createElement("div");
   actions.className = "opening-map-actions";
@@ -352,7 +370,7 @@ function taxonomyCard(node, path, openingBySlug) {
     loadPosition.type = "button";
     loadPosition.className = "opening-map-browse";
     loadPosition.textContent = "LOAD ON BOARD";
-    loadPosition.onclick = () => loadLine(node.mainline_position_data.moves_uci);
+    loadPosition.onclick = () => loadLine(displayedPosition.moves_uci);
     actions.append(loadPosition);
   }
   const opening = node.opening_slugs.length ? openingBySlug.get(node.opening_slugs[0]) : null;

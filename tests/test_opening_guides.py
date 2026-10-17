@@ -54,7 +54,7 @@ class OpeningGuideTests(unittest.TestCase):
                 collect(child)
         for root in hierarchy["roots"]:
             collect(root)
-        self.assertEqual(len(nodes), 114)
+        self.assertEqual(len(nodes), 116)
         self.assertTrue(all(node["pgn"] for node in nodes))
         self.assertTrue(all(node["position_data"]["fen"] for node in nodes))
         najdorf = next(node for node in nodes if node["label"] == "Najdorf")
@@ -75,6 +75,25 @@ class OpeningGuideTests(unittest.TestCase):
         self.assertEqual([node["label"] for node in dragon["children"]], [
             "Dragon Sicilian", "Hyper Accelerated Dragon", "Accelerated Dragon"
         ])
+        accelerated = dragon["children"][2]
+        self.assertEqual(accelerated["child_role"], "key_positions")
+        self.assertEqual([node["label"] for node in accelerated["children"]], [
+            "Maroczy Approach", "Yugoslav Approach"
+        ])
+        maroczy, yugoslav = accelerated["children"]
+        self.assertEqual(
+            maroczy["position_data"]["moves_san"][-10:],
+            ["c4", "Bg7", "Be3", "Nf6", "Nc3", "O-O", "Be2", "d6", "O-O", "Bd7"],
+        )
+        self.assertEqual(len(maroczy["sidelines"]), 1)
+        self.assertEqual(
+            maroczy["sidelines"][0]["position_data"]["moves_san"][-4:],
+            ["Ng4", "Qxg4", "Nxd4", "Qd1"],
+        )
+        self.assertEqual(
+            yugoslav["position_data"]["moves_san"][-11:],
+            ["Nc3", "Bg7", "Be3", "Nf6", "Bc4", "O-O", "Bb3", "d6", "f3", "Bd7", "Qd2"],
+        )
 
         scheveningen = families["Scheveningen"]
         self.assertEqual(scheveningen["child_role"], "key_positions")

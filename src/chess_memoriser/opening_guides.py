@@ -20,6 +20,27 @@ KEY_POSITION_FAMILIES = {
     "e4/Sicilian/4 Knights",
     "e4/Sicilian/Sveshnikov",
     "e4/Sicilian/Alapin",
+    "e4/Sicilian/Dragon/Accelerated Dragon",
+}
+
+HIERARCHY_POSITION_GROUPS = {
+    "e4/Sicilian/Dragon/Accelerated Dragon": [
+        {
+            "label": "Maroczy Approach",
+            "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. c4 Bg7 6. Be3 Nf6 7. Nc3 O-O 8. Be2 d6 9. O-O Bd7",
+            "sidelines": [
+                {
+                    "label": "7...Ng4 tactical sideline",
+                    "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. c4 Bg7 6. Be3 Nf6 7. Nc3 Ng4 8. Qxg4 Nxd4 9. Qd1",
+                }
+            ],
+        },
+        {
+            "label": "Yugoslav Approach",
+            "line": "1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Nc3 Bg7 6. Be3 Nf6 7. Bc4 O-O 8. Bb3 d6 9. f3 Bd7 10. Qd2",
+            "sidelines": [],
+        },
+    ]
 }
 
 HIERARCHY_OPENINGS = {
@@ -201,13 +222,31 @@ def _hierarchy_draft(catalogue_by_slug: dict[str, dict], *, load_mainlines: bool
             if current_minor is None:
                 raise GuideDataError(f"subcategory without minor: {label}")
             current_minor["children"].append(node)
+
+    def inject_position_groups(nodes: list[dict], path: tuple[str, ...]) -> None:
+        for node in nodes:
+            current_path = (*path, node["label"])
+            path_key = "/".join(current_path)
+            for position in HIERARCHY_POSITION_GROUPS.get(path_key, []):
+                node["children"].append({
+                    "label": position["label"],
+                    "level": "position",
+                    "opening_slugs": [],
+                    "children": [],
+                    "_line": position["line"],
+                    "_sidelines": position.get("sidelines", []),
+                })
+            inject_position_groups(node["children"], current_path)
+
+    inject_position_groups(roots, ())
+
     def enrich(node: dict, path: tuple[str, ...], inherited_line: str) -> None:
         current_path = (*path, node["label"])
         path_key = "/".join(current_path)
         if len(current_path) == 3 and current_path[:2] == ("e4", "Sicilian"):
             node["level"] = "family"
         node["child_role"] = "key_positions" if path_key in KEY_POSITION_FAMILIES else "categories"
-        line = HIERARCHY_LINES.get(path_key)
+        line = node.pop("_line", None) or HIERARCHY_LINES.get(path_key)
         if line is None and node["opening_slugs"]:
             line = " ".join(catalogue_by_slug[node["opening_slugs"][0]]["moves_san"])
         if line is None:
@@ -215,6 +254,17 @@ def _hierarchy_draft(catalogue_by_slug: dict[str, dict], *, load_mainlines: bool
         parsed = _position(line, f"hierarchy {path_key}")
         node["position_data"] = _position_fields(parsed)
         node["pgn"] = _pgn(parsed.san_sequence)
+        node["sidelines"] = []
+        for sideline_index, sideline in enumerate(node.pop("_sidelines", []), 1):
+            sideline_position = _position(
+                sideline["line"],
+                f"hierarchy {path_key} sideline {sideline_index}",
+            )
+            node["sidelines"].append({
+                "label": sideline["label"],
+                "pgn": _pgn(sideline_position.san_sequence),
+                "position_data": _position_fields(sideline_position),
+            })
         mainline = mainline_entries.get(path_key)
         if mainline:
             if mainline.get("definition_position_key") != parsed.key:
