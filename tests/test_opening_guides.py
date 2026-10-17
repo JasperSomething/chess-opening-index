@@ -65,6 +65,14 @@ class OpeningGuideTests(unittest.TestCase):
     def test_opening_wiki_is_attached_to_valid_taxonomy_paths(self):
         payload = catalogue_response()
         self.assertEqual(payload["wiki"]["home"]["title"], "Opening theory map")
+        self.assertEqual(payload["wiki"]["entries"]["e4"]["title"], "King's Pawn Opening")
+        self.assertEqual(payload["wiki"]["entries"]["e4/e5"]["title"], "Open Game")
+        self.assertEqual(payload["wiki"]["entries"]["e4/Sicilian/Dragon"]["title"], "Dragon Variation")
+        self.assertEqual(payload["wiki"]["entries"]["e4/Sicilian/Alapin"]["title"], "Alapin Variation")
+        self.assertTrue(any(
+            source["url"] == "https://en.wikibooks.org/wiki/Chess_Opening_Theory"
+            for source in payload["wiki"]["home"]["sources"]
+        ))
         self.assertIn("e4/Sicilian", payload["wiki"]["entries"])
         self.assertIn("d4/Queen's Gambit", payload["wiki"]["entries"])
         self.assertIn("c4 (English)", payload["wiki"]["entries"])

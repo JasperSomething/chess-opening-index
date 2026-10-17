@@ -18,6 +18,7 @@ let activeOpening = null;
 let activeGuide = null;
 let guideRequestId = 0;
 let cataloguePath = [];
+let lineAnimationId = 0;
 
 const OPENING_DISPLAY_NAMES = {
   "e4/e5/Sidelines / Transpositions": "Open Games",
@@ -25,15 +26,29 @@ const OPENING_DISPLAY_NAMES = {
   "e4/Caro-Kann/Sidelines": "Caro-Kann Defense",
   "e4/Alternatives/Modern/ Pirc": "Pirc Defense",
   "e4/Alternatives/Nimsowitsch Defense": "Nimzowitsch Defense",
-  "e4/Sicilian/Nimsowitsch variation": "Sicilian Defense: Nimzowitsch Variation",
-  "e4/Sicilian/Katalimov variation": "Sicilian Defense: Katalimov Variation",
+  "e4/Sicilian/Nimsowitsch variation": "Nimzowitsch Variation",
+  "e4/Sicilian/Katalimov variation": "Katalimov Variation",
   "e4/Sicilian/Moscow variation": "Moscow Variation",
+  "e4/Sicilian/Classical": "Classical Variation",
+  "e4/Sicilian/Dragon": "Dragon Variation",
+  "e4/Sicilian/Dragon/Dragon Sicilian": "Dragon Variation",
+  "e4/Sicilian/Dragon/Hyper Accelerated Dragon": "Hyper-Accelerated Dragon",
+  "e4/Sicilian/Scheveningen": "Scheveningen Variation",
+  "e4/Sicilian/4 Knights": "Four Knights Variation",
+  "e4/Sicilian/Closed": "Closed Sicilian",
+  "e4/Sicilian/Alapin": "Alapin Variation",
   "d4/Queen's Gambit/QG Sidelines": "Queen's Gambit",
   "d4/Sidelines": "Queen's Pawn Opening",
   "c4 (English)/Sidelines/ Alternatives": "English Opening",
 };
 
 const POSITION_MOVE_DISPLAY_NAMES = {
+  "|e2e4": "King's Pawn Opening",
+  "|d2d4": "Queen's Pawn Opening",
+  "|g1f3": "Zukertort Opening",
+  "|c2c4": "English Opening",
+  "|b2b3": "Nimzowitsch-Larsen Attack",
+  "|f2f4": "Bird's Opening",
   "e2e4|c7c5": "Sicilian Defense",
   "e2e4|e7e5": "Open Game",
   "e2e4|e7e6": "French Defense",
@@ -44,6 +59,18 @@ const POSITION_MOVE_DISPLAY_NAMES = {
   "e2e4|g8f6": "Alekhine's Defense",
   "e2e4|b8c6": "Nimzowitsch Defense",
   "e2e4|b7b6": "Owen's Defense",
+};
+
+const THEORY_ROUTE_NAMES = {
+  "e2e4,e7e5|g1f3": "King's Knight Opening",
+  "e2e4,c7c5|g1f3": "Open Sicilian",
+  "e2e4,c7c5,g1f3|d7d6": "Najdorf · Dragon · Scheveningen",
+  "e2e4,c7c5,g1f3|e7e6": "Kan · Taimanov · Four Knights",
+  "e2e4,c7c5,g1f3|b8c6": "Sveshnikov · Accelerated Dragon · Rossolimo",
+  "e2e4,c7c5,g1f3,d7d6|d2d4": "Open Sicilian",
+  "e2e4,c7c5,g1f3,e7e6|d2d4": "Open Sicilian",
+  "e2e4,c7c5,g1f3,b8c6|d2d4": "Open Sicilian",
+  "e2e4,c7c5,g1f3,d7d6,d2d4,c5d4,f3d4,g8f6,b1c3|e7e6": "Scheveningen Variation",
 };
 
 function formatNumber(value) {
@@ -111,6 +138,7 @@ function legalFrom(square) {
   return (data?.legal_moves || []).filter(move => move.uci.slice(0,2) === square);
 }
 function play(uci) {
+  cancelLineAnimation();
   history = history.slice(0, cursor);
   history.push(uci);
   cursor++;
@@ -118,10 +146,93 @@ function play(uci) {
   load(true);
 }
 function loadLine(ucis) {
+  cancelLineAnimation();
   history = [...ucis];
   cursor = history.length;
   selected = null;
   load(true);
+}
+function cancelLineAnimation() {
+  lineAnimationId++;
+  document.querySelectorAll(".theory-piece-flight").forEach(piece => piece.remove());
+  return lineAnimationId;
+}
+function wait(milliseconds) {
+  return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
+async function animateTheoryMove(uci, nextState, nextCursor, animationId) {
+  const grid = $("#grid");
+  const from = grid.querySelector(`[data-square="${uci.slice(0, 2)}"]`);
+  const to = grid.querySelector(`[data-square="${uci.slice(2, 4)}"]`);
+  const piece = from?.querySelector("img.piece");
+  if (from && to && piece) {
+    const gridBox = grid.getBoundingClientRect();
+    const fromBox = from.getBoundingClientRect();
+    const toBox = to.getBoundingClientRect();
+    const flight = piece.cloneNode(true);
+    flight.className = "piece theory-piece-flight";
+    flight.style.left = `${fromBox.left - gridBox.left}px`;
+    flight.style.top = `${fromBox.top - gridBox.top}px`;
+    flight.style.width = `${fromBox.width}px`;
+    flight.style.height = `${fromBox.height}px`;
+    grid.append(flight);
+    piece.style.opacity = "0";
+    to.querySelector("img.piece")?.classList.add("theory-capture-fade");
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    flight.style.transform = `translate(${toBox.left - fromBox.left}px, ${toBox.top - fromBox.top}px)`;
+    await wait(310);
+  } else {
+    await wait(190);
+  }
+  if (animationId !== lineAnimationId) return false;
+  cursor = nextCursor;
+  data = {...nextState, distributions: null};
+  selected = null;
+  renderPosition();
+  return true;
+}
+async function loadLineAnimated(ucis) {
+  const startMoves = history.slice(0, cursor);
+  const target = [...ucis];
+  const extendsCurrent = sameMovePrefix(startMoves, target) && target.length > startMoves.length;
+  if (!extendsCurrent || target.length === startMoves.length + 1) {
+    loadLine(target);
+    return;
+  }
+  const animationId = cancelLineAnimation();
+  const id = ++requestId;
+  clearTimeout(statsTimer);
+  statsController?.abort();
+  stateController?.abort();
+  engineRenderedKey = null;
+  clearEngineForPosition();
+  history = startMoves;
+  showStatisticsLoading();
+  $("#turn").textContent = "Playing theory line";
+  const params = new URLSearchParams({moves: target.join(",")});
+  stateController = new AbortController();
+  try {
+    const response = await fetch("/api/state?" + params, {signal: stateController.signal});
+    const payload = await readJsonResponse(response, "Board position");
+    if (!response.ok) throw new Error(payload.error || `HTTP ${response.status}`);
+    if (id !== requestId || animationId !== lineAnimationId) return;
+    for (const state of payload.prefixes) {
+      positionStateCache.set(stateCacheKey(state.position.uci_sequence), state);
+    }
+    for (let nextCursor = startMoves.length + 1; nextCursor <= target.length; nextCursor++) {
+      history = target.slice(0, nextCursor);
+      const continued = await animateTheoryMove(target[nextCursor - 1], payload.prefixes[nextCursor], nextCursor, animationId);
+      if (!continued) return;
+      await wait(70);
+    }
+    if (id === requestId && animationId === lineAnimationId) applyPositionState(payload.current, id);
+  } catch (error) {
+    if (error.name === "AbortError" || id !== requestId) return;
+    const notice = $("#notice");
+    notice.textContent = error.message;
+    notice.classList.remove("hidden");
+    $("#turn").textContent = "Position error";
+  }
 }
 function clickSquare(square) {
   if (!data) return;
@@ -156,6 +267,7 @@ function renderBoard() {
     for (let file = 0; file < 8; file++) {
       const square = "abcdefgh"[file] + rank;
       const button = document.createElement("button");
+      button.dataset.square = square;
       button.className = `sq ${(file + rank) % 2 ? "dark" : "light"}`;
       if (selected === square) button.classList.add("selected");
       if (targets.has(square)) button.classList.add("target");
@@ -353,29 +465,38 @@ function wikiMoveRows(items) {
   const master = data.distributions?.installed_master_database;
   const lichess = data.distributions?.lichess_player_games;
   const result = [];
-  const routeLabels = {
-    "e2e4,c7c5|g1f3": "Open Sicilian routes",
-    "e2e4,c7c5,g1f3,d7d6|d2d4": "Open Sicilian setup",
-    "e2e4,c7c5,g1f3,e7e6|d2d4": "Open Sicilian setup",
-    "e2e4,c7c5,g1f3,b8c6|d2d4": "Open Sicilian setup",
-  };
   for (const [uci, linked] of groups) {
     const exact = linked.filter(item => !item.isContainer && item.node.position_data.moves_uci.length === moves.length + 1);
     const moveKey = `${moves.join(",")}|${uci}`;
-    const routeLabel = POSITION_MOVE_DISPLAY_NAMES[moveKey] || routeLabels[moveKey];
+    const routeLabel = POSITION_MOVE_DISPLAY_NAMES[moveKey] || THEORY_ROUTE_NAMES[moveKey];
+    const nearest = linked
+      .filter(item => !item.isContainer)
+      .sort((a, b) => a.node.position_data.moves_uci.length - b.node.position_data.moves_uci.length);
+    const nearestDepth = nearest[0]?.node.position_data.moves_uci.length;
+    const nearestLabels = nearest
+      .filter(item => item.node.position_data.moves_uci.length === nearestDepth)
+      .map(item => commonOpeningLabel(item, false))
+      .filter((label, index, all) => all.indexOf(label) === index)
+      .slice(0, 3);
     const labels = routeLabel ? [routeLabel] : exact.length
       ? exact.map(item => {
           return commonOpeningLabel(item, false);
         }).filter((label, index, all) => all.indexOf(label) === index).slice(0, 2)
-      : [linked.length === 1 ? commonOpeningLabel(linked[0], false) : `${linked.length} mapped theory routes`];
+      : nearestLabels.length ? nearestLabels : ["Opening theory"];
     const theoryLines = linked
       .filter(item => !item.isContainer)
-      .map(item => item.node.position_data.moves_uci)
-      .filter(line => line.length > moves.length && sameMovePrefix(moves, line));
-    const candidates = theoryLines.length ? theoryLines : [[...moves, uci]];
-    let sharedLength = Math.min(...candidates.map(line => line.length));
+      .map(item => ({
+        ucis: item.node.position_data.moves_uci,
+        sans: item.node.position_data.moves_san,
+      }))
+      .filter(line => line.ucis.length > moves.length && sameMovePrefix(moves, line.ucis));
+    const candidates = theoryLines.length ? theoryLines : [{
+      ucis: [...moves, uci],
+      sans: [...(data.position.san_sequence || []), legal.get(uci).san],
+    }];
+    let sharedLength = Math.min(...candidates.map(line => line.ucis.length));
     for (let index = moves.length; index < sharedLength; index++) {
-      if (!candidates.every(line => line[index] === candidates[0][index])) {
+      if (!candidates.every(line => line.ucis[index] === candidates[0].ucis[index])) {
         sharedLength = index;
         break;
       }
@@ -384,7 +505,8 @@ function wikiMoveRows(items) {
       uci,
       san: legal.get(uci).san,
       labels,
-      targetUcis: candidates[0].slice(0, sharedLength),
+      targetUcis: candidates[0].ucis.slice(0, sharedLength),
+      continuationSan: candidates[0].sans.slice(moves.length, sharedLength),
       master: sourceMove(master, uci),
       lichess: sourceMove(lichess, uci),
       known: true,
@@ -436,7 +558,7 @@ function renderOpeningWiki() {
   const movesPanel = $("#wiki-moves");
   movesPanel.replaceChildren();
   if (!rows.length) {
-    movesPanel.innerHTML = '<span class="empty">No mapped theory moves from this position.</span>';
+    movesPanel.innerHTML = '<span class="empty">No further opening branches in this guide.</span>';
   } else {
     rows.forEach((row, index) => {
       const button = document.createElement("button");
@@ -444,8 +566,9 @@ function renderOpeningWiki() {
       button.className = "wiki-move" + (row.known ? " known" : "");
       button.innerHTML = `<span class="wiki-rank">${index + 1}</span><strong>${escapeHtml(row.san)}</strong>
         <span class="wiki-move-name">${escapeHtml(row.labels.join(" · "))}</span>
+        ${row.continuationSan.length > 1 ? `<span class="wiki-continuation">→ ${escapeHtml(row.continuationSan.join(" "))}</span>` : ""}
         <span class="wiki-frequency"><i>OTB ${formatPercent(row.master?.frequency)}</i><i>Lichess ${formatPercent(row.lichess?.frequency)}</i></span>`;
-      button.onclick = () => loadLine(row.targetUcis);
+      button.onclick = () => loadLineAnimated(row.targetUcis);
       movesPanel.append(button);
     });
   }
@@ -907,6 +1030,7 @@ function scheduleStatistics(id, delay=120) {
   }, delay);
 }
 async function load(positionChanged=false) {
+  cancelLineAnimation();
   const id = ++requestId;
   clearTimeout(statsTimer);
   statsController?.abort();
