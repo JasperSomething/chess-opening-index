@@ -335,13 +335,11 @@ footer { color: var(--muted); padding: 13px 2px; line-height: 1.55; }
 }
 body {
   background-color: var(--bg);
-  background-image:
-    linear-gradient(#ffffff08 1px, transparent 1px),
-    linear-gradient(90deg, #ffffff05 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: none;
   color: var(--text);
-  font-family: "IBM Plex Mono", "JetBrains Mono", "DejaVu Sans Mono", ui-monospace, monospace;
+  font-family: "Times New Roman", Times, serif;
 }
+body * { font-family: "Times New Roman", Times, serif !important; }
 .board::before, .mini-board::before { filter: contrast(1.34); }
 header {
   min-height: 68px;
@@ -352,7 +350,7 @@ header {
   background: #050505f4;
   box-shadow: 0 10px 30px #000b;
 }
-.eyebrow, .label, label, th, .source-name, .status, footer { letter-spacing: .08em; }
+.eyebrow, .label, label, th, .source-name, .status, footer { letter-spacing: .025em; }
 .eyebrow { color: #969696; font-size: 9px; }
 h1 {
   margin-top: 5px;
@@ -361,7 +359,7 @@ h1 {
   font-size: clamp(18px, 2vw, 25px);
   font-weight: 700;
   letter-spacing: -.04em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 .turn {
   border: 1px solid #555;
@@ -382,8 +380,8 @@ button, select, input {
   box-shadow: none;
   font-family: inherit;
   font-size: 9px;
-  letter-spacing: .055em;
-  text-transform: uppercase;
+  letter-spacing: .02em;
+  text-transform: none;
 }
 button {
   clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
@@ -428,7 +426,7 @@ button:active:not(:disabled) { background: #bdbdbd; color: #000; }
   border-bottom-color: #3a3a3a;
   background: #0c0c0c;
 }
-.opening-browser-head strong { color: #e2e2e2; font-family: inherit; font-size: 14px; font-weight: 700; text-transform: uppercase; }
+.opening-browser-head strong { color: #e2e2e2; font-family: inherit; font-size: 14px; font-weight: 700; text-transform: none; }
 .opening-browser-head .status { padding: 4px 7px; border: 0; border-bottom: 1px solid #aaa; background: transparent; }
 .wiki-layout { grid-template-columns: minmax(235px, .78fr) minmax(320px, 1.22fr); min-height: 390px; max-height: 525px; }
 .wiki-move-panel { padding: 9px; border-right-color: #353535; background: #060606; }
@@ -447,13 +445,13 @@ button:active:not(:disabled) { background: #bdbdbd; color: #000; }
 .wiki-move.known { box-shadow: inset 2px 0 #9a9a9a; }
 .wiki-rank { color: #666; }
 .wiki-move strong { color: #f0f0f0; font-size: 13px; }
-.wiki-move-name { color: #aaa; font-family: inherit; font-size: 9px; text-transform: uppercase; }
+.wiki-move-name { color: #aaa; font-family: inherit; font-size: 9px; text-transform: none; }
 .wiki-frequency i { color: #777; }
 .wiki-article { padding: 18px 20px; background: #090909; }
 .wiki-trail { margin-bottom: 13px; }
 .wiki-trail span { color: #6f6f6f; }
 .wiki-kicker { color: #aaa; }
-.wiki-article h2 { margin-top: 5px; color: #f2f2f2; font-family: inherit; font-weight: 700; text-transform: uppercase; }
+.wiki-article h2 { margin-top: 5px; color: #f2f2f2; font-family: inherit; font-weight: 700; text-transform: none; }
 .wiki-summary { color: #b3b3b3; font-family: inherit; font-size: 12px; }
 .wiki-article ul { border-left-color: #aaa; background: #0d0d0d; color: #a2a2a2; }
 .wiki-related span { border-color: #3a3a3a; background: #0d0d0d; }

@@ -162,13 +162,13 @@ function renderBoard() {
 function statusText(source, kind) {
   const el = $(`#${kind}-status`);
   if (!source.available) {
-    el.textContent = "UNAVAILABLE"; el.classList.add("error"); return;
+    el.textContent = "Unavailable"; el.classList.add("error"); return;
   }
   el.classList.remove("error");
   if (kind === "lichess") {
     const origin = source.metadata.cache_origin;
-    el.textContent = origin === "live_api" ? "LIVE · CACHED NOW" : origin === "local_cache" ? "LOCAL CACHE" : "REUSED LEGACY CACHE";
-  } else el.textContent = "COMPLETE LOCAL INDEX";
+    el.textContent = origin === "live_api" ? "Live · cached now" : origin === "local_cache" ? "Local cache" : "Reused legacy cache";
+  } else el.textContent = "Complete local index";
 }
 function renderSources() {
   const lichess = data.distributions.lichess_player_games;
@@ -189,10 +189,10 @@ function renderMoves() {
   for (const move of data.legal_moves) byUci.set(move.uci, {uci:move.uci, san:move.san});
   const minimum = threshold();
   const label = thresholdLabel();
-  $("#master-source-name").textContent = `LUMBRA OTB · BOTH 2200+ · DISPLAY ≥${label}`;
-  $("#lichess-source-name").textContent = `LICHESS PLAYERS · DISPLAY ≥${label}`;
+  $("#master-source-name").textContent = `Lumbra OTB · both 2200+ · display ≥${label}`;
+  $("#lichess-source-name").textContent = `Lichess players · display ≥${label}`;
   $("#master-table-head").textContent = `OTB 2200+ · ≥${label}`;
-  $("#lichess-table-head").textContent = `LICHESS PLAYERS · ≥${label}`;
+  $("#lichess-table-head").textContent = `Lichess players · ≥${label}`;
   for (const move of lichess.moves) {
     if (move.frequency !== null && move.frequency >= minimum) {
       Object.assign(byUci.get(move.uci) || {}, {uci:move.uci, san:move.san, lichess:move});
@@ -381,13 +381,13 @@ function renderOpeningWiki() {
   ).join("");
   $("#wiki-article").innerHTML = `
     <div class="wiki-trail">${trail.map(part => `<span>${escapeHtml(part)}</span>`).join("")}</div>
-    <span class="wiki-kicker">${classification.primary ? "CURRENT OPENING FAMILY" : "STARTING POSITION"}</span>
+    <span class="wiki-kicker">${classification.primary ? "Current opening family" : "Starting position"}</span>
     <h2>${escapeHtml(title)}</h2>
     ${classification.primary && sourcePath !== pathKey ? `<p class="wiki-inherits">High-level context: ${escapeHtml(article.title)}</p>` : ""}
     <p class="wiki-summary">${escapeHtml(article.summary)}</p>
     ${(article.ideas || []).length ? `<ul>${article.ideas.map(idea => `<li>${escapeHtml(idea)}</li>`).join("")}</ul>` : ""}
-    ${related.length ? `<div class="wiki-related"><b>ALSO RECOGNISED AS</b>${related.map(name => `<span>${escapeHtml(name)}</span>`).join("")}</div>` : ""}
-    <div class="wiki-sources"><b>SOURCES</b>${sources}</div>`;
+    ${related.length ? `<div class="wiki-related"><b>Also recognised as</b>${related.map(name => `<span>${escapeHtml(name)}</span>`).join("")}</div>` : ""}
+    <div class="wiki-sources"><b>Sources</b>${sources}</div>`;
 
   const rows = wikiMoveRows(items);
   const movesPanel = $("#wiki-moves");
@@ -406,7 +406,7 @@ function renderOpeningWiki() {
       movesPanel.append(button);
     });
   }
-  $("#catalogue-count").textContent = classification.primary ? classification.primary.node.label.toUpperCase() : "START";
+  $("#catalogue-count").textContent = classification.primary ? classification.primary.node.label : "Start";
 }
 function taxonomyNodeAt(path) {
   let nodes = openingCatalogue.hierarchy_draft.roots;
@@ -455,7 +455,7 @@ function taxonomyCard(node, path, openingBySlug) {
   card.append(miniBoard(displayedPosition.fen));
   const content = document.createElement("div");
   content.className = "opening-map-content";
-  content.innerHTML = `<span class="opening-map-level">${escapeHtml(node.level.toUpperCase())}</span><h3>${escapeHtml(node.label)}</h3>`;
+  content.innerHTML = `<span class="opening-map-level">${escapeHtml(node.level)}</span><h3>${escapeHtml(node.label)}</h3>`;
   if (!isKeyPosition && node.mainline_pgn !== node.pgn) {
     const definition = document.createElement("p");
     definition.className = "opening-map-definition";
@@ -467,26 +467,26 @@ function taxonomyCard(node, path, openingBySlug) {
   pgn.type = "button";
   pgn.className = "opening-map-pgn";
   pgn.title = `Load ${displayedPgn}`;
-  pgn.innerHTML = `<span>${isKeyPosition ? "KEY POSITION" : "DATABASE MAINLINE TRUNK"}</span><strong>${escapeHtml(displayedPgn)}</strong>`;
+  pgn.innerHTML = `<span>${isKeyPosition ? "Key position" : "Database mainline trunk"}</span><strong>${escapeHtml(displayedPgn)}</strong>`;
   pgn.onclick = () => loadLine(displayedPosition.moves_uci);
   content.append(pgn);
   const stopLabels = {
-    wide_choice: "CHOICE POINT",
-    small_sample: "LOW OTB COVERAGE",
-    middlegame_depth: "MIDDLEGAME",
-    no_continuations: "END OF DATA",
-    definition_only: "DEFINING POSITION",
+    wide_choice: "Choice point",
+    small_sample: "Low OTB coverage",
+    middlegame_depth: "Middlegame",
+    no_continuations: "End of data",
+    definition_only: "Defining position",
   };
   if (!isKeyPosition) {
     const stop = document.createElement("span");
     stop.className = "opening-map-stop";
     const games = node.mainline_stop_games === null ? "" : ` · ${formatNumber(node.mainline_stop_games)} OTB games`;
-    stop.textContent = `${stopLabels[node.mainline_stop_reason] || "STOP POSITION"}${games}`;
+    stop.textContent = `${stopLabels[node.mainline_stop_reason] || "Stop position"}${games}`;
     content.append(stop);
     if (node.mainline_choices.length) {
       const branches = document.createElement("div");
       branches.className = "opening-map-branches";
-      branches.innerHTML = `<b>NEXT</b>${node.mainline_choices.slice(0, 3).map(choice =>
+      branches.innerHTML = `<b>Next</b>${node.mainline_choices.slice(0, 3).map(choice =>
         `<span>${escapeHtml(choice.san)} <i>${formatPercent(choice.frequency)}</i></span>`
       ).join("")}`;
       content.append(branches);
@@ -513,7 +513,7 @@ function taxonomyCard(node, path, openingBySlug) {
     browse.className = "opening-map-browse";
     const childLabel = node.child_role === "key_positions"
       ? `KEY POSITION${node.children.length === 1 ? "" : "S"}`
-      : (node.children.length === 1 ? "OPTION" : "OPTIONS");
+      : (node.children.length === 1 ? "Option" : "Options");
     browse.textContent = `BROWSE ${node.children.length} ${childLabel} →`;
     browse.onclick = () => browseTaxonomy(path);
     actions.append(browse);
@@ -521,7 +521,7 @@ function taxonomyCard(node, path, openingBySlug) {
     const loadPosition = document.createElement("button");
     loadPosition.type = "button";
     loadPosition.className = "opening-map-browse";
-    loadPosition.textContent = "LOAD ON BOARD";
+    loadPosition.textContent = "Load on board";
     loadPosition.onclick = () => loadLine(displayedPosition.moves_uci);
     actions.append(loadPosition);
   }
@@ -530,7 +530,7 @@ function taxonomyCard(node, path, openingBySlug) {
     const guide = document.createElement("button");
     guide.type = "button";
     guide.className = "opening-map-guide";
-    guide.textContent = "STRATEGIC GUIDE";
+    guide.textContent = "Strategic guide";
     guide.onclick = () => selectOpening(opening.slug);
     actions.append(guide);
   }
@@ -562,7 +562,7 @@ function renderOpeningCatalogue() {
   nav.className = "opening-map-nav";
   const home = document.createElement("button");
   home.type = "button";
-  home.textContent = "ALL OPENINGS";
+  home.textContent = "All openings";
   home.onclick = () => browseTaxonomy([]);
   nav.append(home);
   if (!query) {
@@ -594,7 +594,7 @@ function optionStats(option, decision) {
   if (!data?.distributions) return '<span class="choice-stats-away">Loading exact-position frequencies…</span>';
   const master = data.distributions.installed_master_database;
   const lichess = data.distributions.lichess_player_games;
-  return `<span><b>OTB</b> ${guideStat(master, option.move_uci)}</span><span><b>LICHESS</b> ${guideStat(lichess, option.move_uci)}</span>`;
+  return `<span><b>OTB</b> ${guideStat(master, option.move_uci)}</span><span><b>Lichess</b> ${guideStat(lichess, option.move_uci)}</span>`;
 }
 function lineButton(line, label) {
   const ucis = line.position_data.moves_uci.join(",");
@@ -634,15 +634,15 @@ function renderOpeningGuide() {
     const core = decision.options.filter(option => option.prominence !== "practical_sideline");
     const minor = decision.options.filter(option => option.prominence === "practical_sideline");
     const options = core.map(option => choiceButton(option, decision)).join("");
-    const minorOptions = minor.length ? `<details class="minor-options"><summary>${minor.length} PRACTICAL SIDELINE${minor.length > 1 ? "S" : ""} · UNDER 1% IN LOCAL OTB</summary><div>${minor.map(option => choiceButton(option, decision, true)).join("")}</div></details>` : "";
+    const minorOptions = minor.length ? `<details class="minor-options"><summary>${minor.length} practical sideline${minor.length > 1 ? "s" : ""} · under 1% in local OTB</summary><div>${minor.map(option => choiceButton(option, decision, true)).join("")}</div></details>` : "";
     return `<article class="guide-decision${exact ? " current" : ""}">
-      <div class="decision-head"><div><span class="side-badge ${decision.side.toLowerCase()}">${escapeHtml(decision.side.toUpperCase())}'S OPTIONS</span><h3>${escapeHtml(decision.title)}</h3></div>
-      <button class="guide-load decision-position" data-line="${decision.position_data.moves_uci.join(",")}" type="button">${exact ? "ON BOARD" : "LOAD DECISION"}</button></div>
+      <div class="decision-head"><div><span class="side-badge ${decision.side.toLowerCase()}">${escapeHtml(decision.side)}'s options</span><h3>${escapeHtml(decision.title)}</h3></div>
+      <button class="guide-load decision-position" data-line="${decision.position_data.moves_uci.join(",")}" type="button">${exact ? "On board" : "Load decision"}</button></div>
       <p>${escapeHtml(decision.why_here)}</p><div class="guide-choices">${options}</div>${minorOptions}
     </article>`;
   }).join("");
-  const mainlines = guide.lines.filter(line => line.category === "mainline").map(line => `<article class="guide-line-card useful-position${line.primary ? " primary-line" : ""}">${line.primary ? '<span class="mainline-badge">PRIMARY MAIN LINE</span>' : ""}${lineButton(line, line.name)}<p>${escapeHtml(line.result)}</p><div class="plan-grid"><div><b>WHITE'S PLAN</b><ul>${line.white_plans.map(plan => `<li>${escapeHtml(plan)}</li>`).join("")}</ul></div><div><b>BLACK'S PLAN</b><ul>${line.black_plans.map(plan => `<li>${escapeHtml(plan)}</li>`).join("")}</ul></div></div></article>`).join("");
-  const sidelines = guide.lines.filter(line => line.category === "sideline").map(line => `<details class="sideline-row"><summary><strong>${escapeHtml(line.name)}</strong><span>${escapeHtml(line.position_data.moves_san.join(" "))}</span></summary><div class="sideline-body"><button class="guide-load" data-line="${line.position_data.moves_uci.join(",")}" type="button">LOAD POSITION</button><p>${escapeHtml(line.result)}</p><div class="plan-grid"><div><b>WHITE</b><ul>${line.white_plans.map(plan => `<li>${escapeHtml(plan)}</li>`).join("")}</ul></div><div><b>BLACK</b><ul>${line.black_plans.map(plan => `<li>${escapeHtml(plan)}</li>`).join("")}</ul></div></div></div></details>`).join("");
+  const mainlines = guide.lines.filter(line => line.category === "mainline").map(line => `<article class="guide-line-card useful-position${line.primary ? " primary-line" : ""}">${line.primary ? '<span class="mainline-badge">Primary main line</span>' : ""}${lineButton(line, line.name)}<p>${escapeHtml(line.result)}</p><div class="plan-grid"><div><b>White's plan</b><ul>${line.white_plans.map(plan => `<li>${escapeHtml(plan)}</li>`).join("")}</ul></div><div><b>Black's plan</b><ul>${line.black_plans.map(plan => `<li>${escapeHtml(plan)}</li>`).join("")}</ul></div></div></article>`).join("");
+  const sidelines = guide.lines.filter(line => line.category === "sideline").map(line => `<details class="sideline-row"><summary><strong>${escapeHtml(line.name)}</strong><span>${escapeHtml(line.position_data.moves_san.join(" "))}</span></summary><div class="sideline-body"><button class="guide-load" data-line="${line.position_data.moves_uci.join(",")}" type="button">Load position</button><p>${escapeHtml(line.result)}</p><div class="plan-grid"><div><b>White</b><ul>${line.white_plans.map(plan => `<li>${escapeHtml(plan)}</li>`).join("")}</ul></div><div><b>Black</b><ul>${line.black_plans.map(plan => `<li>${escapeHtml(plan)}</li>`).join("")}</ul></div></div></div></details>`).join("");
   const transpositions = guide.transpositions.map(item => `<article class="transposition-card">${lineButton(item, item.label)}<p>${escapeHtml(item.note)}</p></article>`).join("");
   const related = (guide.related_openings || []).map(slug => {
     const opening = openingCatalogue.openings.find(item => item.slug === slug);
@@ -652,11 +652,11 @@ function renderOpeningGuide() {
   panel.innerHTML = `<div class="guide-toolbar"><button id="catalogue-back" type="button">← ALL OPENINGS</button><span>LIVE CHOICE DATA · ${escapeHtml(currentFilterText())}</span></div>
     <div class="guide-hero"><span class="guide-kicker">PILOT GUIDE · ${escapeHtml(guide.eco)}</span><h2>${escapeHtml(guide.title)}</h2>${aliases}<p>${escapeHtml(guide.summary)}</p>
       <button class="guide-load defining-position" data-line="${guide.defining_position.moves_uci.join(",")}" type="button">LOAD DEFINING POSITION · ${escapeHtml(guide.defining_position.moves_san.join(" "))}</button></div>
-    <details class="guide-overview" open><summary>STRATEGIC CONTEST</summary><div class="overview-grid"><div><h3>What the game is about</h3><ul>${guide.strategic_contest.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div><div><h3>Characteristic structures</h3><ul>${guide.structures.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div></div></details>
-    <section class="guide-section useful-section"><div class="section-title"><span>STRATEGIC POSITIONS</span><h2>Reach a useful position</h2><p>Choose a structure, load it on the board, then use the plans as the position's map.</p></div><div class="useful-position-grid">${mainlines}</div></section>
-    <section class="guide-section decision-section"><div class="section-title"><span>COMPACT CHOICE MAP</span><h2>Key forks on the way</h2></div><div class="decision-grid">${decisions}</div></section>
-    <details class="guide-section guide-sidelines"><summary><span>COMMON SIDELINES</span><strong>${guide.lines.filter(line => line.category === "sideline").length} practical deviations</strong></summary><div class="sideline-list">${sidelines}</div></details>
-    <section class="guide-section"><div class="section-title"><span>TRANSPOSITIONS</span><h2>Same ideas, different routes</h2></div><div class="transposition-grid">${transpositions}</div>${related ? `<div class="related-row"><b>RELATED OPENINGS</b>${related}</div>` : ""}</section>
+    <details class="guide-overview" open><summary>Strategic contest</summary><div class="overview-grid"><div><h3>What the game is about</h3><ul>${guide.strategic_contest.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div><div><h3>Characteristic structures</h3><ul>${guide.structures.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div></div></details>
+    <section class="guide-section useful-section"><div class="section-title"><span>Strategic positions</span><h2>Reach a useful position</h2><p>Choose a structure, load it on the board, then use the plans as the position's map.</p></div><div class="useful-position-grid">${mainlines}</div></section>
+    <section class="guide-section decision-section"><div class="section-title"><span>Compact choice map</span><h2>Key forks on the way</h2></div><div class="decision-grid">${decisions}</div></section>
+    <details class="guide-section guide-sidelines"><summary><span>Common sidelines</span><strong>${guide.lines.filter(line => line.category === "sideline").length} practical deviations</strong></summary><div class="sideline-list">${sidelines}</div></details>
+    <section class="guide-section"><div class="section-title"><span>Transpositions</span><h2>Same ideas, different routes</h2></div><div class="transposition-grid">${transpositions}</div>${related ? `<div class="related-row"><b>Related openings</b>${related}</div>` : ""}</section>
     <details class="guide-sources"><summary>SOURCES & SELECTION METHOD</summary><p>${escapeHtml(openingCatalogue.selection_criteria.database_rule)} ${escapeHtml(openingCatalogue.selection_criteria.theory_exception)}</p><div>${sources}</div></details>`;
   bindGuideActions();
 }
@@ -704,7 +704,7 @@ async function initOpenings() {
   } catch (error) {
     $("#wiki-article").innerHTML = `<span class="engine-error">${escapeHtml(error.message)}</span>`;
     $("#wiki-moves").innerHTML = '<span class="empty">Opening moves unavailable.</span>';
-    $("#catalogue-count").textContent = "UNAVAILABLE";
+    $("#catalogue-count").textContent = "Unavailable";
   }
 }
 function engineScore(evaluation) {
@@ -737,11 +737,11 @@ function renderEngine(payload) {
       lines.append(button);
     }
   }
-  const color = (payload.perspective_color || "white").toUpperCase();
-  $("#engine-perspective").textContent = `STOCKFISH · ${color} POV`;
-  $("#engine-status").textContent = payload.engine.toUpperCase() + " · DEPTH " + payload.depth;
+  const color = payload.perspective_color || "white";
+  $("#engine-perspective").textContent = `Stockfish · ${color} perspective`;
+  $("#engine-status").textContent = payload.engine + " · depth " + payload.depth;
 }
-function cancelEngine(status="WAITING") {
+function cancelEngine(status="Waiting") {
   engineRequestId++;
   clearTimeout(engineTimer);
   engineController?.abort();
@@ -749,12 +749,12 @@ function cancelEngine(status="WAITING") {
   $("#engine-status").textContent = status;
 }
 function clearEngineForPosition() {
-  cancelEngine("WAITING FOR POSITION");
-  $("#engine-perspective").textContent = "STOCKFISH · WHITE POV";
+  cancelEngine("Waiting for position");
+  $("#engine-perspective").textContent = "Stockfish · White perspective";
   $("#engine-lines").innerHTML = '<span class="empty">Updating board position…</span>';
 }
 function scheduleEngine() {
-  cancelEngine(enginePaused ? "PAUSED" : "QUEUED");
+  cancelEngine(enginePaused ? "Paused" : "Queued");
   if (enginePaused || !data) return;
   const id = engineRequestId;
   const key = [
@@ -764,7 +764,7 @@ function scheduleEngine() {
   ].join("|");
   engineTimer = setTimeout(async () => {
     if (id !== engineRequestId || enginePaused) return;
-    $("#engine-status").textContent = "ANALYSING";
+    $("#engine-status").textContent = "Analysing";
     engineController = new AbortController();
     const params = new URLSearchParams({
       moves: history.slice(0, cursor).join(","),
@@ -780,7 +780,7 @@ function scheduleEngine() {
       renderEngine(payload);
     } catch (error) {
       if (error.name === "AbortError" || id !== engineRequestId) return;
-      $("#engine-status").textContent = "UNAVAILABLE";
+      $("#engine-status").textContent = "Unavailable";
       const lines = $("#engine-lines");
       lines.replaceChildren();
       const message = document.createElement("span");
@@ -791,7 +791,7 @@ function scheduleEngine() {
   }, 280);
 }
 function renderPosition() {
-  $("#turn").textContent = data.position.turn.toUpperCase() + " TO MOVE";
+  $("#turn").textContent = data.position.turn[0].toUpperCase() + data.position.turn.slice(1) + " to move";
   $("#back").disabled = cursor === 0;
   $("#forward").disabled = cursor >= history.length;
   renderBoard();
@@ -810,7 +810,7 @@ function render() {
 function showStatisticsLoading() {
   for (const kind of ["lichess", "master"]) {
     const status = $(`#${kind}-status`);
-    status.textContent = "LOADING";
+    status.textContent = "Loading";
     status.classList.remove("error");
   }
   $("#lichess-total").textContent = "—";
@@ -828,7 +828,7 @@ function applyPositionState(state, id) {
   selected = null;
   renderPosition();
   showStatisticsLoading();
-  $("#engine-perspective").textContent = "STOCKFISH · WHITE POV";
+  $("#engine-perspective").textContent = "Stockfish · White perspective";
   $("#engine-lines").innerHTML = `<span class="empty">Waiting to analyse ${data.position.turn} to move…</span>`;
   scheduleEngine();
   scheduleStatistics(id);
@@ -855,7 +855,7 @@ function scheduleStatistics(id, delay=120) {
       if (error.name === "AbortError" || id !== requestId) return;
       const notice = $("#notice"); notice.textContent = error.message; notice.classList.remove("hidden");
       for (const kind of ["lichess", "master"]) {
-        const status = $(`#${kind}-status`); status.textContent = "UNAVAILABLE"; status.classList.add("error");
+        const status = $(`#${kind}-status`); status.textContent = "Unavailable"; status.classList.add("error");
       }
     }
   }, delay);
@@ -880,7 +880,7 @@ async function load(positionChanged=false) {
     applyPositionState(cached, id);
     return;
   }
-  $("#turn").textContent = "UPDATING POSITION";
+  $("#turn").textContent = "Updating position";
   const params = new URLSearchParams({
     moves: moves.join(",")
   });
@@ -897,7 +897,7 @@ async function load(positionChanged=false) {
   } catch (error) {
     if (error.name === "AbortError" || id !== requestId) return;
     const notice = $("#notice"); notice.textContent = error.message; notice.classList.remove("hidden");
-    $("#turn").textContent = "POSITION ERROR";
+    $("#turn").textContent = "Position error";
   }
 }
 $("#back").onclick = () => { if (cursor) { cursor--; selected=null; load(true); } };
@@ -923,8 +923,8 @@ $("#engine-depth").onchange = () => scheduleEngine();
 $("#engine-multipv").onchange = () => scheduleEngine();
 $("#engine-toggle").onclick = () => {
   enginePaused = !enginePaused;
-  $("#engine-toggle").textContent = enginePaused ? "RESUME" : "PAUSE";
-  if (enginePaused) cancelEngine("PAUSED"); else scheduleEngine();
+  $("#engine-toggle").textContent = enginePaused ? "Resume" : "Pause";
+  if (enginePaused) cancelEngine("Paused"); else scheduleEngine();
 };
 $("#cancel-promotion").onclick = () => $("#promotion").close();
 document.addEventListener("keydown", event => {

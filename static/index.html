@@ -9,10 +9,10 @@
 <body>
   <header>
     <div>
-      <div class="eyebrow">CHESS_MEMORISER // MARKET_TERMINAL</div>
+      <div class="eyebrow">Chess Memoriser / opening terminal</div>
       <h1>Opening Intelligence Feed</h1>
     </div>
-    <div id="turn" class="turn">WHITE TO MOVE</div>
+    <div id="turn" class="turn">White to move</div>
   </header>
 
   <main>
@@ -23,33 +23,33 @@
       <div class="navigation">
         <button id="back" title="Back">←</button>
         <button id="forward" title="Forward">→</button>
-        <button id="reset">RESET</button>
+        <button id="reset">Reset</button>
       </div>
       <div class="line-panel">
-        <span class="label">CURRENT LINE</span>
+        <span class="label">Current line</span>
         <div id="line" class="line"></div>
       </div>
     </section>
 
     <section class="data-column">
       <nav class="view-tabs" aria-label="Application sections">
-        <button id="openings-tab" class="active" type="button">OPENINGS</button>
-        <button id="explorer-tab" type="button">DATABASE EXPLORER</button>
+        <button id="openings-tab" class="active" type="button">Openings</button>
+        <button id="explorer-tab" type="button">Database explorer</button>
       </nav>
 
       <section id="opening-browser" class="opening-browser opening-wiki" aria-label="Interactive opening wiki">
         <div class="opening-browser-head">
           <div>
-            <span class="label">INTERACTIVE OPENING WIKI</span>
+            <span class="label">Interactive opening wiki</span>
             <strong>Explore theory by playing moves.</strong>
           </div>
-          <span id="catalogue-count" class="status">LOADING</span>
+          <span id="catalogue-count" class="status">Loading</span>
         </div>
         <div class="wiki-layout">
           <aside class="wiki-move-panel">
             <div class="wiki-section-head">
-              <span class="label">AVAILABLE THEORY MOVES</span>
-              <small>MOST COMMON FIRST</small>
+              <span class="label">Available theory moves</span>
+              <small>Most common first</small>
             </div>
             <div id="wiki-moves" class="wiki-moves"><span class="empty">Loading moves…</span></div>
           </aside>
@@ -62,24 +62,24 @@
       <section id="opening-guide" class="opening-guide hidden" aria-label="Opening guide"></section>
 
       <div class="filters">
-        <label>LICHESS RATING
+        <label>Lichess rating
           <select id="ratings">
-            <option value="0,1000,1200,1400,1600,1800,2000,2200,2500">ALL BUCKETS</option>
+            <option value="0,1000,1200,1400,1600,1800,2000,2200,2500">All buckets</option>
             <option value="1800,2000,2200,2500">1800+</option>
             <option value="2000,2200,2500">2000+</option>
             <option value="2200,2500">2200+</option>
             <option value="2500">2500+</option>
           </select>
         </label>
-        <label>SPEEDS
+        <label>Speeds
           <select id="speeds">
-            <option value="ultraBullet,bullet,blitz,rapid,classical,correspondence">ALL SPEEDS</option>
-            <option value="blitz,rapid,classical">BLITZ · RAPID · CLASSICAL</option>
-            <option value="rapid,classical">RAPID · CLASSICAL</option>
-            <option value="classical">CLASSICAL</option>
+            <option value="ultraBullet,bullet,blitz,rapid,classical,correspondence">All speeds</option>
+            <option value="blitz,rapid,classical">Blitz · Rapid · Classical</option>
+            <option value="rapid,classical">Rapid · Classical</option>
+            <option value="classical">Classical</option>
           </select>
         </label>
-        <label>DISPLAY MOVES
+        <label>Display moves
           <select id="frequency-threshold">
             <option value="0.005">≥0.5%</option>
             <option value="0.01" selected>≥1%</option>
@@ -91,25 +91,25 @@
 
       <div class="source-grid">
         <article class="source-card">
-          <span id="master-source-name" class="source-name">LUMBRA OTB · BOTH 2200+ · DISPLAY ≥1%</span>
+          <span id="master-source-name" class="source-name">Lumbra OTB · both 2200+ · display ≥1%</span>
           <strong id="master-total">—</strong>
-          <span id="master-status" class="status">LOCAL INDEX</span>
+          <span id="master-status" class="status">Local index</span>
         </article>
         <article class="source-card">
-          <span id="lichess-source-name" class="source-name">LICHESS PLAYERS · DISPLAY ≥1%</span>
+          <span id="lichess-source-name" class="source-name">Lichess players · display ≥1%</span>
           <strong id="lichess-total">—</strong>
-          <span id="lichess-status" class="status">LOADING</span>
+          <span id="lichess-status" class="status">Loading</span>
         </article>
       </div>
 
       <section class="engine-panel" aria-label="Stockfish analysis">
         <div class="engine-head">
           <div>
-            <span id="engine-perspective" class="source-name">STOCKFISH · WHITE POV</span>
-            <span id="engine-status" class="status">WAITING</span>
+            <span id="engine-perspective" class="source-name">Stockfish · White perspective</span>
+            <span id="engine-status" class="status">Waiting</span>
           </div>
           <div class="engine-controls">
-            <label>DEPTH
+            <label>Depth
               <select id="engine-depth">
                 <option value="12">12</option>
                 <option value="14">14</option>
@@ -118,14 +118,14 @@
                 <option value="20">20</option>
               </select>
             </label>
-            <label>LINES
+            <label>Lines
               <select id="engine-multipv">
                 <option value="1">1</option>
                 <option value="3" selected>3</option>
                 <option value="5">5</option>
               </select>
             </label>
-            <button id="engine-toggle" type="button">PAUSE</button>
+            <button id="engine-toggle" type="button">Pause</button>
           </div>
         </div>
         <div id="engine-lines" class="engine-lines"><span class="empty">Waiting for position…</span></div>
@@ -136,13 +136,13 @@
         <table>
           <thead>
             <tr>
-              <th rowspan="2" class="move-head">MOVE</th>
+              <th rowspan="2" class="move-head">Move</th>
               <th id="master-table-head" colspan="3">OTB 2200+ · ≥1%</th>
-              <th id="lichess-table-head" colspan="3">LICHESS PLAYERS · ≥1%</th>
+              <th id="lichess-table-head" colspan="3">Lichess players · ≥1%</th>
             </tr>
             <tr>
-              <th>GAMES</th><th>SHARE</th><th>WHITE / DRAW / BLACK</th>
-              <th>GAMES</th><th>SHARE</th><th>WHITE / DRAW / BLACK</th>
+              <th>Games</th><th>Share</th><th>White / Draw / Black</th>
+              <th>Games</th><th>Share</th><th>White / Draw / Black</th>
             </tr>
           </thead>
           <tbody id="moves"></tbody>
